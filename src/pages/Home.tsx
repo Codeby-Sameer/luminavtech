@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ArrowRight, Bot, Cpu, Network, Shield, Database, Cloud, Terminal as TerminalIcon, CheckCircle2, UserCheck, Zap, Globe as GlobeIcon, Users, Calendar, Mail, Phone, MapPin, Building2 } from 'lucide-react'
+import { ArrowRight, Bot, Cpu, Network, Database, Cloud, Terminal as TerminalIcon, CheckCircle2, UserCheck, Zap, Globe as GlobeIcon, Users, Calendar } from 'lucide-react'
 import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
 import Particles from '../components/Particles'
-import Globe from '../components/Globe'
+
 import { Terminal, AnimatedSpan, TypingAnimation } from '../components/Terminal'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -170,11 +171,8 @@ const industryDetails: Record<string, { desc: string; projects: string[]; demand
   }
 }
 
-interface HomeProps {
-  setCurrentPage: (page: string) => void
-}
-
-export default function Home({ setCurrentPage }: HomeProps) {
+export default function Home() {
+  const navigate = useNavigate()
   const [selectedDomain, setSelectedDomain] = useState<{
     type: 'tech' | 'industry'
     name: string
@@ -183,17 +181,17 @@ export default function Home({ setCurrentPage }: HomeProps) {
   const [terminalKey, setTerminalKey] = useState(0)
 
   const containerRef = useRef<HTMLDivElement | null>(null)
-  
+
   // Section Refs for GSAP animations
-  const scrollTextSectionRef = useRef<HTMLDivElement | null>(null)
-  const scrollTextRef = useRef<HTMLHeadingElement | null>(null)
+  const heroSectionRef = useRef<HTMLDivElement | null>(null)
+  const heroTypographyRef = useRef<HTMLHeadingElement | null>(null)
+  const mergedHeroContentRef = useRef<HTMLDivElement | null>(null)
   const splitAboutSectionRef = useRef<HTMLDivElement | null>(null)
   const aboutLeftRef = useRef<HTMLDivElement | null>(null)
   const aboutRightRef = useRef<HTMLDivElement | null>(null)
-  const scrollStorySectionRef = useRef<HTMLDivElement | null>(null)
-  
-  // Form submission state
-  const [formSubmitted, setFormSubmitted] = useState(false)
+
+
+
 
   // InView hooks for triggering entry animations
   const { ref: metricsRef, inView: metricsInView } = useInView({
@@ -202,25 +200,45 @@ export default function Home({ setCurrentPage }: HomeProps) {
   })
 
   useEffect(() => {
-    // 1. GSAP: Large Scroll Typography Section (Scale & Opacity Zoom)
-    const textEl = scrollTextRef.current
-    const sectionTextEl = scrollTextSectionRef.current
-    if (textEl && sectionTextEl) {
-      gsap.fromTo(
-        textEl,
-        { scale: 0.4, opacity: 0 },
-        {
-          scale: 1.2,
-          opacity: 1,
-          scrollTrigger: {
-            trigger: sectionTextEl,
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: true,
-            pin: true,
-            anticipatePin: 1,
-          },
-        }
+    // 1. GSAP: Combined Scroll Story Hero Section (Pin & Timeline)
+    const heroSec = heroSectionRef.current
+    const textEl = heroTypographyRef.current
+    const mergedContent = mergedHeroContentRef.current
+    if (heroSec && textEl && mergedContent) {
+      const cards = heroSec.querySelectorAll('.story-card')
+      const isMobile = window.innerWidth < 768
+      const xOffset = isMobile ? '80px' : '240px'
+      const yOffset = isMobile ? '70px' : '100px'
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: heroSec,
+          start: 'top top',
+          end: 'bottom+=2000 bottom',
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+        },
+      })
+
+      // Step 1: Zoom and fade the large typography text
+      tl.to(textEl, { scale: 3.5, opacity: 0, duration: 1.5 }, 0)
+
+      // Step 2: Slide cards from corners to visual display positions
+      tl.fromTo(cards[0], { x: '-70vw', y: '-70vh', rotation: -30, scale: 0.4, opacity: 0 }, { x: `-${xOffset}`, y: `-${yOffset}`, rotation: -10, scale: 1, opacity: 1, duration: 1.5 }, 0.5)
+      tl.fromTo(cards[1], { x: '70vw', y: '-70vh', rotation: 30, scale: 0.4, opacity: 0 }, { x: xOffset, y: `-${yOffset}`, rotation: 10, scale: 1, opacity: 1, duration: 1.5 }, 0.5)
+      tl.fromTo(cards[2], { x: '-70vw', y: '70vh', rotation: -15, scale: 0.4, opacity: 0 }, { x: `-${xOffset}`, y: yOffset, rotation: -5, scale: 1, opacity: 1, duration: 1.5 }, 0.5)
+      tl.fromTo(cards[3], { x: '70vw', y: '70vh', rotation: 15, scale: 0.4, opacity: 0 }, { x: xOffset, y: yOffset, rotation: 5, scale: 1, opacity: 1, duration: 1.5 }, 0.5)
+
+      // Step 3: Merge in the center
+      tl.to(cards, { x: 0, y: 0, rotation: 0, scale: 0.85, opacity: 0.05, duration: 1.2 }, '+=0.2')
+
+      // Step 4: Reveal the actual hero content
+      tl.fromTo(
+        mergedContent,
+        { opacity: 0, scale: 0.85, y: 30, pointerEvents: 'none' },
+        { opacity: 1, scale: 1, y: 0, pointerEvents: 'auto', duration: 1.2, ease: 'power2.out' },
+        '-=0.8'
       )
     }
 
@@ -241,50 +259,12 @@ export default function Home({ setCurrentPage }: HomeProps) {
       tl.fromTo(rightEl, { x: 200, opacity: 0 }, { x: 0, opacity: 1 }, 0)
     }
 
-    // 3. GSAP: Scroll Story Section (Cards merge in center)
-    const storySec = scrollStorySectionRef.current
-    if (storySec) {
-      const cards = storySec.querySelectorAll('.story-card')
-      const mergedText = storySec.querySelector('.merged-text')
-      const storyTitle = storySec.querySelector('.story-title')
-      
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: storySec,
-          start: 'top top',
-          end: 'bottom+=1200 bottom',
-          scrub: true,
-          pin: true,
-          anticipatePin: 1,
-        },
-      })
-
-      // Animate card 1 from left, card 2 from right, card 3 from left, card 4 from right
-      tl.fromTo(cards[0], { x: '-150vw', y: '-50vh', rotation: -30 }, { x: '-60px', y: '-60px', rotation: -10, duration: 2 }, 0)
-      tl.fromTo(cards[1], { x: '150vw', y: '-50vh', rotation: 30 }, { x: '60px', y: '-60px', rotation: 10, duration: 2 }, 0)
-      tl.fromTo(cards[2], { x: '-150vw', y: '50vh', rotation: -15 }, { x: '-60px', y: '60px', rotation: -5, duration: 2 }, 0)
-      tl.fromTo(cards[3], { x: '150vw', y: '50vh', rotation: 15 }, { x: '60px', y: '60px', rotation: 5, duration: 2 }, 0)
-      
-      // Merge all in center
-      tl.to(cards, { x: 0, y: 0, rotation: 0, scale: 0.9, duration: 1.5, opacity: 0.15 }, 'merge')
-      tl.to(storyTitle, { opacity: 0, duration: 0.5 }, 'merge')
-      
-      // Reveal the merged message
-      tl.fromTo(mergedText, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 1.5 }, 'merge+=0.5')
-    }
-
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
     }
   }, [])
 
-  // Floating technology icons configuration for Hero Section
-  const techIcons = [
-    { component: Bot, label: 'AI', color: 'text-blue-400', top: '15%', left: '10%' },
-    { component: Cpu, label: 'ML', color: 'text-indigo-400', top: '65%', left: '15%' },
-    { component: Network, label: 'Data', color: 'text-cyan-400', top: '25%', left: '75%' },
-    { component: Shield, label: 'Cyber', color: 'text-blue-500', top: '70%', left: '80%' },
-  ]
+
 
   // Services list
   const services = [
@@ -302,8 +282,8 @@ export default function Home({ setCurrentPage }: HomeProps) {
 
   // Technologies (horizontal scroll marquee)
   const technologies = [
-    'Generative AI', 'Artificial Intelligence', 'Machine Learning', 'Python Full Stack', 
-    'React Development', 'Java Full Stack', 'DevOps', 'Data Science', 'Data Engineering', 
+    'Generative AI', 'Artificial Intelligence', 'Machine Learning', 'Python Full Stack',
+    'React Development', 'Java Full Stack', 'DevOps', 'Data Science', 'Data Engineering',
     'Cybersecurity', 'QA Automation', 'Salesforce', 'SAP', 'ServiceNow', 'Business Analysis'
   ]
 
@@ -346,99 +326,136 @@ export default function Home({ setCurrentPage }: HomeProps) {
 
   return (
     <div ref={containerRef} className="relative w-full overflow-hidden bg-[#020617]">
-      {/* 1. Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-24 pb-20 overflow-hidden">
-        {/* Glow Spheres */}
-        <div className="glow-spot glow-blue w-[600px] h-[600px] -top-10 -left-10" />
-        <div className="glow-spot glow-cyan w-[500px] h-[500px] bottom-10 right-10" />
-        <div className="absolute inset-0 animated-grid pointer-events-none" />
-        
-        {/* Particles Network */}
+      {/* Dynamic Keyframe Animations for Hero Icons */}
+      <style>{`
+        @keyframes heroFloat {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-8px) rotate(3deg); }
+        }
+        @keyframes heroPulseGlow {
+          0%, 100% { filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.4)); }
+          50% { filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.8)); }
+        }
+        @keyframes heroSpinSlow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-hero-float {
+          animation: heroFloat 5s ease-in-out infinite;
+        }
+        .animate-hero-pulse-glow {
+          animation: heroPulseGlow 3s ease-in-out infinite;
+        }
+        .animate-hero-spin-slow {
+          animation: heroSpinSlow 16s linear infinite;
+        }
+      `}</style>
+
+      {/* 1. Combined Scroll Story & Typography Hero Section */}
+      <section
+        ref={heroSectionRef}
+        className="relative h-screen bg-[#5D8AA8] flex items-center justify-center overflow-hidden z-20"
+      >
+        {/* Background Grids and Particles */}
+        <div className="absolute inset-0 animated-grid opacity-25 pointer-events-none" />
+        <div className="glow-spot glow-blue w-[600px] h-[600px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30 pointer-events-none" />
         <Particles />
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
-          {/* Left Hero Content */}
-          <div className="lg:col-span-7 text-left space-y-8">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400">
-              <Bot className="w-4 h-4 animate-pulse" />
-              <span>Next-Gen Talent Acquisition</span>
+        <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center relative h-full">
+
+          {/* Large Scroll Typography (Scale & Opacity Zoom) */}
+          <h2
+            ref={heroTypographyRef}
+            className="hero-typography font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wider text-center leading-none text-white select-none whitespace-pre-line uppercase absolute z-20"
+          >
+            THE FUTURE{'\n'}OF TALENT{'\n'}IS HERE
+          </h2>
+
+          {/* Cards to merge */}
+          <div className="relative w-full h-[400px] flex items-center justify-center z-10">
+            {/* Card 1: Talent */}
+            <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-2xl">
+              <div className="w-full h-full glass-panel border-white/10 p-6 flex flex-col justify-between rounded-2xl animate-hero-float">
+                <Users className="w-8 h-8 text-blue-400 animate-hero-pulse-glow" />
+                <div>
+                  <h3 className="font-display font-bold text-lg text-white">Talent</h3>
+                  <p className="text-xs text-slate-400 mt-1">Connecting organizations with top skilled tech experts.</p>
+                </div>
+              </div>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
-              Powering Business Growth Through{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-                People & Technology
-              </span>
-            </h1>
-
-            <p className="text-slate-300 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
-              Delivering IT Staffing, AI Talent Solutions, Workforce Consulting and Specialized Technology Recruitment for modern enterprises.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <button
-                onClick={() => setCurrentPage('contact')}
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-semibold text-sm tracking-wide text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer"
-              >
-                Talk To Experts
-                <ArrowRight className="w-4 h-4" />
-              </button>
-              <button
-                onClick={() => setCurrentPage('services')}
-                className="px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 font-semibold text-sm tracking-wide text-white hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer"
-              >
-                Explore Services
-              </button>
-            </div>
-          </div>
-
-          {/* Right Hero Globe Card */}
-          <div className="lg:col-span-5 relative flex items-center justify-center">
-            {/* Glass Box Container for Globe */}
-            <div className="w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] rounded-3xl glass-panel relative flex items-center justify-center overflow-hidden shadow-2xl border-white/10">
-              <Globe />
+            {/* Card 2: Technology */}
+            <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-2xl">
+              <div className="w-full h-full glass-panel border-white/10 p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-1.5s' }}>
+                <Cpu className="w-8 h-8 text-indigo-400 animate-hero-pulse-glow" style={{ animationDelay: '-1s' }} />
+                <div>
+                  <h3 className="font-display font-bold text-lg text-white">Technology</h3>
+                  <p className="text-xs text-slate-400 mt-1">Harnessing tech tools and expert engineering pools.</p>
+                </div>
+              </div>
             </div>
 
-            {/* Floating Tech Icons on Globe Side */}
-            {techIcons.map((icon, idx) => {
-              const IconComp = icon.component
-              return (
-                <motion.div
-                  key={idx}
-                  className="absolute p-3 rounded-2xl glass-panel border-white/10 flex items-center gap-2 shadow-lg cursor-pointer"
-                  style={{ top: icon.top, left: icon.left }}
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    delay: idx * 1.2,
-                    ease: 'easeInOut',
-                  }}
-                  whileHover={{ scale: 1.1, borderColor: 'rgba(96,165,250,0.4)' }}
+            {/* Card 3: Innovation */}
+            <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-2xl">
+              <div className="w-full h-full glass-panel border-white/10 p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-3s' }}>
+                <Bot className="w-8 h-8 text-cyan-400 animate-hero-pulse-glow" style={{ animationDelay: '-2s' }} />
+                <div>
+                  <h3 className="font-display font-bold text-lg text-white">Innovation</h3>
+                  <p className="text-xs text-slate-400 mt-1">Leveraging AI insights for intelligent matchmaking.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4: Growth */}
+            <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-2xl">
+              <div className="w-full h-full glass-panel border-white/10 p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-4.2s' }}>
+                <Zap className="w-8 h-8 text-blue-500 animate-hero-pulse-glow" style={{ animationDelay: '-3s' }} />
+                <div>
+                  <h3 className="font-display font-bold text-lg text-white">Growth</h3>
+                  <p className="text-xs text-slate-400 mt-1">Scaling business operations and project delivery.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Merged Hero Content (Revealed inside scrub timeline) */}
+            <div
+              ref={mergedHeroContentRef}
+              className="merged-hero-content absolute text-center pointer-events-none opacity-0 select-none max-w-4xl px-4 z-30"
+            >
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400 mb-6 uppercase tracking-widest font-display">
+                <Bot className="w-4 h-4 animate-pulse" />
+                <span>Next-Gen Talent Acquisition</span>
+              </div>
+
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight">
+                Powering Business Growth Through{' '}
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                  People & Technology
+                </span>
+              </h1>
+
+              <p className="text-slate-300 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto mt-6">
+                Delivering IT Staffing, AI Talent Solutions, Workforce Consulting and Specialized Technology Recruitment for modern enterprises.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-8 justify-center pointer-events-auto">
+                <button
+                  onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
+                  className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-semibold text-sm tracking-wide text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <IconComp className={`w-5 h-5 ${icon.color}`} />
-                  <span className="text-xs font-semibold text-slate-300 font-display">{icon.label}</span>
-                </motion.div>
-              )
-            })}
+                  Talk To Experts
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}
+                  className="px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 font-semibold text-sm tracking-wide text-white hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  Explore Services
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
-
-      {/* 2. Large Scroll Typography Section */}
-      <section
-        ref={scrollTextSectionRef}
-        className="relative h-screen bg-[#020617] flex items-center justify-center z-10 overflow-hidden"
-      >
-        <div className="absolute inset-0 animated-grid opacity-30 pointer-events-none" />
-        <div className="glow-spot glow-blue w-[400px] h-[400px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-        
-        <h2
-          ref={scrollTextRef}
-          className="font-display font-black text-5xl md:text-8xl tracking-wider text-center leading-none text-white select-none whitespace-pre-line uppercase"
-        >
-          THE FUTURE{'\n'}OF TALENT{'\n'}IS HERE
-        </h2>
       </section>
 
       {/* 3. About LuminaVTech (Timeline / Split Entrance) */}
@@ -468,7 +485,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
               We also leverage AI-driven talent insights to better align candidate skills with evolving job requirements, enabling more precise and efficient hiring decisions. Additionally, we use intelligent sourcing methods to identify niche technology professionals faster across competitive talent markets.
             </p>
             <button
-              onClick={() => setCurrentPage('about')}
+              onClick={() => { navigate('/about'); window.scrollTo(0, 0); }}
               className="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors mt-2"
             >
               Read Company Story
@@ -506,15 +523,15 @@ export default function Home({ setCurrentPage }: HomeProps) {
                 >
                   {/* Glowing background spot for hover */}
                   <div className="absolute -top-12 -left-12 w-24 h-24 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all" />
-                  
+
                   <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-600/25 transition-all">
                     <Icon className="w-6 h-6" />
                   </div>
-                  
+
                   <h3 className="font-display font-semibold text-lg text-white group-hover:text-blue-400 transition-colors">
                     {svc.title}
                   </h3>
-                  
+
                   <p className="text-sm text-slate-400 leading-relaxed font-light flex-grow">
                     {svc.desc}
                   </p>
@@ -530,7 +547,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
 
           <div className="mt-12 text-center">
             <button
-              onClick={() => setCurrentPage('services')}
+              onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}
               className="px-8 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-sm font-semibold tracking-wide text-white transition-all inline-flex items-center gap-2 cursor-pointer"
             >
               View All Services
@@ -540,73 +557,6 @@ export default function Home({ setCurrentPage }: HomeProps) {
         </div>
       </section>
 
-      {/* 5. Scroll Story Section (Pinned side merge) */}
-      <section
-        ref={scrollStorySectionRef}
-        className="relative h-screen bg-[#020617] flex items-center justify-center z-10 overflow-hidden"
-      >
-        <div className="absolute inset-0 animated-grid opacity-30 pointer-events-none" />
-        <div className="glow-spot glow-blue w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-
-        <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center relative h-full">
-          
-          <h2 className="story-title absolute top-20 font-display font-bold text-3xl sm:text-5xl text-white tracking-tight uppercase">
-            Our Core Pillars
-          </h2>
-
-          {/* Cards to merge */}
-          <div className="relative w-full h-[400px] flex items-center justify-center">
-            {/* Card 1: Talent */}
-            <div className="story-card absolute w-[260px] h-[180px] rounded-2xl glass-panel border-white/10 p-6 flex flex-col justify-between shadow-2xl">
-              <Users className="w-8 h-8 text-blue-400" />
-              <div>
-                <h3 className="font-display font-bold text-xl text-white">Talent</h3>
-                <p className="text-xs text-slate-400 mt-1">Connecting organizations with top skilled tech experts.</p>
-              </div>
-            </div>
-
-            {/* Card 2: Technology */}
-            <div className="story-card absolute w-[260px] h-[180px] rounded-2xl glass-panel border-white/10 p-6 flex flex-col justify-between shadow-2xl">
-              <Cpu className="w-8 h-8 text-indigo-400" />
-              <div>
-                <h3 className="font-display font-bold text-xl text-white">Technology</h3>
-                <p className="text-xs text-slate-400 mt-1">Harnessing tech tools and expert engineering pools.</p>
-              </div>
-            </div>
-
-            {/* Card 3: Innovation */}
-            <div className="story-card absolute w-[260px] h-[180px] rounded-2xl glass-panel border-white/10 p-6 flex flex-col justify-between shadow-2xl">
-              <Bot className="w-8 h-8 text-cyan-400" />
-              <div>
-                <h3 className="font-display font-bold text-xl text-white">Innovation</h3>
-                <p className="text-xs text-slate-400 mt-1">Leveraging AI insights for intelligent matchmaking.</p>
-              </div>
-            </div>
-
-            {/* Card 4: Growth */}
-            <div className="story-card absolute w-[260px] h-[180px] rounded-2xl glass-panel border-white/10 p-6 flex flex-col justify-between shadow-2xl">
-              <Zap className="w-8 h-8 text-blue-500" />
-              <div>
-                <h3 className="font-display font-bold text-xl text-white">Growth</h3>
-                <p className="text-xs text-slate-400 mt-1">Scaling business operations and project delivery.</p>
-              </div>
-            </div>
-
-            {/* Merged Text Overlay */}
-            <div className="merged-text absolute text-center pointer-events-none opacity-0 select-none">
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400 mb-6 uppercase tracking-widest font-display">
-                Mission Achieved
-              </div>
-              <h3 className="font-display font-black text-4xl sm:text-7xl text-white leading-none tracking-tight">
-                Building Future-Ready Teams
-              </h3>
-              <p className="text-slate-400 mt-6 text-sm sm:text-lg font-light max-w-xl mx-auto">
-                By uniting talent, technology, innovation, and growth, we forge high-performing workforce models for enterprises globally.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 6 & 7. Interactive Domain & Industry Expertise Section */}
       <section className="relative py-28 bg-[#090f20]/40 border-y border-white/5 z-10 overflow-hidden">
@@ -734,21 +684,19 @@ export default function Home({ setCurrentPage }: HomeProps) {
               <div className="flex space-x-3 bg-slate-950/40 p-1.5 rounded-2xl border border-white/5">
                 <button
                   onClick={() => setActiveTab('tech')}
-                  className={`flex-1 py-3 px-4 rounded-xl font-display font-semibold text-xs tracking-wider uppercase transition-all cursor-pointer ${
-                    activeTab === 'tech'
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20'
-                      : 'bg-transparent text-slate-450 hover:text-slate-200'
-                  }`}
+                  className={`flex-1 py-3 px-4 rounded-xl font-display font-semibold text-xs tracking-wider uppercase transition-all cursor-pointer ${activeTab === 'tech'
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20'
+                    : 'bg-transparent text-slate-450 hover:text-slate-200'
+                    }`}
                 >
                   Tech Expertise
                 </button>
                 <button
                   onClick={() => setActiveTab('industry')}
-                  className={`flex-1 py-3 px-4 rounded-xl font-display font-semibold text-xs tracking-wider uppercase transition-all cursor-pointer ${
-                    activeTab === 'industry'
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20'
-                      : 'bg-transparent text-slate-450 hover:text-slate-200'
-                  }`}
+                  className={`flex-1 py-3 px-4 rounded-xl font-display font-semibold text-xs tracking-wider uppercase transition-all cursor-pointer ${activeTab === 'industry'
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20'
+                    : 'bg-transparent text-slate-450 hover:text-slate-200'
+                    }`}
                 >
                   Industry Verticals
                 </button>
@@ -767,11 +715,10 @@ export default function Home({ setCurrentPage }: HomeProps) {
                             setSelectedDomain({ type: 'tech', name: tech })
                             setTerminalKey((prev) => prev + 1)
                           }}
-                          className={`px-4 py-3 rounded-xl text-xs font-semibold border transition-all text-center justify-center items-center flex cursor-pointer ${
-                            isSelected
-                              ? 'bg-blue-500/20 border-blue-500 text-blue-450 shadow-lg shadow-blue-500/5 font-bold scale-[1.02]'
-                              : 'bg-slate-900/40 border-white/5 text-slate-300 hover:border-blue-500/30 hover:bg-blue-500/5'
-                          }`}
+                          className={`px-4 py-3 rounded-xl text-xs font-semibold border transition-all text-center justify-center items-center flex cursor-pointer ${isSelected
+                            ? 'bg-blue-500/20 border-blue-500 text-blue-450 shadow-lg shadow-blue-500/5 font-bold scale-[1.02]'
+                            : 'bg-slate-900/40 border-white/5 text-slate-300 hover:border-blue-500/30 hover:bg-blue-500/5'
+                            }`}
                         >
                           {tech}
                         </button>
@@ -789,11 +736,10 @@ export default function Home({ setCurrentPage }: HomeProps) {
                             setSelectedDomain({ type: 'industry', name: ind.name })
                             setTerminalKey((prev) => prev + 1)
                           }}
-                          className={`px-4 py-3 rounded-xl text-xs font-semibold border transition-all text-left flex flex-col items-start justify-center cursor-pointer ${
-                            isSelected
-                              ? 'bg-blue-500/20 border-blue-500 text-blue-455 shadow-lg shadow-blue-500/5 font-bold scale-[1.02]'
-                              : 'bg-slate-900/40 border-white/5 text-slate-300 hover:border-blue-500/30 hover:bg-blue-500/5'
-                          }`}
+                          className={`px-4 py-3 rounded-xl text-xs font-semibold border transition-all text-left flex flex-col items-start justify-center cursor-pointer ${isSelected
+                            ? 'bg-blue-500/20 border-blue-500 text-blue-455 shadow-lg shadow-blue-500/5 font-bold scale-[1.02]'
+                            : 'bg-slate-900/40 border-white/5 text-slate-300 hover:border-blue-500/30 hover:bg-blue-500/5'
+                            }`}
                         >
                           <span className={isSelected ? 'text-blue-400 font-bold' : 'text-white'}>{ind.name}</span>
                           <span className="text-[10px] text-slate-500 mt-1 font-light font-display leading-tight">{ind.desc}</span>
@@ -851,7 +797,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
         className="relative py-24 bg-[#090f20]/60 border-y border-white/5 z-10 overflow-hidden"
       >
         <div className="absolute inset-0 animated-grid opacity-30 pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {metrics.map((metric, idx) => (
             <div key={idx} className="text-center space-y-2">
@@ -877,7 +823,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
           {/* Animated node grid background */}
           <div className="absolute inset-0 opacity-15 animated-grid pointer-events-none" />
           <div className="glow-spot glow-blue w-[400px] h-[400px] -bottom-20 -right-20" />
-          
+
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
             <h2 className="font-display font-black text-3xl sm:text-5xl text-white leading-tight">
               Let's Build High-Performing Teams Together
@@ -887,7 +833,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
             </p>
             <div className="pt-4">
               <button
-                onClick={() => setCurrentPage('contact')}
+                onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
                 className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-bold text-sm tracking-wider uppercase text-white shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all inline-flex items-center gap-3 cursor-pointer"
               >
                 Schedule Consultation
@@ -898,144 +844,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
         </div>
       </section>
 
-      {/* 11. Contact Section */}
-      <section className="relative py-24 px-6 md:px-12 max-w-7xl mx-auto z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left info column */}
-          <div className="lg:col-span-5 text-left space-y-8">
-            <div className="space-y-4">
-              <div className="text-blue-500 font-bold text-xs uppercase tracking-widest font-display">Get in Touch</div>
-              <h2 className="font-display font-bold text-3xl sm:text-5xl text-white">Let’s Build Together</h2>
-              <p className="text-slate-400 font-light text-sm sm:text-base leading-relaxed">
-                We welcome the opportunity to learn about your hiring challenges and business goals. Share your requirements with us, and our team will work closely with you to deliver the right IT staffing solutions that support your success.
-              </p>
-            </div>
 
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 shrink-0">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs text-slate-500 font-semibold font-display">Email Us</div>
-                  <div className="text-sm text-slate-300">contact@luminavtech.com</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 shrink-0">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs text-slate-500 font-semibold font-display">Call Us</div>
-                  <div className="text-sm text-slate-300">+1 (800) 555-0199</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs text-slate-500 font-semibold font-display">Global Centers</div>
-                  <div className="text-sm text-slate-300">USA Operations & India Offshore Centers</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right form column */}
-          <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-3xl glass-panel border-white/10 shadow-2xl relative overflow-hidden text-left">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl" />
-              
-              {formSubmitted ? (
-                <div className="py-16 text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mx-auto">
-                    <CheckCircle2 className="w-8 h-8" />
-                  </div>
-                  <h3 className="font-display font-bold text-2xl text-white">Consultation Requested</h3>
-                  <p className="text-slate-400 font-light text-sm max-w-sm mx-auto">
-                    Thank you for reaching out. An enterprise staffing expert from LuminaVTech will contact you within the next 24 hours.
-                  </p>
-                </div>
-              ) : (
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault()
-                    setFormSubmitted(true)
-                  }}
-                  className="space-y-6"
-                >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-xs font-semibold text-slate-400 font-display">Full Name</label>
-                      <input
-                        type="text"
-                        id="name"
-                        required
-                        className="w-full px-4 py-3.5 rounded-xl bg-slate-950/50 border border-white/10 focus:border-blue-500/50 text-white text-sm focus:outline-none transition-all placeholder:text-slate-600"
-                        placeholder="John Doe"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-xs font-semibold text-slate-400 font-display">Corporate Email</label>
-                      <input
-                        type="email"
-                        id="email"
-                        required
-                        className="w-full px-4 py-3.5 rounded-xl bg-slate-950/50 border border-white/10 focus:border-blue-500/50 text-white text-sm focus:outline-none transition-all placeholder:text-slate-600"
-                        placeholder="john@enterprise.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="phone" className="text-xs font-semibold text-slate-400 font-display">Phone Number</label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        className="w-full px-4 py-3.5 rounded-xl bg-slate-950/50 border border-white/10 focus:border-blue-500/50 text-white text-sm focus:outline-none transition-all placeholder:text-slate-600"
-                        placeholder="+1 (555) 000-0000"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="company" className="text-xs font-semibold text-slate-400 font-display">Company Name</label>
-                      <input
-                        type="text"
-                        id="company"
-                        required
-                        className="w-full px-4 py-3.5 rounded-xl bg-slate-950/50 border border-white/10 focus:border-blue-500/50 text-white text-sm focus:outline-none transition-all placeholder:text-slate-600"
-                        placeholder="Enterprise Inc."
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-xs font-semibold text-slate-400 font-display">Your Requirements</label>
-                    <textarea
-                      id="message"
-                      rows={4}
-                      required
-                      className="w-full px-4 py-3.5 rounded-xl bg-slate-950/50 border border-white/10 focus:border-blue-500/50 text-white text-sm focus:outline-none transition-all placeholder:text-slate-600 resize-none"
-                      placeholder="Tell us about the roles or consultation services you need..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-semibold text-sm tracking-wider uppercase text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all cursor-pointer flex items-center justify-center gap-2"
-                  >
-                    Send Message
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

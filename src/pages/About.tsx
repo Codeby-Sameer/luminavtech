@@ -1,11 +1,9 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import { CheckCircle2, Shield, Rocket, Target, Heart, Award, Sparkles, Handshake, Users } from 'lucide-react'
 
-interface AboutProps {
-  setCurrentPage: (page: string) => void
-}
-
-export default function About({ setCurrentPage }: AboutProps) {
+export default function About() {
+  const navigate = useNavigate()
   // Why Choose Us Lists from content.md (Lines 82 - 105)
   const resultsOrientedList = [
     { title: 'Experienced Recruitment Team', desc: 'Our recruiters bring strong domain knowledge and hiring expertise.' },
@@ -212,7 +210,7 @@ export default function About({ setCurrentPage }: AboutProps) {
           Request a specialized talent consultation or explore candidate profiles suited for your open mandates.
         </p>
         <button
-          onClick={() => setCurrentPage('contact')}
+          onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
           className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all cursor-pointer inline-block"
         >
           Initiate Sourcing

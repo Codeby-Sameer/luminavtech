@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import {
   Mail,
   Phone,
@@ -6,16 +7,8 @@ import {
   Menu,
   X
 } from "lucide-react";
-interface FooterProps {
-  setCurrentPage: (page: string) => void
-}
 
-export default function Footer({ setCurrentPage }: FooterProps) {
-  const handleNavClick = (pageId: string) => {
-    setCurrentPage(pageId)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
+export default function Footer() {
   return (
     <footer className="relative bg-[#020617] border-t border-white/5 pt-20 pb-10 overflow-hidden z-10">
       {/* Background radial glow */}
@@ -25,8 +18,9 @@ export default function Footer({ setCurrentPage }: FooterProps) {
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         {/* Column 1: Brand Info */}
         <div className="space-y-6">
-          <div
-            onClick={() => handleNavClick('home')}
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center space-x-2 cursor-pointer group w-fit"
           >
             <div className="relative w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-400 flex items-center justify-center font-display font-bold text-white shadow-[0_0_15px_rgba(37,99,235,0.4)]">
@@ -36,7 +30,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
             <span className="font-display font-bold text-lg md:text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">
               Lumina<span className="text-blue-500">V</span>Tech
             </span>
-          </div>
+          </Link>
           <p className="text-sm text-slate-400 leading-relaxed">
             LuminaVTech is a specialized IT staffing and consulting organization dedicated to helping businesses access top-tier technology talent.
           </p>
@@ -58,29 +52,45 @@ export default function Footer({ setCurrentPage }: FooterProps) {
           <h4 className="text-sm font-semibold tracking-wider uppercase text-white font-display">Navigation</h4>
           <ul className="space-y-3">
             <li>
-              <button onClick={() => handleNavClick('home')} className="text-sm text-slate-400 hover:text-blue-400 transition-colors text-left">
+              <Link
+                to="/"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="text-sm text-slate-400 hover:text-blue-400 transition-colors text-left block"
+              >
                 Home Page
-              </button>
+              </Link>
             </li>
             <li>
-              <button onClick={() => handleNavClick('services')} className="text-sm text-slate-400 hover:text-blue-400 transition-colors text-left">
+              <Link
+                to="/services"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="text-sm text-slate-400 hover:text-blue-400 transition-colors text-left block"
+              >
                 Our Services
-              </button>
+              </Link>
             </li>
             <li>
-              <button onClick={() => handleNavClick('about')} className="text-sm text-slate-400 hover:text-blue-400 transition-colors text-left">
+              <Link
+                to="/about"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="text-sm text-slate-400 hover:text-blue-400 transition-colors text-left block"
+              >
                 About LuminaVTech
-              </button>
+              </Link>
             </li>
             <li>
-              <button onClick={() => handleNavClick('contact')} className="text-sm text-slate-400 hover:text-blue-400 transition-colors text-left">
+              <Link
+                to="/contact"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="text-sm text-slate-400 hover:text-blue-400 transition-colors text-left block"
+              >
                 Contact Us
-              </button>
+              </Link>
             </li>
           </ul>
         </div>
 
-        {/* Column 3: Core Services */}
+        {/* Column 3: Core Offerings */}
         <div className="space-y-6">
           <h4 className="text-sm font-semibold tracking-wider uppercase text-white font-display">Core Offerings</h4>
           <ul className="space-y-3">

@@ -1,11 +1,9 @@
 import { motion } from 'framer-motion'
-import { Bot, Cpu, Users, UserCheck, Zap, Globe, Network, Database, Terminal, Cloud, Shield, Search, ArrowRight, Lightbulb, Compass, Award, BarChart, Building } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { Bot, Cpu, Users, UserCheck, Zap, Globe, Network, Database, Terminal, Cloud, Search, ArrowRight, Lightbulb, Compass, Award, Building } from 'lucide-react'
 
-interface ServicesProps {
-  setCurrentPage: (page: string) => void
-}
-
-export default function Services({ setCurrentPage }: ServicesProps) {
+export default function Services() {
+  const navigate = useNavigate()
   // Full Services from content.md (Lines 38 - 69)
   const servicesList = [
     {
@@ -215,7 +213,7 @@ export default function Services({ setCurrentPage }: ServicesProps) {
                 </div>
 
                 <div
-                  onClick={() => setCurrentPage('contact')}
+                  onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
                   className="flex items-center gap-1 text-xs font-semibold text-blue-500 group-hover:text-blue-400 pt-6 mt-4 border-t border-white/5 hover:underline"
                 >
                   <span>Request Staffing</span>
@@ -304,7 +302,7 @@ export default function Services({ setCurrentPage }: ServicesProps) {
             </p>
           </div>
           <button
-            onClick={() => setCurrentPage('contact')}
+            onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
             className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap cursor-pointer"
           >
             Connect With Advisors
