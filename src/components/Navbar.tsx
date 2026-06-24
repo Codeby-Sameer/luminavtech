@@ -78,7 +78,7 @@ export default function Navbar() {
           className="flex items-center space-x-2 cursor-pointer group"
         >
           <img
-            src="../../../src/assets/luminologo1.png"
+            src="/luminologo1.png"
             alt="Logo"
             className="h-20 md:h-20 transition-all duration-300 group-hover:scale-110"
           />
@@ -93,11 +93,10 @@ export default function Navbar() {
                 <div key={item.name} className="relative services-dropdown-container">
                   <button
                     onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                    className={`flex items-center gap-1 px-4 py-2 text-sm font-medium tracking-wide transition-all rounded-full cursor-pointer focus:outline-none ${
-                      isActive
-                        ? 'bg-[#f8e000] text-slate-900 font-semibold'
-                        : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
-                    }`}
+                    className={`flex items-center gap-1 px-4 py-2 text-sm font-medium tracking-wide transition-all rounded-full cursor-pointer focus:outline-none ${isActive
+                      ? 'bg-[#f8e000] text-slate-900 font-semibold'
+                      : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
+                      }`}
                   >
                     {item.name}
                     <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
@@ -113,11 +112,10 @@ export default function Navbar() {
                             setIsServicesDropdownOpen(false)
                             handleNavClick()
                           }}
-                          className={`text-xs px-3 py-2 rounded-lg transition-colors text-left ${
-                            currentPage === dropItem.path
-                              ? 'bg-[#f8e000] text-slate-900 font-bold'
-                              : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
-                          }`}
+                          className={`text-xs px-3 py-2 rounded-lg transition-colors text-left ${currentPage === dropItem.path
+                            ? 'bg-[#f8e000] text-slate-900 font-bold'
+                            : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
+                            }`}
                         >
                           {dropItem.name}
                         </Link>
@@ -134,11 +132,10 @@ export default function Navbar() {
                 key={item.name}
                 to={item.path!}
                 onClick={handleNavClick}
-                className={`px-4 py-2 text-sm font-medium tracking-wide transition-all rounded-full cursor-pointer ${
-                  isActive
-                    ? 'bg-[#f8e000] text-slate-900 font-semibold'
-                    : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
-                }`}
+                className={`px-4 py-2 text-sm font-medium tracking-wide transition-all rounded-full cursor-pointer ${isActive
+                  ? 'bg-[#f8e000] text-slate-900 font-semibold'
+                  : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
+                  }`}
               >
                 {item.name}
               </Link>
@@ -172,7 +169,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-x-0 top-[73px] bottom-0 bg-white border-t border-slate-200 z-40 md:hidden transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-4 invisible'
+        className={`fixed inset-x-0 top-[73px] bottom-0 bg-white border-t border-slate-200 z-40 md:hidden transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 bg-white visible' : 'opacity-0 -translate-y-4 invisible'
           }`}
       >
         <div className="flex flex-col p-8 space-y-2 overflow-y-auto max-h-[calc(100vh-100px)]">
@@ -183,9 +180,8 @@ export default function Navbar() {
                 <div key={item.name} className="flex flex-col">
                   <button
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                    className={`flex items-center justify-between text-lg font-medium text-left transition-colors py-2 px-4 rounded-xl focus:outline-none ${
-                      isActive ? 'bg-[#f8e000] text-slate-900 font-bold' : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
-                    }`}
+                    className={`flex items-center justify-between text-lg font-medium text-left transition-colors py-2 px-4 rounded-xl focus:outline-none ${isActive ? 'bg-[#f8e000] text-slate-900 font-bold' : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
+                      }`}
                   >
                     <span>{item.name}</span>
                     <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
@@ -198,9 +194,8 @@ export default function Navbar() {
                           key={dropItem.name}
                           to={dropItem.path}
                           onClick={handleNavClick}
-                          className={`text-base text-left transition-colors py-2 px-4 rounded-xl ${
-                            currentPage === dropItem.path ? 'bg-[#f8e000] text-slate-900 font-medium' : 'text-slate-500 hover:bg-[#f8e000] hover:text-slate-900'
-                          }`}
+                          className={`text-base text-left transition-colors py-2 px-4 rounded-xl ${currentPage === dropItem.path ? 'bg-[#f8e000] text-slate-900 font-medium' : 'text-slate-500 hover:bg-[#f8e000] hover:text-slate-900'
+                            }`}
                         >
                           {dropItem.name}
                         </Link>
@@ -217,9 +212,8 @@ export default function Navbar() {
                 key={item.name}
                 to={item.path!}
                 onClick={handleNavClick}
-                className={`text-lg font-medium text-left transition-colors py-2 px-4 rounded-xl ${
-                  isActive ? 'bg-[#f8e000] text-slate-900 font-bold' : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
-                }`}
+                className={`text-lg font-medium text-left transition-colors py-2 px-4 rounded-xl ${isActive ? 'bg-[#f8e000] text-slate-900 font-bold' : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
+                  }`}
               >
                 {item.name}
               </Link>

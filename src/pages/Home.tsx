@@ -277,7 +277,7 @@ export default function Home() {
       {/* 3. About LuminaVTech (Timeline / Split Entrance) */}
       <section
         ref={splitAboutSectionRef}
-        className="relative  bg-gradient-to-b from-yellow-200 via-yellow-100 to-blue-50 py-12 px-6 md:px-12  mx-auto z-10 overflow-hidden"
+        className="relative  bg-gradient-to-b from-yellow-100 via-yellow-50 to-blue-50 py-12 px-6 md:px-12  mx-auto z-10 overflow-hidden"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column heading */}
