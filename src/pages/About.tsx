@@ -60,7 +60,7 @@ export default function About() {
   ]
 
   return (
-    <div className="relative w-full pt-32 pb-24 bg-[#020617] overflow-hidden text-left">
+    <div className="relative w-full pt-32 pb-24 bg-yellow-200 overflow-hidden text-left">
       {/* Background radial glows */}
       <div className="glow-spot glow-blue w-[700px] h-[700px] -top-20 -left-20" />
       <div className="glow-spot glow-cyan w-[600px] h-[600px] bottom-10 right-0" />
@@ -77,13 +77,13 @@ export default function About() {
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400">
             <span>About LuminaVTech</span>
           </div>
-          <h1 className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight leading-tight">
+          <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-900 tracking-tight leading-tight">
             Powering Innovation Through{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
               People & Strategy
             </span>
           </h1>
-          <p className="text-slate-350 text-lg md:text-xl font-light leading-relaxed">
+          <p className="text-slate-600 text-lg md:text-xl font-light leading-relaxed">
             A premier specialized IT staffing, AI talent consulting, and workforce optimization firm engineered to scale modern software development, artificial intelligence, and cloud operations.
           </p>
         </motion.div>
@@ -102,15 +102,13 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.6 }}
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center ${
-                  isEven ? '' : 'lg:flex-row-reverse'
-                }`}
+                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center ${isEven ? '' : 'lg:flex-row-reverse'
+                  }`}
               >
                 {/* Visual Block Column */}
                 <div
-                  className={`lg:col-span-4 flex items-center gap-6 ${
-                    isEven ? 'lg:order-1' : 'lg:order-2'
-                  }`}
+                  className={`lg:col-span-4 flex items-center gap-6 ${isEven ? 'lg:order-1' : 'lg:order-2'
+                    }`}
                 >
                   <div className="w-14 h-14 rounded-2xl bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 shadow-[0_0_15px_rgba(37,99,235,0.15)]">
                     <Icon className="w-6 h-6" />
@@ -119,7 +117,7 @@ export default function About() {
                     <div className="text-blue-500 font-display font-black text-xl tracking-wider leading-none">
                       {story.label}
                     </div>
-                    <h3 className="font-display font-bold text-xl text-white mt-1">
+                    <h3 className="font-display font-bold text-xl text-slate-900 mt-1">
                       {story.title}
                     </h3>
                   </div>
@@ -127,9 +125,8 @@ export default function About() {
 
                 {/* Text Block Column */}
                 <div
-                  className={`lg:col-span-8 p-8 rounded-2xl glass-panel border-white/5 text-slate-350 leading-relaxed font-light text-sm sm:text-base ${
-                    isEven ? 'lg:order-2' : 'lg:order-1'
-                  }`}
+                  className={`lg:col-span-8 p-8 rounded-2xl glass-panel border-slate-200 text-slate-600 leading-relaxed font-light text-sm sm:text-base ${isEven ? 'lg:order-2' : 'lg:order-1'
+                    }`}
                 >
                   {story.text}
                 </div>
@@ -140,11 +137,11 @@ export default function About() {
       </div>
 
       {/* Why Partner with Us (Dual Columns from content.md lines 82-105) */}
-      <div className="bg-[#090f20]/50 border-y border-white/5 py-28 relative z-10">
+      <div className="bg-slate-50 border-y border-slate-200 py-28 relative z-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center space-y-4 mb-20">
             <div className="text-blue-500 font-bold text-xs uppercase tracking-widest font-display">Deep Partnership</div>
-            <h2 className="font-display font-black text-3xl sm:text-5xl text-white">Why Partner with Us</h2>
+            <h2 className="font-display font-black text-3xl sm:text-5xl text-slate-900">Why Partner with Us</h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -156,18 +153,18 @@ export default function About() {
               transition={{ duration: 0.6 }}
               className="space-y-8"
             >
-              <div className="flex items-center gap-3 pb-4 border-b border-white/5">
+              <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
                 <Sparkles className="w-6 h-6 text-blue-400" />
-                <h3 className="font-display font-bold text-2xl text-white">Results-Oriented Staffing</h3>
+                <h3 className="font-display font-bold text-2xl text-slate-900">Results-Oriented Staffing</h3>
               </div>
-              
+
               <div className="space-y-6">
                 {resultsOrientedList.map((item, idx) => (
                   <div key={idx} className="flex gap-4">
                     <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
                     <div className="space-y-1">
-                      <h4 className="font-display font-semibold text-base text-slate-200">{item.title}</h4>
-                      <p className="text-xs sm:text-sm text-slate-400 font-light leading-relaxed">{item.desc}</p>
+                      <h4 className="font-display font-semibold text-base text-slate-900">{item.title}</h4>
+                      <p className="text-xs sm:text-sm text-slate-700 font-light leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -182,9 +179,9 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-8"
             >
-              <div className="flex items-center gap-3 pb-4 border-b border-white/5">
+              <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
                 <Shield className="w-6 h-6 text-indigo-400" />
-                <h3 className="font-display font-bold text-2xl text-white">Deep Talent Understanding</h3>
+                <h3 className="font-display font-bold text-2xl text-slate-900">Deep Talent Understanding</h3>
               </div>
 
               <div className="space-y-6">
@@ -192,8 +189,8 @@ export default function About() {
                   <div key={idx} className="flex gap-4">
                     <CheckCircle2 className="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" />
                     <div className="space-y-1">
-                      <h4 className="font-display font-semibold text-base text-slate-200">{item.title}</h4>
-                      <p className="text-xs sm:text-sm text-slate-400 font-light leading-relaxed">{item.desc}</p>
+                      <h4 className="font-display font-semibold text-base text-slate-900">{item.title}</h4>
+                      <p className="text-xs sm:text-sm text-slate-700 font-light leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -205,8 +202,8 @@ export default function About() {
 
       {/* CTA Box */}
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 pt-28 text-center space-y-6">
-        <h3 className="font-display font-bold text-2xl sm:text-3xl text-white">Ready to consult with our staffing directors?</h3>
-        <p className="text-slate-400 text-sm max-w-xl mx-auto font-light leading-relaxed">
+        <h3 className="font-display font-bold text-2xl sm:text-3xl text-slate-900">Ready to consult with our staffing directors?</h3>
+        <p className="text-slate-500 text-sm max-w-xl mx-auto font-light leading-relaxed">
           Request a specialized talent consultation or explore candidate profiles suited for your open mandates.
         </p>
         <button

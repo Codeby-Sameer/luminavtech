@@ -325,7 +325,7 @@ export default function Home() {
   ]
 
   return (
-    <div ref={containerRef} className="relative w-full overflow-hidden bg-[#020617]">
+    <div ref={containerRef} className="relative w-full  overflow-hidden ">
       {/* Dynamic Keyframe Animations for Hero Icons */}
       <style>{`
         @keyframes heroFloat {
@@ -354,7 +354,7 @@ export default function Home() {
       {/* 1. Combined Scroll Story & Typography Hero Section */}
       <section
         ref={heroSectionRef}
-        className="relative h-screen bg-[#5D8AA8] flex items-center justify-center overflow-hidden z-20"
+        className="relative h-screen bg-yellow-100 flex items-center justify-center overflow-hidden z-20"
       >
         {/* Background Grids and Particles */}
         <div className="absolute inset-0 animated-grid opacity-25 pointer-events-none" />
@@ -366,7 +366,7 @@ export default function Home() {
           {/* Large Scroll Typography (Scale & Opacity Zoom) */}
           <h2
             ref={heroTypographyRef}
-            className="hero-typography font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wider text-center leading-none text-white select-none whitespace-pre-line uppercase absolute z-20"
+            className="hero-typography font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wider text-center leading-none text-slate-900 select-none whitespace-pre-line uppercase absolute z-20"
           >
             THE FUTURE{'\n'}OF TALENT{'\n'}IS HERE
           </h2>
@@ -375,44 +375,44 @@ export default function Home() {
           <div className="relative w-full h-[400px] flex items-center justify-center z-10">
             {/* Card 1: Talent */}
             <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-2xl">
-              <div className="w-full h-full glass-panel border-white/10 p-6 flex flex-col justify-between rounded-2xl animate-hero-float">
+              <div className="w-full h-full glass-panel border-slate-300 p-6 flex flex-col justify-between rounded-2xl animate-hero-float">
                 <Users className="w-8 h-8 text-blue-400 animate-hero-pulse-glow" />
                 <div>
-                  <h3 className="font-display font-bold text-lg text-white">Talent</h3>
-                  <p className="text-xs text-slate-400 mt-1">Connecting organizations with top skilled tech experts.</p>
+                  <h3 className="font-display font-bold text-lg text-slate-900">Talent</h3>
+                  <p className="text-xs text-slate-500 mt-1">Connecting organizations with top skilled tech experts.</p>
                 </div>
               </div>
             </div>
 
             {/* Card 2: Technology */}
             <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-2xl">
-              <div className="w-full h-full glass-panel border-white/10 p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-1.5s' }}>
+              <div className="w-full h-full glass-panel border-slate-300 p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-1.5s' }}>
                 <Cpu className="w-8 h-8 text-indigo-400 animate-hero-pulse-glow" style={{ animationDelay: '-1s' }} />
                 <div>
-                  <h3 className="font-display font-bold text-lg text-white">Technology</h3>
-                  <p className="text-xs text-slate-400 mt-1">Harnessing tech tools and expert engineering pools.</p>
+                  <h3 className="font-display font-bold text-lg text-slate-900">Technology</h3>
+                  <p className="text-xs text-slate-500 mt-1">Harnessing tech tools and expert engineering pools.</p>
                 </div>
               </div>
             </div>
 
             {/* Card 3: Innovation */}
             <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-2xl">
-              <div className="w-full h-full glass-panel border-white/10 p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-3s' }}>
+              <div className="w-full h-full glass-panel border-slate-300 p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-3s' }}>
                 <Bot className="w-8 h-8 text-cyan-400 animate-hero-pulse-glow" style={{ animationDelay: '-2s' }} />
                 <div>
-                  <h3 className="font-display font-bold text-lg text-white">Innovation</h3>
-                  <p className="text-xs text-slate-400 mt-1">Leveraging AI insights for intelligent matchmaking.</p>
+                  <h3 className="font-display font-bold text-lg text-slate-900">Innovation</h3>
+                  <p className="text-xs text-slate-500 mt-1">Leveraging AI insights for intelligent matchmaking.</p>
                 </div>
               </div>
             </div>
 
             {/* Card 4: Growth */}
             <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-2xl">
-              <div className="w-full h-full glass-panel border-white/10 p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-4.2s' }}>
+              <div className="w-full h-full glass-panel border-slate-300 p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-4.2s' }}>
                 <Zap className="w-8 h-8 text-blue-500 animate-hero-pulse-glow" style={{ animationDelay: '-3s' }} />
                 <div>
-                  <h3 className="font-display font-bold text-lg text-white">Growth</h3>
-                  <p className="text-xs text-slate-400 mt-1">Scaling business operations and project delivery.</p>
+                  <h3 className="font-display font-bold text-lg text-slate-900">Growth</h3>
+                  <p className="text-xs text-slate-500 mt-1">Scaling business operations and project delivery.</p>
                 </div>
               </div>
             </div>
@@ -427,28 +427,27 @@ export default function Home() {
                 <span>Next-Gen Talent Acquisition</span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-tight">
                 Powering Business Growth Through{' '}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">
                   People & Technology
                 </span>
               </h1>
 
-              <p className="text-slate-300 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto mt-6">
+              <p className="text-slate-600 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto mt-6">
                 Delivering IT Staffing, AI Talent Solutions, Workforce Consulting and Specialized Technology Recruitment for modern enterprises.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-8 justify-center pointer-events-auto">
                 <button
                   onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-                  className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-semibold text-sm tracking-wide text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="px-8 py-4 rounded-xl btn-yellow flex items-center justify-center gap-2 cursor-pointer"
                 >
                   Talk To Experts
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}
-                  className="px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 font-semibold text-sm tracking-wide text-white hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="px-8 py-4 rounded-xl btn-yellow bg-white text-blue-600 border border-blue-200 hover:bg-slate-50 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   Explore Services
                 </button>
@@ -461,20 +460,20 @@ export default function Home() {
       {/* 3. About LuminaVTech (Timeline / Split Entrance) */}
       <section
         ref={splitAboutSectionRef}
-        className="relative py-28 px-6 md:px-12 max-w-7xl mx-auto z-10 overflow-hidden"
+        className="relative  bg-gradient-to-b from-yellow-200 via-yellow-100 to-blue-50 py-12 px-6 md:px-12  mx-auto z-10 overflow-hidden"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column heading */}
           <div ref={aboutLeftRef} className="lg:col-span-5 space-y-6 text-left">
             <div className="text-blue-500 font-bold text-xs uppercase tracking-widest font-display">Who We Are</div>
-            <h2 className="font-display font-bold text-3xl sm:text-5xl text-white leading-tight">
+            <h2 className="font-display font-bold text-3xl sm:text-5xl text-slate-900 leading-tight">
               Delivering Premium IT Staffing & AI Talent Solutions
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded" />
           </div>
 
           {/* Right Column content */}
-          <div ref={aboutRightRef} className="lg:col-span-7 text-left space-y-6 text-slate-350 leading-relaxed text-base font-light">
+          <div ref={aboutRightRef} className="lg:col-span-7 text-left space-y-6 text-slate-600 leading-relaxed text-base font-light">
             <p>
               At LuminaVTech, we believe that great businesses are built by great people. As a trusted IT staffing and workforce solutions partner, we specialize in connecting organizations with highly skilled technology professionals who help drive innovation, efficiency, and growth.
             </p>
@@ -486,7 +485,7 @@ export default function Home() {
             </p>
             <button
               onClick={() => { navigate('/about'); window.scrollTo(0, 0); }}
-              className="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors mt-2"
+              className="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition-colors mt-2"
             >
               Read Company Story
               <ArrowRight className="w-4 h-4" />
@@ -496,13 +495,13 @@ export default function Home() {
       </section>
 
       {/* 4. Services Section */}
-      <section className="relative py-28 bg-[#090f20]/60 border-y border-white/5 z-10">
+      <section className="relative py-14 bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200 border-y border-slate-200 z-10">
         <div className="absolute inset-0 animated-grid opacity-30 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative">
           <div className="text-center space-y-4 mb-16">
-            <div className="text-blue-500 font-bold text-xs uppercase tracking-widest font-display">Specialized Capabilities</div>
-            <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white">Our Staffing & AI Services</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+            <div className="text-black font-bold text-xs uppercase tracking-widest font-display">Specialized Capabilities</div>
+            <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-slate-900">Our Staffing & AI Services</h2>
+            <p className="text-black max-w-2xl mx-auto text-sm sm:text-base">
               We deliver reliable IT staffing and consulting services that support your evolving business needs and help you stay efficient, agile, and competitive.
             </p>
           </div>
@@ -514,7 +513,7 @@ export default function Home() {
               return (
                 <motion.div
                   key={idx}
-                  className="p-8 rounded-2xl glass-panel glass-panel-hover flex flex-col text-left space-y-4 shadow-xl border-white/5 relative group overflow-hidden cursor-pointer"
+                  className="p-8 rounded-2xl bg-white glass-panel-hover flex flex-col text-left space-y-4 shadow-xl border-slate-200 relative group overflow-hidden cursor-pointer"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
@@ -528,11 +527,11 @@ export default function Home() {
                     <Icon className="w-6 h-6" />
                   </div>
 
-                  <h3 className="font-display font-semibold text-lg text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="font-display font-semibold text-lg text-slate-900 group-hover:text-blue-400 transition-colors">
                     {svc.title}
                   </h3>
 
-                  <p className="text-sm text-slate-400 leading-relaxed font-light flex-grow">
+                  <p className="text-sm text-slate-500 leading-relaxed font-light flex-grow">
                     {svc.desc}
                   </p>
 
@@ -548,7 +547,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <button
               onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}
-              className="px-8 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-sm font-semibold tracking-wide text-white transition-all inline-flex items-center gap-2 cursor-pointer"
+              className="px-8 py-3.5 rounded-xl bg-blue-600 text-white inline-flex items-center gap-2 cursor-pointer"
             >
               View All Services
               <ArrowRight className="w-4 h-4" />
@@ -558,207 +557,13 @@ export default function Home() {
       </section>
 
 
-      {/* 6 & 7. Interactive Domain & Industry Expertise Section */}
-      <section className="relative py-28 bg-[#090f20]/40 border-y border-white/5 z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-[#020617] opacity-60 pointer-events-none" />
-        <div className="absolute inset-0 animated-grid opacity-10 pointer-events-none" />
-        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <div className="text-left space-y-4 mb-16">
-            <div className="text-blue-500 font-bold text-xs uppercase tracking-widest font-display">Interactive Directory</div>
-            <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white mt-2">Explore Our Domain Expertise</h2>
-            <p className="text-slate-400 max-w-2xl text-sm sm:text-base">
-              LuminaVTech covers a vast array of cutting-edge technologies and industry verticals. Select a pill below to run simulated database query diagnostics.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left Column: Terminal */}
-            <div className="lg:col-span-6 w-full lg:sticky lg:top-24">
-              {selectedDomain === null ? (
-                <Terminal key={terminalKey}>
-                  <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-1">
-                    <span>$</span>
-                    <TypingAnimation delay={0}>systeminfo --guest</TypingAnimation>
-                  </div>
-                  <AnimatedSpan delay={400} className="text-blue-400 font-bold">
-                    LuminaVTech Enterprise Talent Registry v1.0.0
-                  </AnimatedSpan>
-                  <AnimatedSpan delay={700} className="text-slate-500">
-                    =============================================
-                  </AnimatedSpan>
-                  <AnimatedSpan delay={1000} className="text-slate-300">
-                    Ready to query database. Select any Industry Vertical or Technology Domain on the right to inspect talent metrics.
-                  </AnimatedSpan>
-                  <AnimatedSpan delay={1500} className="text-indigo-400 font-semibold">
-                    💡 Click on any expertise pill to run a real-time diagnostics profile!
-                  </AnimatedSpan>
-                  <AnimatedSpan delay={2000} className="text-slate-500 border-t border-white/5 pt-2 mt-4 text-xs">
-                    Need instant consultation? Feel free to contact our support team at contact@luminavtech.com.
-                  </AnimatedSpan>
-                </Terminal>
-              ) : selectedDomain.type === 'tech' ? (
-                (() => {
-                  const details = techDetails[selectedDomain.name] || { desc: '', skills: [], metrics: '' }
-                  return (
-                    <Terminal key={terminalKey}>
-                      <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-1">
-                        <span>$</span>
-                        <TypingAnimation delay={0} speed={15}>{`resolve-domain --tech "${selectedDomain.name}"`}</TypingAnimation>
-                      </div>
-                      <AnimatedSpan delay={400} className="text-cyan-400">
-                        [RESOLVING] Querying LuminaVTech active engineering records...
-                      </AnimatedSpan>
-                      <AnimatedSpan delay={800} className="text-emerald-400">
-                        [SUCCESS] Retrieved technology profile for "{selectedDomain.name}"
-                      </AnimatedSpan>
-                      <AnimatedSpan delay={1200} className="text-slate-300">
-                        <span className="text-slate-500">Scope:</span> {details.desc}
-                      </AnimatedSpan>
-                      <AnimatedSpan delay={1600} className="text-slate-300 space-y-1">
-                        <span className="text-slate-500">Key Sub-Skills:</span>
-                        <div className="pl-4 flex flex-wrap gap-2 pt-1">
-                          {details.skills.map((skill, idx) => (
-                            <span key={idx} className="px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300 font-mono">
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </AnimatedSpan>
-                      <AnimatedSpan delay={2000} className="text-blue-400 font-semibold">
-                        📈 Talent Metric: {details.metrics}
-                      </AnimatedSpan>
-                      <AnimatedSpan delay={2400} className="text-slate-400 border-t border-white/5 pt-3 mt-4 text-xs flex flex-col gap-1.5">
-                        <span className="text-slate-350 font-bold text-sm">✉️ Feel free to contact us!</span>
-                        <span>Need experts in {selectedDomain.name}? Reach out to our staffing team at contact@luminavtech.com or click "Talk To Experts"!</span>
-                      </AnimatedSpan>
-                    </Terminal>
-                  )
-                })()
-              ) : (
-                (() => {
-                  const details = industryDetails[selectedDomain.name] || { desc: '', projects: [], demand: '' }
-                  return (
-                    <Terminal key={terminalKey}>
-                      <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-1">
-                        <span>$</span>
-                        <TypingAnimation delay={0} speed={15}>{`resolve-domain --industry "${selectedDomain.name}"`}</TypingAnimation>
-                      </div>
-                      <AnimatedSpan delay={400} className="text-cyan-400">
-                        [RESOLVING] Indexing industry capability matrix...
-                      </AnimatedSpan>
-                      <AnimatedSpan delay={800} className="text-emerald-400">
-                        [SUCCESS] Retrieved vertical profile for "{selectedDomain.name}"
-                      </AnimatedSpan>
-                      <AnimatedSpan delay={1200} className="text-slate-300">
-                        <span className="text-slate-500">Focus Area:</span> {details.desc}
-                      </AnimatedSpan>
-                      <AnimatedSpan delay={1600} className="text-slate-300 space-y-1.5">
-                        <span className="text-slate-500">Key Project Capabilities:</span>
-                        <div className="space-y-1">
-                          {details.projects.map((proj, idx) => (
-                            <div key={idx} className="pl-4 text-slate-300 text-xs flex items-center gap-1">
-                              <span className="text-blue-500">↳</span> {proj}
-                            </div>
-                          ))}
-                        </div>
-                      </AnimatedSpan>
-                      <AnimatedSpan delay={2000} className="text-blue-400 font-semibold">
-                        📈 Industry Demand: {details.demand}
-                      </AnimatedSpan>
-                      <AnimatedSpan delay={2400} className="text-slate-400 border-t border-white/5 pt-3 mt-4 text-xs flex flex-col gap-1.5">
-                        <span className="text-slate-350 font-bold text-sm">✉️ Feel free to contact us!</span>
-                        <span>Partner with LuminaVTech to build custom development or QA squads. Email us at contact@luminavtech.com!</span>
-                      </AnimatedSpan>
-                    </Terminal>
-                  )
-                })()
-              )}
-            </div>
-
-            {/* Right Column: Interactive Selectors */}
-            <div className="lg:col-span-6 space-y-6">
-              {/* Tab Toggles */}
-              <div className="flex space-x-3 bg-slate-950/40 p-1.5 rounded-2xl border border-white/5">
-                <button
-                  onClick={() => setActiveTab('tech')}
-                  className={`flex-1 py-3 px-4 rounded-xl font-display font-semibold text-xs tracking-wider uppercase transition-all cursor-pointer ${activeTab === 'tech'
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20'
-                    : 'bg-transparent text-slate-450 hover:text-slate-200'
-                    }`}
-                >
-                  Tech Expertise
-                </button>
-                <button
-                  onClick={() => setActiveTab('industry')}
-                  className={`flex-1 py-3 px-4 rounded-xl font-display font-semibold text-xs tracking-wider uppercase transition-all cursor-pointer ${activeTab === 'industry'
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20'
-                    : 'bg-transparent text-slate-450 hover:text-slate-200'
-                    }`}
-                >
-                  Industry Verticals
-                </button>
-              </div>
-
-              {/* Items Grid */}
-              <div>
-                {activeTab === 'tech' ? (
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-h-[460px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-800 scrollbar-track-transparent">
-                    {technologies.map((tech) => {
-                      const isSelected = selectedDomain?.type === 'tech' && selectedDomain.name === tech
-                      return (
-                        <button
-                          key={tech}
-                          onClick={() => {
-                            setSelectedDomain({ type: 'tech', name: tech })
-                            setTerminalKey((prev) => prev + 1)
-                          }}
-                          className={`px-4 py-3 rounded-xl text-xs font-semibold border transition-all text-center justify-center items-center flex cursor-pointer ${isSelected
-                            ? 'bg-blue-500/20 border-blue-500 text-blue-450 shadow-lg shadow-blue-500/5 font-bold scale-[1.02]'
-                            : 'bg-slate-900/40 border-white/5 text-slate-300 hover:border-blue-500/30 hover:bg-blue-500/5'
-                            }`}
-                        >
-                          {tech}
-                        </button>
-                      )
-                    })}
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[460px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-800 scrollbar-track-transparent">
-                    {industries.map((ind) => {
-                      const isSelected = selectedDomain?.type === 'industry' && selectedDomain.name === ind.name
-                      return (
-                        <button
-                          key={ind.name}
-                          onClick={() => {
-                            setSelectedDomain({ type: 'industry', name: ind.name })
-                            setTerminalKey((prev) => prev + 1)
-                          }}
-                          className={`px-4 py-3 rounded-xl text-xs font-semibold border transition-all text-left flex flex-col items-start justify-center cursor-pointer ${isSelected
-                            ? 'bg-blue-500/20 border-blue-500 text-blue-455 shadow-lg shadow-blue-500/5 font-bold scale-[1.02]'
-                            : 'bg-slate-900/40 border-white/5 text-slate-300 hover:border-blue-500/30 hover:bg-blue-500/5'
-                            }`}
-                        >
-                          <span className={isSelected ? 'text-blue-400 font-bold' : 'text-white'}>{ind.name}</span>
-                          <span className="text-[10px] text-slate-500 mt-1 font-light font-display leading-tight">{ind.desc}</span>
-                        </button>
-                      )
-                    })}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 8. Why Choose Us (Bento Grid) */}
-      <section className="relative py-28 px-6 md:px-12 max-w-7xl mx-auto z-10">
+      <section className="relative bg-blue-200 py-28 px-6 md:px-12  mx-auto z-10">
         <div className="text-center space-y-4 mb-16">
           <div className="text-blue-500 font-bold text-xs uppercase tracking-widest font-display">Our Advantage</div>
-          <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white">Why Modern Enterprises Partner With Us</h2>
+          <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-slate-900">Why Modern Enterprises Partner With Us</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -767,7 +572,7 @@ export default function Home() {
             return (
               <motion.div
                 key={idx}
-                className={`p-8 rounded-2xl glass-panel flex flex-col justify-between border-white/5 shadow-xl hover:border-blue-500/25 transition-all text-left relative overflow-hidden group cursor-pointer ${item.size}`}
+                className={`p-8 rounded-2xl glass-panel flex flex-col justify-between border-slate-200 shadow-xl hover:border-blue-500/25 transition-all text-left relative overflow-hidden group cursor-pointer ${item.size}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -778,10 +583,10 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="font-display font-bold text-xl text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="font-display font-bold text-xl text-slate-900 group-hover:text-blue-400 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-slate-400 leading-relaxed font-light">
+                  <p className="text-sm text-slate-500 leading-relaxed font-light">
                     {item.desc}
                   </p>
                 </div>
@@ -794,22 +599,22 @@ export default function Home() {
       {/* 9. Metrics Section */}
       <section
         ref={metricsRef}
-        className="relative py-24 bg-[#090f20]/60 border-y border-white/5 z-10 overflow-hidden"
+        className="relative py-16 bg-white border-y border-slate-200 z-10 overflow-hidden"
       >
         <div className="absolute inset-0 animated-grid opacity-30 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {metrics.map((metric, idx) => (
             <div key={idx} className="text-center space-y-2">
-              <div className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight drop-shadow-[0_0_15px_rgba(59,130,246,0.25)]">
+              <div className="font-display font-black text-4xl sm:text-6xl text-slate-900 tracking-tight drop-shadow-[0_0_15px_rgba(59,130,246,0.25)]">
                 {metricsInView ? (
                   <CountUpComponent start={0} end={metric.value} duration={3} delay={0.2} />
                 ) : (
                   <span>0</span>
                 )}
-                <span className="text-blue-400">{metric.suffix}</span>
+                <span className="text-blue-900">{metric.suffix}</span>
               </div>
-              <p className="text-slate-400 text-xs sm:text-sm font-light uppercase tracking-wider font-display">
+              <p className="text-slate-500 text-xs sm:text-sm font-light uppercase tracking-wider font-display">
                 {metric.label}
               </p>
             </div>
@@ -818,23 +623,23 @@ export default function Home() {
       </section>
 
       {/* 10. Enterprise CTA Section */}
-      <section className="relative py-28 px-6 md:px-12 z-10">
-        <div className="max-w-6xl mx-auto rounded-3xl bg-gradient-to-r from-blue-950 via-[#0f172a] to-blue-900/60 border border-white/10 p-8 sm:p-16 text-center relative overflow-hidden shadow-2xl">
+      <section className="relative  z-10">
+        <div className=" mx-auto bg-blue-500 py-12 text-center relative overflow-hidden shadow-2xl">
           {/* Animated node grid background */}
           <div className="absolute inset-0 opacity-15 animated-grid pointer-events-none" />
           <div className="glow-spot glow-blue w-[400px] h-[400px] -bottom-20 -right-20" />
 
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-            <h2 className="font-display font-black text-3xl sm:text-5xl text-white leading-tight">
+            <h2 className="font-display font-black text-3xl sm:text-5xl text-slate-900 leading-tight">
               Let's Build High-Performing Teams Together
             </h2>
-            <p className="text-slate-300 text-base sm:text-lg font-light leading-relaxed">
+            <p className="text-black text-base sm:text-lg font-light leading-relaxed">
               Partner with LuminaVTech to access enterprise-grade AI experts, specialized IT talent, and smart workforce consulting strategies tailored for your business.
             </p>
             <div className="pt-4">
               <button
                 onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-bold text-sm tracking-wider uppercase text-white shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all inline-flex items-center gap-3 cursor-pointer"
+                className="px-8 py-4 rounded-xl btn-yellow font-bold text-sm tracking-wider uppercase inline-flex items-center gap-3 cursor-pointer"
               >
                 Schedule Consultation
                 <Calendar className="w-4 h-4" />

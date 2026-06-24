@@ -3,19 +3,28 @@ import {
   Mail,
   Phone,
   MapPin,
-  ArrowRight,
-  Menu,
+
   X
 } from "lucide-react";
 
+const LinkedInIcon = ({ className = "w-6 h-6" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+  >
+    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5zM0.5 8h4V24h-4V8zm7.5 0h3.83v2.19h.05c.53-1.01 1.84-2.08 3.79-2.08 4.05 0 4.8 2.67 4.8 6.14V24h-4v-7.81c0-1.86-.03-4.25-2.59-4.25-2.59 0-2.99 2.02-2.99 4.11V24h-4V8z" />
+  </svg>
+);
 export default function Footer() {
   return (
-    <footer className="relative bg-[#020617] border-t border-white/5 pt-20 pb-10 overflow-hidden z-10">
+    <footer className="relative bg-white border-t border-slate-200 pt-12 pb-10 overflow-hidden z-10">
       {/* Background radial glow */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-indigo-900/10 rounded-full blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-yellow-100/40 rounded-full blur-[100px] pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10 ">
         {/* Column 1: Brand Info */}
         <div className="space-y-6">
           <Link
@@ -23,39 +32,36 @@ export default function Footer() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center space-x-2 cursor-pointer group w-fit"
           >
-            <div className="relative w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-400 flex items-center justify-center font-display font-bold text-white shadow-[0_0_15px_rgba(37,99,235,0.4)]">
-              L
-              <span className="absolute -bottom-1 -right-1 text-[8px] bg-sky-400 text-slate-950 font-bold px-0.5 rounded">V</span>
-            </div>
-            <span className="font-display font-bold text-lg md:text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">
-              Lumina<span className="text-blue-500">V</span>Tech
-            </span>
+            <img src="../../../src/assets/luminologo1.png" alt="Logo" className="h-20 md:h-20 transition-all duration-300 group-hover:scale-110" />
           </Link>
-          <p className="text-sm text-slate-400 leading-relaxed">
+          <p className="text-sm text-slate-600 leading-relaxed">
             LuminaVTech is a specialized IT staffing and consulting organization dedicated to helping businesses access top-tier technology talent.
           </p>
           <div className="flex space-x-4">
-            <a href="#" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-blue-600/25 border border-white/10 hover:border-blue-500/50 flex items-center justify-center text-slate-400 hover:text-white transition-all">
-              <Menu className="w-4 h-4" />
+            <a href="https://www.linkedin.com/company/luminavtech-llc"
+              target='_blank'
+              rel='noopener noreferrer'
+              className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 flex items-center justify-center text-slate-500 hover:text-blue-600 transition-all">
+              <LinkedInIcon className="w-4 h-4" />
             </a>
-            <a href="#" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-blue-600/25 border border-white/10 hover:border-blue-500/50 flex items-center justify-center text-slate-400 hover:text-white transition-all">
+            {/* <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 flex items-center justify-center text-slate-500 hover:text-blue-600 transition-all">
               <X className="w-4 h-4" />
             </a>
-            <a href="#" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-blue-600/25 border border-white/10 hover:border-blue-500/50 flex items-center justify-center text-slate-400 hover:text-white transition-all">
+            <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 flex items-center justify-center text-slate-500 hover:text-blue-600 transition-all">
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </a> */}
           </div>
         </div>
 
         {/* Column 2: Navigation Links */}
         <div className="space-y-6">
-          <h4 className="text-sm font-semibold tracking-wider uppercase text-white font-display">Navigation</h4>
+          <h4 className="text-sm font-semibold tracking-wider uppercase text-slate-900 font-display">Navigation</h4>
           <ul className="space-y-3">
             <li>
               <Link
                 to="/"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="text-sm text-slate-400 hover:text-blue-400 transition-colors text-left block"
+                className="text-sm text-slate-600 hover:text-blue-600 transition-colors text-left block"
               >
                 Home Page
               </Link>
@@ -64,7 +70,7 @@ export default function Footer() {
               <Link
                 to="/services"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="text-sm text-slate-400 hover:text-blue-400 transition-colors text-left block"
+                className="text-sm text-slate-600 hover:text-blue-600 transition-colors text-left block"
               >
                 Our Services
               </Link>
@@ -73,7 +79,7 @@ export default function Footer() {
               <Link
                 to="/about"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="text-sm text-slate-400 hover:text-blue-400 transition-colors text-left block"
+                className="text-sm text-slate-600 hover:text-blue-600 transition-colors text-left block"
               >
                 About LuminaVTech
               </Link>
@@ -82,7 +88,7 @@ export default function Footer() {
               <Link
                 to="/contact"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="text-sm text-slate-400 hover:text-blue-400 transition-colors text-left block"
+                className="text-sm text-slate-600 hover:text-blue-600 transition-colors text-left block"
               >
                 Contact Us
               </Link>
@@ -92,46 +98,52 @@ export default function Footer() {
 
         {/* Column 3: Core Offerings */}
         <div className="space-y-6">
-          <h4 className="text-sm font-semibold tracking-wider uppercase text-white font-display">Core Offerings</h4>
+          <h4 className="text-sm font-semibold tracking-wider uppercase text-slate-900 font-display">Core Offerings</h4>
           <ul className="space-y-3">
-            <li className="text-sm text-slate-400">AI Talent Solutions</li>
-            <li className="text-sm text-slate-400">Specialized IT Staffing</li>
-            <li className="text-sm text-slate-400">Offshore & Nearshore Solutions</li>
-            <li className="text-sm text-slate-400">Digital Transformation</li>
+            <li className="text-sm text-slate-600">AI Talent Solutions</li>
+            <li className="text-sm text-slate-600">Specialized IT Staffing</li>
+            <li className="text-sm text-slate-600">Offshore & Nearshore Solutions</li>
+            <li className="text-sm text-slate-600">Digital Transformation</li>
           </ul>
         </div>
 
         {/* Column 4: Contact Information */}
         <div className="space-y-6">
-          <h4 className="text-sm font-semibold tracking-wider uppercase text-white font-display">Enterprise Contact</h4>
+          <h4 className="text-sm font-semibold tracking-wider uppercase text-slate-900 font-display">Enterprise Contact</h4>
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
-              <MapPin className="w-4 h-4 text-blue-500 mt-0.5 shrink-0" />
-              <span className="text-sm text-slate-400 leading-relaxed">
-                Global Staffing HQ, Enterprise Park, USA & India Centers
+              <MapPin className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" />
+              <span className="text-sm text-slate-600 leading-relaxed">
+                320 Decker Dr, Suite 131, Irving, TX, 75062.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <MapPin className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" />
+              <span className="text-sm text-slate-600 leading-relaxed">
+
+                #407, 4th floor, Capital park, Hitech city, Hyderabad 500081
               </span>
             </li>
             <li className="flex items-center gap-3">
-              <Phone className="w-4 h-4 text-blue-500 shrink-0" />
-              <span className="text-sm text-slate-400">+1 (800) 555-0199</span>
+              <Phone className="w-4 h-4 text-blue-600 shrink-0" />
+              <span className="text-sm text-slate-600">+1 (800) 555-0199</span>
             </li>
             <li className="flex items-center gap-3">
-              <Mail className="w-4 h-4 text-blue-500 shrink-0" />
-              <span className="text-sm text-slate-400">contact@luminavtech.com</span>
+              <Mail className="w-4 h-4 text-blue-600 shrink-0" />
+              <span className="text-sm text-slate-600">info@luminavtech.com</span>
             </li>
           </ul>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-xs text-slate-500">
           © {new Date().getFullYear()} LuminaVTech. All rights reserved.
         </p>
         <div className="flex space-x-6">
-          <a href="#" className="text-xs text-slate-500 hover:text-slate-350 transition-colors">Privacy Policy</a>
-          <a href="#" className="text-xs text-slate-500 hover:text-slate-350 transition-colors">Terms of Service</a>
-          <a href="#" className="text-xs text-slate-500 hover:text-slate-350 transition-colors">Sitemap</a>
+          <Link to="/privacy" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-xs text-slate-500 hover:text-slate-800 transition-colors">Privacy Policy</Link>
+          <Link to="/terms" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-xs text-slate-500 hover:text-slate-800 transition-colors">Terms of Service</Link>
         </div>
       </div>
     </footer>
