@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
@@ -8,177 +8,18 @@ import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
 import Particles from '../components/Particles'
 
-import { Terminal, AnimatedSpan, TypingAnimation } from '../components/Terminal'
+
 
 gsap.registerPlugin(ScrollTrigger)
 
 // Resolve ESM/CJS interop mismatch for react-countup in some bundlers
 const CountUpComponent = (CountUp as any).default || CountUp
 
-const techDetails: Record<string, { desc: string; skills: string[]; metrics: string }> = {
-  'Generative AI': {
-    desc: 'Empowering enterprises with custom LLMs, RAG architectures, and AI agent orchestration.',
-    skills: ['LLM Fine-tuning', 'Prompt Engineering', 'LangChain', 'LlamaIndex', 'Vector Databases'],
-    metrics: '120+ active engineers available for hire'
-  },
-  'Artificial Intelligence': {
-    desc: 'Deploying neural networks, cognitive computing engines, and natural language interfaces.',
-    skills: ['NLP', 'Computer Vision', 'PyTorch', 'TensorFlow', 'Deep Learning'],
-    metrics: '150+ pre-vetted AI experts in network'
-  },
-  'Machine Learning': {
-    desc: 'Building predictive pipelines, anomaly detection, and recommendation algorithms.',
-    skills: ['Scikit-Learn', 'Pandas/NumPy', 'Feature Engineering', 'MLOps', 'AWS SageMaker'],
-    metrics: '95%+ match accuracy on candidate sourcing'
-  },
-  'Python Full Stack': {
-    desc: 'Rapid web application development paired with high-performance backends and data pipelines.',
-    skills: ['Django', 'FastAPI', 'Flask', 'PostgreSQL', 'React/Vue integrations'],
-    metrics: 'Average turnaround: 72 hours to source'
-  },
-  'React Development': {
-    desc: 'Crafting responsive, visually stunning web interfaces with modern state management.',
-    skills: ['React 19', 'Next.js', 'TypeScript', 'TailwindCSS', 'Redux / Zustand'],
-    metrics: 'Top 3% of front-end developers'
-  },
-  'Java Full Stack': {
-    desc: 'Robust, enterprise-grade architecture with microservices and cloud deployments.',
-    skills: ['Spring Boot', 'Hibernate', 'Microservices', 'Docker', 'Kubernetes'],
-    metrics: 'Trusted by Fortune 500 BFSI clients'
-  },
-  'DevOps': {
-    desc: 'Streamlining CI/CD pipelines, containerization, and infrastructure-as-code automation.',
-    skills: ['Terraform', 'Ansible', 'GitHub Actions', 'Docker', 'AWS/Azure/GCP'],
-    metrics: 'Zero-downtime deployment pipelines'
-  },
-  'Data Science': {
-    desc: 'Turning raw organizational data into actionable business intelligence and reports.',
-    skills: ['Statistical Modeling', 'A/B Testing', 'Tableau', 'PowerBI', 'SQL/Python'],
-    metrics: 'Data-driven business acceleration'
-  },
-  'Data Engineering': {
-    desc: 'Constructing robust data pipelines, data lakes, and scalable ETL processes.',
-    skills: ['Apache Spark', 'Kafka', 'Snowflake', 'Hadoop', 'Databricks'],
-    metrics: 'Terabyte-scale processing architectures'
-  },
-  'Cybersecurity': {
-    desc: 'Protecting cloud infrastructure, threat modeling, and implementing zero-trust systems.',
-    skills: ['Penetration Testing', 'IAM', 'SOC Monitoring', 'SIEM', 'OWASP Standards'],
-    metrics: 'Certified CISSP/CEH security experts'
-  },
-  'QA Automation': {
-    desc: 'Ensuring software quality and stability through rigorous automated testing suites.',
-    skills: ['Selenium', 'Cypress', 'Playwright', 'Jest', 'CI pipeline integration'],
-    metrics: '99.8% post-release bug reduction'
-  },
-  'Salesforce': {
-    desc: 'Customizing and integrating Salesforce CRM platforms to drive sales performance.',
-    skills: ['Apex', 'Lightning Web Components', 'Sales/Service Cloud', 'MuleSoft integrations'],
-    metrics: 'Certified Salesforce Developers & Admins'
-  },
-  'SAP': {
-    desc: 'Enterprise resource planning integrations across supply chain, finance, and operations.',
-    skills: ['ABAP', 'SAP S/4HANA', 'Fiori', 'SAP Cloud Platform', 'SuccessFactors'],
-    metrics: 'Over 10+ years average consultant tenure'
-  },
-  'ServiceNow': {
-    desc: 'Automating IT workflows, employee experiences, and customer service management.',
-    skills: ['ITSM', 'ITOM', 'Service Portal', 'JavaScript', 'IntegrationHub'],
-    metrics: 'Gold-standard workflow implementation'
-  },
-  'Business Analysis': {
-    desc: 'Bridging technical capabilities with business goals through detailed requirement mapping.',
-    skills: ['Agile/Scrum', 'Requirement Gathering', 'UML Modeling', 'Jira/Confluence', 'User Stories'],
-    metrics: 'Flawless alignment between tech & business'
-  }
-}
 
-const industryDetails: Record<string, { desc: string; projects: string[]; demand: string }> = {
-  'Aviation': {
-    desc: 'Digital modernization of airline operations, flight scheduling, and reservation systems.',
-    projects: ['Crew dispatch management systems', 'Passenger check-in portal design', 'IoT maintenance alerts'],
-    demand: 'High demand for C++ and Real-Time Systems engineers'
-  },
-  'BFSI': {
-    desc: 'Secure digital banking portals, real-time transaction processing, and automated fraud checks.',
-    projects: ['Cross-border payment gateways', 'Automated credit score analysis', 'Cloud ledger migrations'],
-    demand: 'Strong need for Core Java and Cybersecurity specialists'
-  },
-  'Healthcare': {
-    desc: 'HIPAA-compliant platforms, virtual clinic scheduling, and real-time medical diagnostics integrations.',
-    projects: ['EHR cloud integrations', 'Telehealth video consultations', 'AI diagnostic image analysis'],
-    demand: 'High demand for Node.js, Python, and Compliance experts'
-  },
-  'Retail': {
-    desc: 'Next-gen e-commerce engines, customer recommendation algorithms, and inventory pipelines.',
-    projects: ['Headless commerce store development', 'AI pricing optimization models', 'Omnichannel inventory sync'],
-    demand: 'Focus on React, Next.js, and Node.js developers'
-  },
-  'Manufacturing': {
-    desc: 'Industrial IoT implementations, smart factory analytics, and supply chain tracking.',
-    projects: ['Predictive assembly line monitoring', 'RFID inventory scan networks', 'Warehouse robotics control'],
-    demand: 'Demand for IoT, Embedded Rust, and Python/Django'
-  },
-  'Telecom': {
-    desc: 'High-availability routing systems, billing platforms, and next-gen 5G integrations.',
-    projects: ['Automated usage billing software', 'Network load monitoring APIs', '5G edge computing wrappers'],
-    demand: 'High demand for Go, Scala, and Network Engineers'
-  },
-  'IT & Software': {
-    desc: 'Delivering full-lifecycle product development, cloud migrations, and platform scale.',
-    projects: ['SaaS application bootstrap', 'Legacy monolith to microservice migration', 'DevOps audit'],
-    demand: 'Continuous demand for React, Java, Python, and AWS/Azure'
-  },
-  'Logistics': {
-    desc: 'Real-time fleet tracking, route optimization engines, and supply chain transparency.',
-    projects: ['GPS-guided vehicle dispatcher', 'Last-mile delivery route mapping', 'IoT cargo temperature checks'],
-    demand: 'Needs Python, GIS Mapping APIs, and React Native'
-  },
-  'Government': {
-    desc: 'Highly secure municipal systems, public portals, and secure cloud storage solutions.',
-    projects: ['Citizen document portals', 'Secure identity authentication APIs', 'Public records database design'],
-    demand: 'Requires Security Clearances, CISSP, and secure JVM stacks'
-  },
-  'Energy': {
-    desc: 'Sustainability analytics, smart grid integrations, and environmental impact reporting tools.',
-    projects: ['Smart meter telemetry ingest', 'Carbon emission calculation dashboards', 'Solar grid management panels'],
-    demand: 'Python, Time-series databases (InfluxDB), React'
-  },
-  'Pharma': {
-    desc: 'Managing drug trial data, secure clinical research storage, and laboratory integrations.',
-    projects: ['Clinical trial dashboard', 'Regulatory file submission systems', 'Bio-analytics data pipelines'],
-    demand: 'Python, R, and GxP compliance consultants'
-  },
-  'Hospitality': {
-    desc: 'Dynamic booking systems, digital customer care chats, and custom loyalty portals.',
-    projects: ['Multi-currency hotel booker', 'AI guest communication bot', 'Reward point ledger system'],
-    demand: 'React, Node.js, and third-party API integration expertise'
-  },
-  'Automotive': {
-    desc: 'Connected vehicle software, autonomous driving simulation pipelines, and customer portals.',
-    projects: ['In-car infotainment applications', 'Sensor data ingestion tools', 'Dealership management systems'],
-    demand: 'C/C++, Python, Qt/QML, and cloud streaming experts'
-  },
-  'Media': {
-    desc: 'High-speed media streaming, digital rights management, and user behavior analytics.',
-    projects: ['Custom video encoder pipelines', 'Subscription management engine', 'Real-time stream telemetry'],
-    demand: 'AWS Elementals, FFmpeg, React, Python'
-  },
-  'Real Estate': {
-    desc: 'PropTech platforms, virtual property tour integrations, and secure transaction workflows.',
-    projects: ['Tenant portal & billing app', 'VR interactive listings engine', 'Property valuation database'],
-    demand: 'Node.js, Postgres, React Native'
-  }
-}
 
 export default function Home() {
   const navigate = useNavigate()
-  const [selectedDomain, setSelectedDomain] = useState<{
-    type: 'tech' | 'industry'
-    name: string
-  } | null>(null)
-  const [activeTab, setActiveTab] = useState<'tech' | 'industry'>('tech')
-  const [terminalKey, setTerminalKey] = useState(0)
+
 
   const containerRef = useRef<HTMLDivElement | null>(null)
 
@@ -280,31 +121,7 @@ export default function Home() {
     { title: 'Digital Transformation Consulting', icon: Cloud, desc: 'Assess systems, optimize legacy processes, and implement modern cloud strategies to drive growth.' },
   ]
 
-  // Technologies (horizontal scroll marquee)
-  const technologies = [
-    'Generative AI', 'Artificial Intelligence', 'Machine Learning', 'Python Full Stack',
-    'React Development', 'Java Full Stack', 'DevOps', 'Data Science', 'Data Engineering',
-    'Cybersecurity', 'QA Automation', 'Salesforce', 'SAP', 'ServiceNow', 'Business Analysis'
-  ]
 
-  // Industries (opposite direction marquee)
-  const industries = [
-    { name: 'Aviation', desc: 'Flight ops, digital infrastructure' },
-    { name: 'BFSI', desc: 'Secure digital banking & payments' },
-    { name: 'Healthcare', desc: 'Diagnostics & cloud data systems' },
-    { name: 'Retail', desc: 'AI engines & e-commerce' },
-    { name: 'Manufacturing', desc: 'IoT, industrial automation' },
-    { name: 'Telecom', desc: 'Network ops & next-gen connectivity' },
-    { name: 'IT & Software', desc: 'DevOps, cloud & dev staffing' },
-    { name: 'Logistics', desc: 'Supply chain & route optimization' },
-    { name: 'Government', desc: 'Public modernization & security' },
-    { name: 'Energy', desc: 'Sustainability & smart grid tech' },
-    { name: 'Pharma', desc: 'Drug discovery & clinical research' },
-    { name: 'Hospitality', desc: 'Booking & digital customer care' },
-    { name: 'Automotive', desc: 'Autonomous driving & vehicles' },
-    { name: 'Media', desc: 'Streaming, content analytics' },
-    { name: 'Real Estate', desc: 'Smart management & analytics' },
-  ]
 
   // Bento grid items for "Why Choose Us"
   const bentoGrid = [

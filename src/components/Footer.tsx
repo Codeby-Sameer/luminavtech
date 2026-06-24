@@ -2,9 +2,7 @@ import { Link } from 'react-router-dom'
 import {
   Mail,
   Phone,
-  MapPin,
-
-  X
+  MapPin
 } from "lucide-react";
 
 const LinkedInIcon = ({ className = "w-6 h-6" }) => (
