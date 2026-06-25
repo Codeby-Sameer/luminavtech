@@ -116,7 +116,7 @@ export default function Contact() {
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-xs font-semibold text-slate-500 font-display">Full Name</label>
+                      <label htmlFor="name" className="text-sm font-semibold text-slate-900 font-display">Full Name</label>
                       <input
                         type="text"
                         id="name"
@@ -126,7 +126,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-xs font-semibold text-slate-500 font-display">Corporate Email</label>
+                      <label htmlFor="email" className="text-sm font-semibold text-slate-900 font-display">Corporate Email</label>
                       <input
                         type="email"
                         id="email"
@@ -139,7 +139,7 @@ export default function Contact() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="phone" className="text-xs font-semibold text-slate-500 font-display">Phone Number</label>
+                      <label htmlFor="phone" className="text-sm font-semibold text-slate-900 font-display">Phone Number</label>
                       <input
                         type="tel"
                         id="phone"
@@ -148,7 +148,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="company" className="text-xs font-semibold text-slate-500 font-display">Company Name</label>
+                      <label htmlFor="company" className="text-sm font-semibold text-slate-900 font-display">Company Name</label>
                       <input
                         type="text"
                         id="company"
@@ -160,7 +160,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-xs font-semibold text-slate-500 font-display">Your Requirements</label>
+                    <label htmlFor="message" className="text-sm font-semibold text-slate-900 font-display">Your Requirements</label>
                     <textarea
                       id="message"
                       rows={4}

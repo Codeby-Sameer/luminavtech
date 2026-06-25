@@ -7,6 +7,7 @@ import { ArrowRight, Bot, Cpu, Network, Database, Cloud, Terminal as TerminalIco
 import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
 import Particles from '../components/Particles'
+import TrustStrip from '@/components/TrustStrip'
 
 
 
@@ -309,6 +310,9 @@ export default function Home() {
             </button>
           </div>
         </div>
+      </section>
+      <section className='py-8 '>
+        <TrustStrip/>
       </section>
 
       {/* 4. Services Section */}

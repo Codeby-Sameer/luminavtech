@@ -12,6 +12,7 @@ import Industries from './pages/Industries'
 import Careers from './pages/Careers'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
+import WhatsAppWidget from './components/WhatsAppWidget'
 
 function App() {
   const location = useLocation()
@@ -51,6 +52,7 @@ function App() {
 
         {/* Shared Footer */}
         <Footer />
+        <WhatsAppWidget />
       </div>
     </SmoothScroll>
   )
