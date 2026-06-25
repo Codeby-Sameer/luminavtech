@@ -33,7 +33,7 @@ export default function Particles() {
         y: Math.random() * height,
         vx: (Math.random() - 0.5) * 0.4,
         vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 2 + 1,
+        radius: Math.random() * 3 + 2,
       })
     }
 
@@ -61,7 +61,7 @@ export default function Particles() {
       ctx.clearRect(0, 0, width, height)
 
       // Draw background gradient
-      ctx.fillStyle = '#020617'
+      ctx.fillStyle = "#D1D5DB"; // gray-300
       ctx.fillRect(0, 0, width, height)
 
       // Update and draw particles
@@ -88,8 +88,16 @@ export default function Particles() {
         // Draw particle
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
-        ctx.fillStyle = 'rgba(96, 165, 250, 0.4)'
-        ctx.fill()
+        ctx.fillStyle = "#2563EB";
+        ctx.shadowColor = "#38BDF8";
+        ctx.shadowBlur = 15;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius + 0.3, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.shadowBlur = 0;
+
       })
 
       // Draw connections
@@ -106,8 +114,8 @@ export default function Particles() {
             ctx.beginPath()
             ctx.moveTo(p1.x, p1.y)
             ctx.lineTo(p2.x, p2.y)
-            ctx.strokeStyle = `rgba(96, 165, 250, ${alpha})`
-            ctx.lineWidth = 0.8
+         ctx.strokeStyle = `rgba(30,64,175,${alpha})` // Blue-800
+            ctx.lineWidth = 1.2
             ctx.stroke()
           }
         }
@@ -146,7 +154,7 @@ export default function Particles() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-none z-0"
-      style={{ mixBlendMode: 'screen' }}
+      style={{ opacity: 0.7 }}
     />
   )
 }
