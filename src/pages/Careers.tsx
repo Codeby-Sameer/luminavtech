@@ -114,7 +114,7 @@ export default function Careers() {
   ]
 
   return (
-    <div className="relative w-full pt-32 pb-24 bg-gray-300 overflow-hidden text-left">
+    <div className="relative w-full pt-32 pb-24 bg-[#3B444B] overflow-hidden text-left">
       {/* Background Gradients */}
       <div className="glow-spot glow-blue w-[700px] h-[700px] -top-20 -left-20" />
       <div className="glow-spot glow-purple w-[600px] h-[600px] top-1/3 right-0" />
@@ -131,13 +131,13 @@ export default function Careers() {
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400">
             <span>Career Pathways</span>
           </div>
-          <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-900 tracking-tight leading-tight">
+          <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-100 tracking-tight leading-tight">
             Accelerate Your{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
               Professional Journey
             </span>
           </h1>
-          <p className="text-slate-600 text-lg md:text-xl font-light leading-relaxed">
+          <p className="text-slate-200 text-lg md:text-xl font-light leading-relaxed">
             Discover a culture of learning, collaboration, and continuous advancement. We offer specialized programs tailored to support your career growth at every experience level.
           </p>
         </motion.div>

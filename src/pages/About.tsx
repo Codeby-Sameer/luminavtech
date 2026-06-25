@@ -60,7 +60,7 @@ export default function About() {
   ]
 
   return (
-    <div className="relative w-full pt-32 pb-24 bg-gray-400 overflow-hidden text-left">
+    <div className="relative w-full pt-32 pb-24 bg-[#242628] overflow-hidden text-left">
       {/* Background radial glows */}
       <div className="glow-spot glow-blue w-[700px] h-[700px] -top-20 -left-20" />
       <div className="glow-spot glow-cyan w-[600px] h-[600px] bottom-10 right-0" />
@@ -77,13 +77,13 @@ export default function About() {
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400">
             <span>About LuminaVTech</span>
           </div>
-          <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-900 tracking-tight leading-tight">
+          <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-100 tracking-tight leading-tight">
             Powering Innovation Through{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
               People & Strategy
             </span>
           </h1>
-          <p className="text-slate-600 text-lg md:text-xl font-light leading-relaxed">
+          <p className="text-slate-200 text-lg md:text-xl font-light leading-relaxed">
             A premier specialized IT staffing, AI talent consulting, and workforce optimization firm engineered to scale modern software development, artificial intelligence, and cloud operations.
           </p>
         </motion.div>

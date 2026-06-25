@@ -172,7 +172,8 @@ export default function Home() {
       {/* 1. Combined Scroll Story & Typography Hero Section */}
       <section
         ref={heroSectionRef}
-        className="relative h-screen bg-gray-300 flex items-center justify-center overflow-hidden z-20"
+        className="relative h-screen  bg-[#242628]
+        flex items-center justify-center overflow-hidden z-20"
       >
         {/* Background Grids and Particles */}
         <div className="absolute inset-0 animated-grid opacity-25 pointer-events-none" />

@@ -114,7 +114,7 @@ export default function Particles() {
             ctx.beginPath()
             ctx.moveTo(p1.x, p1.y)
             ctx.lineTo(p2.x, p2.y)
-         ctx.strokeStyle = `rgba(30,64,175,${alpha})` // Blue-800
+         ctx.strokeStyle = `rgba(30,64,175,${alpha})` // Blue-800npm
             ctx.lineWidth = 1.2
             ctx.stroke()
           }
