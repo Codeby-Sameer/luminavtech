@@ -60,7 +60,7 @@ export default function About() {
   ]
 
   return (
-    <div className="relative w-full pt-32 pb-24 bg-yellow-100 overflow-hidden text-left">
+    <div className="relative w-full pt-32 pb-24 bg-gray-400 overflow-hidden text-left">
       {/* Background radial glows */}
       <div className="glow-spot glow-blue w-[700px] h-[700px] -top-20 -left-20" />
       <div className="glow-spot glow-cyan w-[600px] h-[600px] bottom-10 right-0" />

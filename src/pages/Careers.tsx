@@ -114,7 +114,7 @@ export default function Careers() {
   ]
 
   return (
-    <div className="relative w-full pt-32 pb-24 bg-blue-50 overflow-hidden text-left">
+    <div className="relative w-full pt-32 pb-24 bg-gray-300 overflow-hidden text-left">
       {/* Background Gradients */}
       <div className="glow-spot glow-blue w-[700px] h-[700px] -top-20 -left-20" />
       <div className="glow-spot glow-purple w-[600px] h-[600px] top-1/3 right-0" />
