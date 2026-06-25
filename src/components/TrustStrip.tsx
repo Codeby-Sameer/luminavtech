@@ -20,7 +20,7 @@ import dartLogo from '../assets/clientlogo/Dartlogo.wine.svg';
 import tcsLogo from '../assets/clientlogo/tcs.jpg';
 import techMLogo from '../assets/clientlogo/Tech_Mahindra-Logo.wine.svg';
 import accentureLogo from '../assets/clientlogo/Accenture-Logo.wine.svg';
-import creditOneLogo from '../assets/clientlogo/Capital_One_logo.svg.png';
+import creditOneLogo from '../assets/clientlogo/creditone.jpeg';
 // import bcbsLogo from '../assets/clientlogo/BCBS_logo.jpeg';
 import ctsLogo from '../assets/clientlogo/cts.jpeg';
 import ibmLogo from '../assets/clientlogo/IBM-Logo.wine.svg';
