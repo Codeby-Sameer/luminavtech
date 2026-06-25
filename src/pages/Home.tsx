@@ -389,7 +389,7 @@ export default function Home() {
             return (
               <motion.div
                 key={idx}
-                className={`p-8 rounded-2xl glass-panel flex flex-col justify-between border-slate-200 shadow-xl hover:border-blue-500/25 transition-all text-left relative overflow-hidden group cursor-pointer ${item.size}`}
+                className={`p-8 rounded-2xl  bg-white flex flex-col justify-between border-slate-200 shadow-xl hover:border-blue-500/25 transition-all text-left relative overflow-hidden group cursor-pointer ${item.size}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
