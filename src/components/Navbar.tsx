@@ -169,10 +169,10 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-x-0 top-[73px] bottom-0 bg-white border-t border-slate-200 z-40 md:hidden transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 bg-white visible' : 'opacity-0 -translate-y-4 invisible'
+        className={`fixed inset-x-0 top-[96px] bottom-0 bg-white border-t border-slate-200 z-40 md:hidden transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 bg-white visible' : 'opacity-0 -translate-y-4  invisible'
           }`}
       >
-        <div className="flex flex-col p-8 space-y-2 overflow-y-auto max-h-[calc(100vh-100px)]">
+        <div className="flex flex-col p-8 bg-white  space-y-2 overflow-y-auto max-h-[calc(100vh-100px)]">
           {navItems.map((item) => {
             if (item.isDropdown) {
               const isActive = currentPage === '/services' || currentPage === '/industries'

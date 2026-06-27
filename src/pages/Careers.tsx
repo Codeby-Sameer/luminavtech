@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { Sparkles, Award, TrendingUp, UserPlus, BarChart3, Cpu, Crown, GraduationCap, ArrowRight, Check } from 'lucide-react'
+import careersImg from '../assets/careers.png'
 
 export default function Careers() {
   const navigate = useNavigate()
@@ -122,25 +123,43 @@ export default function Careers() {
 
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 mb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl space-y-6"
-        >
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400">
-            <span>Career Pathways</span>
-          </div>
-          <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-100 tracking-tight leading-tight">
-            Accelerate Your{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
-              Professional Journey
-            </span>
-          </h1>
-          <p className="text-slate-200 text-lg md:text-xl font-light leading-relaxed">
-            Discover a culture of learning, collaboration, and continuous advancement. We offer specialized programs tailored to support your career growth at every experience level.
-          </p>
-        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7 space-y-6"
+          >
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400">
+              <span>Career Pathways</span>
+            </div>
+            <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-100 tracking-tight leading-tight">
+              Accelerate Your{' '}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
+                Professional Journey
+              </span>
+            </h1>
+            <p className="text-slate-200 text-lg md:text-xl font-light leading-relaxed">
+              Discover a culture of learning, collaboration, and continuous advancement. We offer specialized programs tailored to support your career growth at every experience level.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-5 w-full flex justify-center lg:justify-end"
+          >
+            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] group">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3B444B] via-transparent to-transparent opacity-30 z-10" />
+              <img
+                src={careersImg}
+                alt="LuminaVTech Careers"
+                className="w-full h-auto max-h-[300px] sm:max-h-[450px] lg:max-h-[500px] object-contain group-hover:scale-102 transition-transform duration-500"
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Programs Showcase Grid */}
