@@ -136,7 +136,7 @@ export default function About() {
                     <div className="text-blue-500 font-display font-black text-xl tracking-wider leading-none">
                       {story.label}
                     </div>
-                    <h3 className="font-display font-bold text-xl text-slate-900 mt-1">
+                    <h3 className="font-display font-bold text-xl text-blue-500 mt-1">
                       {story.title}
                     </h3>
                   </div>
@@ -144,7 +144,7 @@ export default function About() {
 
                 {/* Text Block Column */}
                 <div
-                  className={`lg:col-span-8 p-8 rounded-2xl glass-panel border-slate-200 text-slate-600 leading-relaxed font-light text-sm sm:text-base ${isEven ? 'lg:order-2' : 'lg:order-1'
+                  className={`lg:col-span-8 p-8 rounded-2xl bg-white border-slate-200 text-slate-600 leading-relaxed font-light text-sm sm:text-base ${isEven ? 'lg:order-2' : 'lg:order-1'
                     }`}
                 >
                   {story.text}
@@ -221,8 +221,8 @@ export default function About() {
 
       {/* CTA Box */}
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 pt-28 text-center space-y-6">
-        <h3 className="font-display font-bold text-2xl sm:text-3xl text-slate-900">Ready to consult with our staffing directors?</h3>
-        <p className="text-slate-500 text-sm max-w-xl mx-auto font-light leading-relaxed">
+        <h3 className="font-display font-bold text-2xl sm:text-3xl text-slate-50">Ready to consult with our staffing directors?</h3>
+        <p className="text-slate-100 text-sm max-w-xl mx-auto font-light leading-relaxed">
           Request a specialized talent consultation or explore candidate profiles suited for your open mandates.
         </p>
         <button

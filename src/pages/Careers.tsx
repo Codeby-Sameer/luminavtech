@@ -165,8 +165,8 @@ export default function Careers() {
       {/* Programs Showcase Grid */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 mb-32">
         <div className="text-left space-y-2 mb-12">
-          <h2 className="font-display font-bold text-2xl sm:text-3xl text-slate-900">Unique Career Programs We Offer</h2>
-          <p className="text-slate-500 text-sm font-light max-w-xl">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl text-slate-50">Unique Career Programs We Offer</h2>
+          <p className="text-slate-100  text-sm  max-w-xl">
             Choose the path that matches your ambitions and start building future-proof skills with our structured curriculum.
           </p>
         </div>
@@ -181,7 +181,7 @@ export default function Careers() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="p-8 rounded-2xl glass-panel border-slate-200 shadow-xl flex flex-col justify-between group hover:border-blue-500/30 transition-all relative overflow-hidden"
+                className="p-8 rounded-2xl bg-white border-slate-200 shadow-xl flex flex-col justify-between group hover:border-blue-500/30 transition-all relative overflow-hidden"
               >
                 {/* Micro glow spot */}
                 <div className="absolute -top-10 -left-10 w-24 h-24 bg-blue-500/5 rounded-full blur-xl group-hover:bg-blue-500/15 transition-all" />
@@ -202,17 +202,17 @@ export default function Careers() {
                     <h3 className="font-display font-bold text-xl sm:text-2xl text-slate-900 group-hover:text-blue-400 transition-colors">
                       {prog.title}
                     </h3>
-                    <p className="text-sm text-slate-500 leading-relaxed font-light">
+                    <p className="text-sm text-slate-900 leading-relaxed ">
                       {prog.desc}
                     </p>
                   </div>
 
                   {/* Benefits */}
-                  <div className="pt-4 border-t border-slate-200">
-                    <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-widest font-display mb-3">Program Benefits:</h4>
+                  <div className="pt-4 border-t border-slate-300">
+                    <h4 className="text-xs font-semibold text-slate-700 uppercase tracking-widest font-display mb-3">Program Benefits:</h4>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {prog.benefits.map((benefit, bIdx) => (
-                        <li key={bIdx} className="flex items-start gap-2 text-xs text-slate-600 font-light">
+                        <li key={bIdx} className="flex items-start gap-2 text-xs text-slate-700">
                           <Check className="w-4.5 h-4.5 text-blue-500 shrink-0" />
                           <span>{benefit}</span>
                         </li>
@@ -236,10 +236,10 @@ export default function Careers() {
 
       {/* CTA Box */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="rounded-3xl bg-gradient-to-r from-blue-50 to-slate-100 border border-slate-300 p-8 sm:p-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="rounded-3xl bg-white border border-slate-300 p-8 sm:p-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="space-y-2">
             <h3 className="font-display font-bold text-2xl text-slate-900">Ready to take the next step in your career?</h3>
-            <p className="text-sm text-slate-500 font-light max-w-xl">
+            <p className="text-sm text-slate-700  max-w-xl">
               Apply today for our customized training and leadership pathways, and align yourself with high-impact industry roles.
             </p>
           </div>

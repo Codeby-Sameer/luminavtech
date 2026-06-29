@@ -158,11 +158,11 @@ export default function Technologies() {
           </div>
           <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-900 tracking-tight leading-tight">
             Next-Gen Technology{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-700">
               Capabilities
             </span>
           </h1>
-          <p className="text-slate-600 text-lg md:text-xl font-light leading-relaxed">
+          <p className="text-slate-800 text-lg md:text-xl font-light leading-relaxed">
             Harness the power of leading-edge technologies. We supply specialized engineering talent and implement custom consulting solutions across major enterprise verticals.
           </p>
         </motion.div>
@@ -196,7 +196,7 @@ export default function Technologies() {
                     <h3 className="font-display font-bold text-lg text-slate-900 group-hover:text-blue-400 transition-colors">
                       {tech.title}
                     </h3>
-                    <p className="text-xs text-slate-500 leading-relaxed font-light">
+                    <p className="text-xs text-slate-800 leading-relaxed ">
                       {tech.desc}
                     </p>
                   </div>
@@ -208,7 +208,7 @@ export default function Technologies() {
                     {tech.tags.map((tag, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-2 py-0.5 rounded bg-slate-100 text-[9px] font-semibold text-slate-500 border border-slate-200"
+                        className="px-2 py-1 rounded bg-slate-100 text-[9px] font-semibold text-slate-500 border border-slate-200"
                       >
                         {tag}
                       </span>
@@ -216,7 +216,7 @@ export default function Technologies() {
                   </div>
                   <div
                     onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-                    className="flex items-center gap-1 text-[10px] font-semibold text-blue-500 group-hover:text-blue-400 hover:underline pt-1"
+                    className="flex items-center gap-1 text-[12px] font-semibold text-blue-500 group-hover:text-blue-400 hover:underline pt-1"
                   >
                     <span>Request Developers</span>
                     <ArrowRight className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" />
@@ -230,10 +230,10 @@ export default function Technologies() {
 
       {/* CTA Box */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="rounded-3xl bg-gradient-to-r from-blue-50 to-slate-100 border border-slate-300 p-8 sm:p-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="rounded-3xl p-8 sm:p-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="space-y-2">
-            <h3 className="font-display font-bold text-2xl text-slate-900">Looking for specialized technology expertise?</h3>
-            <p className="text-sm text-slate-500 font-light max-w-xl">
+            <h3 className="font-display font-bold text-3xl text-slate-900">Looking for specialized technology expertise?</h3>
+            <p className="text-sm text-slate-800 max-w-xl">
               Partner with LuminaVTech to access elite developers, engineers, and specialists across our tech stacks.
             </p>
           </div>

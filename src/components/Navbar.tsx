@@ -67,7 +67,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
         ? 'bg-white backdrop-blur-md border-b border-slate-200 py-2 shadow-sm'
-        : 'bg-transparent py-2'
+        : 'bg-transparent  py-2'
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -78,7 +78,7 @@ export default function Navbar() {
           className="flex items-center space-x-2 cursor-pointer group"
         >
           <img
-            src="/luminologo1.png"
+            src="/luminavtechlogo.png"
             alt="Logo"
             className="h-20 md:h-20 transition-all duration-300 group-hover:scale-110"
           />
@@ -112,7 +112,7 @@ export default function Navbar() {
                             setIsServicesDropdownOpen(false)
                             handleNavClick()
                           }}
-                          className={`text-xs px-3 py-2 rounded-lg transition-colors text-left ${currentPage === dropItem.path
+                          className={`text-sm px-3 py-2 rounded-lg transition-colors text-left ${currentPage === dropItem.path
                             ? 'bg-[#f8e000] text-slate-900 font-bold'
                             : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
                             }`}

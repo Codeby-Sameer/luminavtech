@@ -30,7 +30,7 @@ export default function Footer() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center space-x-2 cursor-pointer group w-fit"
           >
-            <img src="/luminologo1.png" alt="Logo" className="h-20 md:h-20 transition-all duration-300 group-hover:scale-110" />
+            <img src="/luminavtechlogo.png" alt="Logo" className="h-20 md:h-20 transition-all duration-300 group-hover:scale-110" />
           </Link>
           <p className="text-sm text-slate-600 leading-relaxed">
             LuminaVTech is a specialized IT staffing and consulting organization dedicated to helping businesses access top-tier technology talent.
