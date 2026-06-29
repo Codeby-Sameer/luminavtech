@@ -17,20 +17,20 @@ const LinkedInIcon = ({ className = "w-6 h-6" }) => (
 );
 export default function Footer() {
   return (
-    <footer className="relative bg-white border-t border-slate-200 pt-12 pb-10 overflow-hidden z-10">
+    <footer className="relative bg-white border-t border-slate-200 pt-14 pb-10 overflow-hidden z-10">
       {/* Background radial glow */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-[120px] pointer-events-none -z-10" />
       <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-yellow-100/40 rounded-full blur-[100px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10 ">
         {/* Column 1: Brand Info */}
-        <div className="space-y-6">
+        <div className="space-y-3">
           <Link
             to="/"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center space-x-2 cursor-pointer group w-fit"
           >
-            <img src="/luminavtechlogo.png" alt="Logo" className="h-20 md:h-20 transition-all duration-300 group-hover:scale-110" />
+            <img src="/luminavtechlogo.png" alt="Logo" className="h-20 md:h-26 transition-all duration-300 group-hover:scale-110" />
           </Link>
           <p className="text-sm text-slate-600 leading-relaxed">
             LuminaVTech is a specialized IT staffing and consulting organization dedicated to helping businesses access top-tier technology talent.
