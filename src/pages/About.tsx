@@ -76,12 +76,12 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 space-y-6"
           >
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-secondary">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-xs font-semibold text-accent">
               <span>About LuminaVTech</span>
             </div>
             <h1 className="font-display font-black text-4xl sm:text-6xl text-heading tracking-tight leading-tight">
               Powering Innovation Through{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent to-yellow-600">
                 People & Strategy
               </span>
             </h1>
@@ -129,14 +129,14 @@ export default function About() {
                   className={`lg:col-span-4 flex items-center gap-6 ${isEven ? 'lg:order-1' : 'lg:order-2'
                     }`}
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary shadow-[0_0_15px_rgba(37,99,235,0.15)]">
+                  <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shadow-[0_0_15px_rgba(37,99,235,0.15)]">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <div className="text-primary font-display font-black text-xl tracking-wider leading-none">
+                    <div className="text-accent font-display font-black text-xl tracking-wider leading-none">
                       {story.label}
                     </div>
-                    <h3 className="font-display font-bold text-xl text-primary mt-1">
+                    <h3 className="font-display font-bold text-xl text-accent mt-1">
                       {story.title}
                     </h3>
                   </div>
@@ -159,7 +159,7 @@ export default function About() {
       <div className="bg-surface border-y border-default py-28 relative z-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center space-y-4 mb-20">
-            <div className="text-primary font-bold text-xs uppercase tracking-widest font-display">Deep Partnership</div>
+            <div className="text-accent font-bold text-xs uppercase tracking-widest font-display">Deep Partnership</div>
             <h2 className="font-display font-black text-3xl sm:text-5xl text-heading">Why Partner with Us</h2>
           </div>
 
@@ -173,14 +173,14 @@ export default function About() {
               className="space-y-8"
             >
               <div className="flex items-center gap-3 pb-4 border-b border-default">
-                <Sparkles className="w-6 h-6 text-secondary" />
+                <Sparkles className="w-6 h-6 text-accent" />
                 <h3 className="font-display font-bold text-2xl text-heading">Results-Oriented Staffing</h3>
               </div>
 
               <div className="space-y-6">
                 {resultsOrientedList.map((item, idx) => (
                   <div key={idx} className="flex gap-4">
-                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                     <div className="space-y-1">
                       <h4 className="font-display font-semibold text-base text-heading">{item.title}</h4>
                       <p className="text-xs sm:text-sm text-body font-light leading-relaxed">{item.desc}</p>
@@ -199,14 +199,14 @@ export default function About() {
               className="space-y-8"
             >
               <div className="flex items-center gap-3 pb-4 border-b border-default">
-                <Shield className="w-6 h-6 text-indigo-400" />
+                <Shield className="w-6 h-6 text-accent" />
                 <h3 className="font-display font-bold text-2xl text-heading">Deep Talent Understanding</h3>
               </div>
 
               <div className="space-y-6">
                 {talentUnderstandingList.map((item, idx) => (
                   <div key={idx} className="flex gap-4">
-                    <CheckCircle2 className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                     <div className="space-y-1">
                       <h4 className="font-display font-semibold text-base text-heading">{item.title}</h4>
                       <p className="text-xs sm:text-sm text-body font-light leading-relaxed">{item.desc}</p>
@@ -227,7 +227,7 @@ export default function About() {
         </p>
         <button
           onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-          className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary to-secondary font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all cursor-pointer inline-block"
+          className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all cursor-pointer inline-block"
         >
           Initiate Sourcing
         </button>

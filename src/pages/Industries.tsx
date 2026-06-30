@@ -130,12 +130,12 @@ export default function Industries() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl space-y-6"
         >
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-secondary">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-xs font-semibold text-accent">
             <span>Market Focus</span>
           </div>
           <h1 className="font-display font-black text-4xl sm:text-6xl text-heading tracking-tight leading-tight">
             Industries We{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent to-yellow-600">
               Serve & Transform
             </span>
           </h1>
@@ -157,20 +157,20 @@ export default function Industries() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="p-8 rounded-card bg-surface border border-default shadow-card flex flex-col justify-between group hover:border-primary transition-all cursor-pointer relative overflow-hidden"
+                className="p-8 rounded-card bg-surface border border-default shadow-card flex flex-col justify-between group hover:border-accent transition-all cursor-pointer relative overflow-hidden"
               >
                 {/* Micro glow spot */}
-                <div className="absolute -top-10 -left-10 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/15 transition-all" />
+                <div className="absolute -top-10 -left-10 w-24 h-24 bg-accent/5 rounded-full blur-xl group-hover:bg-accent/15 transition-all" />
 
                 <div className="space-y-6">
                   {/* Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary group-hover:bg-primary/20 group-hover:scale-105 transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:bg-accent/20 group-hover:scale-105 transition-all">
                     <IconComp className="w-6 h-6" />
                   </div>
 
                   {/* Title & Desc */}
                   <div className="space-y-3">
-                    <h3 className="font-display font-bold text-xl text-heading group-hover:text-secondary transition-colors">
+                    <h3 className="font-display font-bold text-xl text-heading group-hover:text-accent transition-colors">
                       {ind.title}
                     </h3>
                     <p className="text-sm text-muted leading-relaxed font-light">
@@ -181,7 +181,7 @@ export default function Industries() {
 
                 <div
                   onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-                  className="flex items-center gap-1.5 text-xs font-semibold text-primary group-hover:text-secondary pt-6 mt-6 border-t border-default hover:underline cursor-pointer"
+                  className="flex items-center gap-1.5 text-xs font-semibold text-accent group-hover:text-yellow-600 pt-6 mt-6 border-t border-default hover:underline cursor-pointer"
                 >
                   <span>Request Staffing Solutions</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -203,7 +203,7 @@ export default function Industries() {
           </div>
           <button
             onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary to-secondary font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap cursor-pointer"
+            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap cursor-pointer"
           >
             Connect With Experts
           </button>

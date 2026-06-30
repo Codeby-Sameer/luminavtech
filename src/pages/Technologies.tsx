@@ -153,12 +153,12 @@ export default function Technologies() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl space-y-6"
         >
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-secondary">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-xs font-semibold text-accent">
             <span>Our Tech Expertise</span>
           </div>
           <h1 className="font-display font-black text-4xl sm:text-6xl text-heading tracking-tight leading-tight">
             Next-Gen Technology{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent to-yellow-600">
               Capabilities
             </span>
           </h1>
@@ -180,20 +180,20 @@ export default function Technologies() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.4, delay: idx * 0.03 }}
-                className="p-6 rounded-card bg-surface border border-default shadow-card flex flex-col justify-between group hover:border-primary transition-all cursor-pointer relative overflow-hidden"
+                className="p-6 rounded-card bg-surface border border-default shadow-card flex flex-col justify-between group hover:border-accent transition-all cursor-pointer relative overflow-hidden"
               >
                 {/* Micro glow spot */}
-                <div className="absolute -top-10 -left-10 w-20 h-20 bg-primary/5 rounded-full blur-lg group-hover:bg-primary/15 transition-all" />
+                <div className="absolute -top-10 -left-10 w-20 h-20 bg-accent/5 rounded-full blur-lg group-hover:bg-accent/15 transition-all" />
 
                 <div className="space-y-4">
                   {/* Icon */}
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary group-hover:scale-105 transition-all">
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:scale-105 transition-all">
                     <IconComp className="w-5 h-5" />
                   </div>
 
                   {/* Title & Desc */}
                   <div className="space-y-2">
-                    <h3 className="font-display font-bold text-lg text-heading group-hover:text-secondary transition-colors">
+                    <h3 className="font-display font-bold text-lg text-heading group-hover:text-accent transition-colors">
                       {tech.title}
                     </h3>
                     <p className="text-xs text-body leading-relaxed ">
@@ -208,7 +208,7 @@ export default function Technologies() {
                     {tech.tags.map((tag, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-2 py-1 rounded bg-primary text-slate-100 text-[10px] font-semibold border border-primary"
+                        className="px-2 py-1 rounded-full bg-gradient-to-r from-accent to-yellow-600 text-slate-100 text-[10px] font-semibold border border-accent"
                       >
                         {tag}
                       </span>
@@ -216,7 +216,7 @@ export default function Technologies() {
                   </div>
                   <div
                     onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-                    className="flex items-center gap-1 text-[12px] font-semibold text-blue-300 group-hover:text-secondary hover:underline pt-1"
+                    className="flex items-center gap-1 text-[12px] font-semibold text-yellow-300 group-hover:text-accent hover:underline pt-1"
                   >
                     <span>Request Developers</span>
                     <ArrowRight className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" />
@@ -239,7 +239,7 @@ export default function Technologies() {
           </div>
           <button
             onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary to-secondary font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap cursor-pointer"
+            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap cursor-pointer"
           >
             Request Staffing
           </button>

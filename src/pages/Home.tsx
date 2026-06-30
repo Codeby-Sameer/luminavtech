@@ -195,7 +195,7 @@ export default function Home() {
             {/* Card 1: Talent */}
             <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-card">
               <div className="w-full h-full glass-panel border-default p-6 flex flex-col justify-between rounded-2xl animate-hero-float">
-                <Users className="w-8 h-8 text-secondary animate-hero-pulse-glow" />
+                <Users className="w-8 h-8 text-accent animate-hero-pulse-glow" />
                 <div>
                   <h3 className="font-display font-bold text-lg text-heading">Talent</h3>
                   <p className="text-xs text-muted mt-1">Connecting organizations with top skilled tech experts.</p>
@@ -206,7 +206,7 @@ export default function Home() {
             {/* Card 2: Technology */}
             <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-card">
               <div className="w-full h-full glass-panel border-default p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-1.5s' }}>
-                <Cpu className="w-8 h-8 text-indigo-400 animate-hero-pulse-glow" style={{ animationDelay: '-1s' }} />
+                <Cpu className="w-8 h-8 text-accent animate-hero-pulse-glow" style={{ animationDelay: '-1s' }} />
                 <div>
                   <h3 className="font-display font-bold text-lg text-heading">Technology</h3>
                   <p className="text-xs text-muted mt-1">Harnessing tech tools and expert engineering pools.</p>
@@ -217,7 +217,7 @@ export default function Home() {
             {/* Card 3: Innovation */}
             <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-card">
               <div className="w-full h-full glass-panel border-default p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-3s' }}>
-                <Bot className="w-8 h-8 text-secondary animate-hero-pulse-glow" style={{ animationDelay: '-2s' }} />
+                <Bot className="w-8 h-8 text-accent animate-hero-pulse-glow" style={{ animationDelay: '-2s' }} />
                 <div>
                   <h3 className="font-display font-bold text-lg text-heading">Innovation</h3>
                   <p className="text-xs text-muted mt-1">Leveraging AI insights for intelligent matchmaking.</p>
@@ -228,7 +228,7 @@ export default function Home() {
             {/* Card 4: Growth */}
             <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-card">
               <div className="w-full h-full glass-panel border-default p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-4.2s' }}>
-                <Zap className="w-8 h-8 text-primary animate-hero-pulse-glow" style={{ animationDelay: '-3s' }} />
+                <Zap className="w-8 h-8 text-accent animate-hero-pulse-glow" style={{ animationDelay: '-3s' }} />
                 <div>
                   <h3 className="font-display font-bold text-lg text-heading">Growth</h3>
                   <p className="text-xs text-muted mt-1">Scaling business operations and project delivery.</p>
@@ -241,14 +241,14 @@ export default function Home() {
               ref={mergedHeroContentRef}
               className="merged-hero-content absolute text-center pointer-events-none opacity-0 select-none max-w-4xl px-4 z-30"
             >
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-secondary mb-6 uppercase tracking-widest font-display">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-xs font-semibold text-accent mb-6 uppercase tracking-widest font-display">
                 <Bot className="w-4 h-4 animate-pulse" />
                 <span>Next-Gen Talent Acquisition</span>
               </div>
 
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-heading leading-tight">
                 Powering Business Growth Through{' '}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent to-yellow-600 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">
                   People & Technology
                 </span>
               </h1>
@@ -266,7 +266,7 @@ export default function Home() {
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <button
-                  className="px-8 py-4 rounded-xl btn-yellow bg-white text-primary border border-blue-200 hover:bg-slate-50 flex items-center justify-center gap-2 cursor-pointer"
+                  className="px-8 py-4 rounded-xl btn-yellow bg-white text-accent border border-blue-200 hover:bg-slate-50 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   Explore Services
                 </button>
@@ -335,7 +335,7 @@ export default function Home() {
               return (
                 <motion.div
                   key={idx}
-                  className="p-8 rounded-2xl bg-white glass-panel-hover flex flex-col text-left space-y-4 shadow-card border-default relative group overflow-hidden cursor-pointer"
+                  className="p-8 rounded-2xl bg-white glass-panel-hover flex flex-col text-left space-y-4 border-default relative group overflow-hidden cursor-pointer"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
@@ -343,13 +343,11 @@ export default function Home() {
                   whileHover={{ y: -5 }}
                 >
                   {/* Glowing background spot for hover */}
-                  <div className="absolute -top-12 -left-12 w-24 h-24 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all" />
-
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary group-hover:scale-110 group-hover:bg-blue-600/25 transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:scale-110 group-hover:bg-yellow-600/25 transition-all">
                     <Icon className="w-6 h-6" />
                   </div>
 
-                  <h3 className="font-display font-semibold text-lg text-slate-900 group-hover:text-secondary transition-colors">
+                  <h3 className="font-display font-semibold text-lg text-slate-900 group-hover:text-accent transition-colors">
                     {svc.title}
                   </h3>
 
@@ -365,7 +363,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <button
               onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}
-              className="px-8 py-3.5 rounded-xl bg-blue-600 text-white inline-flex items-center gap-2 cursor-pointer"
+              className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent to-yellow-600 text-white inline-flex items-center gap-2 cursor-pointer"
             >
               View All Services
               <ArrowRight className="w-4 h-4" />
@@ -396,12 +394,12 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
               >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-blue-500/10 transition-all" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-full blur-xl group-hover:bg-blue-500/10 transition-all" />
                 <div className="space-y-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary">
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="font-display font-bold text-xl text-slate-800 group-hover:text-secondary transition-colors">
+                  <h3 className="font-display font-bold text-xl text-slate-800 group-hover:text-accent transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-sm text-slate-600 leading-relaxed font-light">
@@ -430,7 +428,7 @@ export default function Home() {
                 ) : (
                   <span>0</span>
                 )}
-                <span className="text-blue-900">{metric.suffix}</span>
+                <span className="text-yellow-600">{metric.suffix}</span>
               </div>
               <p className="text-muted text-xs sm:text-sm font-light uppercase tracking-wider font-display">
                 {metric.label}
@@ -442,7 +440,7 @@ export default function Home() {
 
       {/* 10. Enterprise CTA Section */}
       <section className="relative  z-10">
-        <div className=" mx-auto bg-primary py-12 text-center relative overflow-hidden shadow-card">
+        <div className=" mx-auto bg-accent py-12 text-center relative overflow-hidden shadow-card">
           {/* Animated node grid background */}
           <div className="absolute inset-0 opacity-15 animated-grid pointer-events-none" />
           <div className="glow-spot glow-blue w-[400px] h-[400px] -bottom-20 -right-20" />
@@ -457,7 +455,7 @@ export default function Home() {
             <div className="pt-4">
               <button
                 onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-accent to-yellow-600 text-white font-bold text-sm tracking-wider uppercase inline-flex items-center gap-3 cursor-pointer"
+                className="px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-blue-600 text-white font-bold text-sm tracking-wider uppercase inline-flex items-center gap-3 cursor-pointer"
               >
                 Schedule Consultation
                 <Calendar className="w-4 h-4" />
