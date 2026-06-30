@@ -294,7 +294,7 @@ export default function Home() {
           {/* Right Column content */}
           <div ref={aboutRightRef} className="lg:col-span-7 text-left space-y-6 text-body leading-relaxed text-base font-light">
             <p>
-              At LuminaVTech, we believe that great businesses are built by great people. As a trusted IT staffing and workforce solutions partner, we specialize in connecting organizations with highly skilled technology professionals who help drive innovation, efficiency, and growth.
+              At LuminaVTech,  As a trusted IT staffing and workforce solutions partner, we specialize in connecting organizations with highly skilled technology professionals who help drive innovation, efficiency, and growth.
             </p>
             <p>
               Our expertise lies in understanding the unique talent needs of modern businesses and delivering customized staffing solutions that support both short-term projects and long-term strategic goals. With a strong network of qualified IT professionals and a commitment to excellence, we help companies build agile, high-performing teams that can thrive in today's rapidly evolving digital landscape.

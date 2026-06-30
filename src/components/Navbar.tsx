@@ -135,7 +135,7 @@ export default function Navbar() {
             className="group relative px-6 py-2.5 text-slate-50 rounded-full text-xs font-semibold uppercase tracking-wider overflow-hidden bg-gradient-to-r from-yellow-500 to-yellow-600 flex items-center gap-2"
           >
             <span className="relative z-10 flex items-center gap-2">
-              Talk To Experts
+             Connect with Us
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </span>
           </Link>

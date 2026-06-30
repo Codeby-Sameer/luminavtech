@@ -11,7 +11,7 @@ Your Trusted Partner in IT Staffing & Workforce Solutions.
 
 About US:
 1Who We Are
-At LuminaVTech, we believe that great businesses are built by great people. As a trusted IT staffing and workforce solutions partner, we specialize in connecting organizations with highly skilled technology professionals who help drive innovation, efficiency, and growth.
+At LuminaVTech,  As a trusted IT staffing and workforce solutions partner, we specialize in connecting organizations with highly skilled technology professionals who help drive innovation, efficiency, and growth.
 Our expertise lies in understanding the unique talent needs of modern businesses and delivering customized staffing solutions that support both short-term projects and long-term strategic goals. With a strong network of qualified IT professionals and a commitment to excellence, we help companies build agile, high-performing teams that can thrive in today's rapidly evolving digital landscape. We also leverage AI-driven talent insights to better align candidate skills with evolving job requirements, enabling more precise and efficient hiring decisions. Additionally, we use intelligent sourcing methods to identify niche technology professionals faster across competitive talent markets.
 At LuminaVTech, integrity, collaboration, and client success are at the core of everything we do. We are dedicated to creating meaningful partnerships, delivering exceptional talent, and helping businesses achieve sustainable success through the power of people and technology.
 2 – Partnership & Business Success Focused
