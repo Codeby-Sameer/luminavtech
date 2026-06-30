@@ -132,7 +132,7 @@ body {
 .glass-panel-hover:hover {
   background: rgba(46, 49, 51, 0.9);
   border-color: rgba(11, 59, 140, 0.3);
-  box-shadow: 0 4px 20px 0 rgba(11, 59, 140, 0.25);
+  box-shadow: 0 4px 20px 0 rgba(252, 216, 35, 0.881);
 }
 
 /* Custom Scrollbar */

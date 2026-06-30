@@ -40,12 +40,7 @@ export default function Footer() {
               className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 border border-default hover:border-blue-300 flex items-center justify-center text-muted hover:text-primary transition-all">
               <LinkedInIcon className="w-4 h-4" />
             </a>
-            {/* <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 border border-default hover:border-blue-300 flex items-center justify-center text-muted hover:text-primary transition-all">
-              <X className="w-4 h-4" />
-            </a>
-            <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 border border-default hover:border-blue-300 flex items-center justify-center text-muted hover:text-primary transition-all">
-              <ArrowRight className="w-4 h-4" />
-            </a> */}
+
           </div>
         </div>
 

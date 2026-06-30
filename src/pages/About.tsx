@@ -129,7 +129,7 @@ export default function About() {
                   className={`lg:col-span-4 flex items-center gap-6 ${isEven ? 'lg:order-1' : 'lg:order-2'
                     }`}
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shadow-[0_0_15px_rgba(37,99,235,0.15)]">
+                  <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>

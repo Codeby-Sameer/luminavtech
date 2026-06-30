@@ -21,12 +21,12 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl space-y-6"
         >
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-secondary">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-xs font-semibold text-accent">
             <span>Corporate Communications</span>
           </div>
           <h1 className="font-display font-black text-4xl sm:text-6xl text-heading tracking-tight leading-tight">
             Connect With{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent to-yellow-600">
               Our Specialists
             </span>
           </h1>
@@ -42,7 +42,7 @@ export default function Contact() {
           {/* Left info column */}
           <div className="lg:col-span-5 text-left space-y-8">
             <div className="space-y-4">
-              <div className="text-primary font-bold text-xs uppercase tracking-widest font-display">Get in Touch</div>
+              <div className="text-accent font-bold text-xs uppercase tracking-widest font-display">Get in Touch</div>
               <h2 className="font-display font-bold text-3xl sm:text-5xl text-heading">Let’s Build Together</h2>
               <p className="text-heading font-light text-sm sm:text-base leading-relaxed">
                 We welcome the opportunity to learn about your hiring challenges and business goals. Share your requirements with us, and our team will work closely with you to deliver the right IT staffing solutions that support your success.
@@ -51,7 +51,7 @@ export default function Contact() {
 
             <div className="space-y-8">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
@@ -61,7 +61,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
@@ -71,7 +71,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -80,7 +80,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -94,11 +94,11 @@ export default function Contact() {
           {/* Right form column */}
           <div className="lg:col-span-7">
             <div className="p-8 sm:p-10 rounded-card bg-surface border border-default shadow-card relative overflow-hidden text-left">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-2xl" />
 
               {formSubmitted ? (
                 <div className="py-16 text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-secondary mx-auto">
+                  <div className="w-16 h-16 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-accent mx-auto">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="font-display font-bold text-2xl text-heading">Consultation Requested</h3>
@@ -121,7 +121,7 @@ export default function Contact() {
                         type="text"
                         id="name"
                         required
-                        className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-primary text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-primary"
+                        className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-accent text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-accent"
                         placeholder="John Doe"
                       />
                     </div>
@@ -131,7 +131,7 @@ export default function Contact() {
                         type="email"
                         id="email"
                         required
-                        className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-primary text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-primary"
+                        className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-accent text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-accent"
                         placeholder="john@enterprise.com"
                       />
                     </div>
@@ -143,7 +143,7 @@ export default function Contact() {
                       <input
                         type="tel"
                         id="phone"
-                        className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-primary text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-primary"
+                        className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-accent text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-accent"
                         placeholder="+1 (555) 000-0000"
                       />
                     </div>
@@ -153,7 +153,7 @@ export default function Contact() {
                         type="text"
                         id="company"
                         required
-                        className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-primary text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-primary"
+                        className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-accent text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-accent"
                         placeholder="Enterprise Inc."
                       />
                     </div>
@@ -165,14 +165,14 @@ export default function Contact() {
                       id="message"
                       rows={4}
                       required
-                      className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-primary text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-primary resize-none"
+                      className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-accent text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-accent resize-none"
                       placeholder="Tell us about the roles or consultation services you need..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-secondary font-semibold text-sm tracking-wider uppercase text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all cursor-pointer flex items-center justify-center gap-2"
+                    className="w-full py-4 rounded-xl bg-gradient-to-r from-accent to-yellow-600 font-semibold text-sm tracking-wider uppercase text-white  hover:-translate-y-0.5 transition-all cursor-pointer flex items-center justify-center gap-2"
                   >
                     Send Message
                     <ArrowRight className="w-4 h-4" />

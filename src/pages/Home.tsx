@@ -116,10 +116,10 @@ export default function Home() {
     { title: 'Diversity Hiring', icon: UserCheck, desc: 'Build inclusive, high-performing technology teams through strategic diversity hiring initiatives.' },
     { title: 'Technology Talent Consulting', icon: Zap, desc: 'Make informed hiring decisions with expert talent insights and workforce planning strategies.' },
     { title: 'Offshore & Nearshore Staffing', icon: GlobeIcon, desc: 'Expand your talent pool with access to qualified technology professionals across cost-effective global markets.' },
-    { title: 'Managed Staffing Services', icon: Network, desc: 'Simplify workforce management, vendor coordination, and optimize contingent labor programs.' },
-    { title: 'Talent Mapping', icon: Database, desc: 'Gain valuable insights into talent availability, hiring trends, compensation benchmarks, and competitors.' },
-    { title: 'Project-Based Staffing', icon: TerminalIcon, desc: 'Access developers, architects, and project managers to deliver critical technology projects on time.' },
-    { title: 'Digital Transformation Consulting', icon: Cloud, desc: 'Assess systems, optimize legacy processes, and implement modern cloud strategies to drive growth.' },
+    // { title: 'Managed Staffing Services', icon: Network, desc: 'Simplify workforce management, vendor coordination, and optimize contingent labor programs.' },
+    // { title: 'Talent Mapping', icon: Database, desc: 'Gain valuable insights into talent availability, hiring trends, compensation benchmarks, and competitors.' },
+    // { title: 'Project-Based Staffing', icon: TerminalIcon, desc: 'Access developers, architects, and project managers to deliver critical technology projects on time.' },
+    // { title: 'Digital Transformation Consulting', icon: Cloud, desc: 'Assess systems, optimize legacy processes, and implement modern cloud strategies to drive growth.' },
   ]
 
 
@@ -394,7 +394,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
               >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-full blur-xl group-hover:bg-blue-500/10 transition-all" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-full blur-xl group-hover:bg-yellow-500/10 transition-all" />
                 <div className="space-y-4">
                   <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
                     <Icon className="w-5 h-5" />
@@ -422,7 +422,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {metrics.map((metric, idx) => (
             <div key={idx} className="text-center space-y-2">
-              <div className="font-display font-black text-4xl sm:text-6xl text-heading tracking-tight drop-shadow-[0_0_15px_rgba(59,130,246,0.25)]">
+              <div className="font-display font-black text-4xl sm:text-6xl text-heading tracking-tight ">
                 {metricsInView ? (
                   <CountUpComponent start={0} end={metric.value} duration={3} delay={0.2} />
                 ) : (
