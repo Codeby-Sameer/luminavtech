@@ -1,6 +1,23 @@
 import { useEffect, useRef } from 'react'
 
 export default function Globe() {
+  const getThemeColor = (varName: string, defaultColor: string) => {
+    if (typeof window === 'undefined') return defaultColor
+    const val = getComputedStyle(document.documentElement).getPropertyValue(varName).trim()
+    return val || defaultColor
+  }
+
+  const hexToRgba = (hex: string, alpha: number) => {
+    hex = hex.replace('#', '')
+    if (hex.length === 3) {
+      hex = hex.split('').map((char) => char + char).join('')
+    }
+    const r = parseInt(hex.substring(0, 2), 16) || 0
+    const g = parseInt(hex.substring(2, 4), 16) || 0
+    const b = parseInt(hex.substring(4, 6), 16) || 0
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`
+  }
+
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
   useEffect(() => {
@@ -40,11 +57,11 @@ export default function Globe() {
 
     // Highlighted hubs (representing Global Capability Centers / Talent hubs)
     const hubs = [
-      { lat: 0.7, lon: 4.8, name: 'North America', color: '#60a5fa' },
-      { lat: 0.9, lon: 1.2, name: 'Europe', color: '#3b82f6' },
-      { lat: 0.2, lon: 2.5, name: 'India Hub', color: '#2563eb' },
-      { lat: -0.4, lon: 3.1, name: 'APAC Talent', color: '#38bdf8' },
-      { lat: -0.2, lon: 0.8, name: 'Nearshore LatAm', color: '#60a5fa' },
+      { lat: 0.7, lon: 4.8, name: 'North America', colorVar: '--primary', defaultColor: '#0B3B8C' },
+      { lat: 0.9, lon: 1.2, name: 'Europe', colorVar: '--secondary', defaultColor: '#3E6FB6' },
+      { lat: 0.2, lon: 2.5, name: 'India Hub', colorVar: '--accent', defaultColor: '#D4A017' },
+      { lat: -0.4, lon: 3.1, name: 'APAC Talent', colorVar: '--secondary', defaultColor: '#3E6FB6' },
+      { lat: -0.2, lon: 0.8, name: 'Nearshore LatAm', colorVar: '--primary', defaultColor: '#0B3B8C' },
     ]
 
     let angleX = 0.003
@@ -128,7 +145,9 @@ export default function Globe() {
 
       // Draw background glow under globe
       const bgGlow = ctx.createRadialGradient(cx, cy, radius * 0.5, cx, cy, radius * 1.5)
-      bgGlow.addColorStop(0, 'rgba(37, 99, 235, 0.05)')
+      const primaryColor = getThemeColor('--primary', '#0B3B8C');
+      const secondaryColor = getThemeColor('--secondary', '#3E6FB6');
+      bgGlow.addColorStop(0, hexToRgba(primaryColor, 0.05))
       bgGlow.addColorStop(1, 'transparent')
       ctx.fillStyle = bgGlow
       ctx.beginPath()
@@ -155,12 +174,12 @@ export default function Globe() {
 
         ctx.beginPath()
         ctx.arc(screenX, screenY, Math.max(0.5, scale * 1.2), 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(96, 165, 250, ${alpha})`
+        ctx.fillStyle = hexToRgba(secondaryColor, alpha)
         ctx.fill()
       })
 
       // Draw connections (meridians and parallels)
-      ctx.strokeStyle = 'rgba(59, 130, 246, 0.06)'
+      ctx.strokeStyle = hexToRgba(primaryColor, 0.06)
       ctx.lineWidth = 0.5
       
       // Draw latitude circles
@@ -209,16 +228,16 @@ export default function Globe() {
           // Inner solid dot
           ctx.beginPath()
           ctx.arc(screenX, screenY, scale * 3.5, 0, Math.PI * 2)
-          ctx.fillStyle = hub.color
+          ctx.fillStyle = getThemeColor(hub.colorVar, hub.defaultColor)
           ctx.shadowBlur = 10
-          ctx.shadowColor = hub.color
+          ctx.shadowColor = getThemeColor(hub.colorVar, hub.defaultColor)
           ctx.fill()
           ctx.shadowBlur = 0 // reset shadow
 
           // Outer pulsing ring
           ctx.beginPath()
           ctx.arc(screenX, screenY, scale * (3.5 + pulse), 0, Math.PI * 2)
-          ctx.strokeStyle = hub.color
+          ctx.strokeStyle = getThemeColor(hub.colorVar, hub.defaultColor)
           ctx.lineWidth = 1
           ctx.stroke()
 

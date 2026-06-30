@@ -107,10 +107,10 @@ export default function TrustStrip() {
   }, [isHovered, slides.length]);
 
   return (
-    <section className="w-full border-y border-white/5 overflow-hidden relative">
+    <section className="w-full border-y border-default py-6 bg-white overflow-hidden relative">
       <div className=" mx-auto px-6 mb-6 relative z-20">
         <SmoothScroll >
-          <p className="text-center  text-xs md:text-sm font-semibold text-slate-900 uppercase tracking-widest">
+          <p className="text-center  text-xs md:text-sm font-semibold text-slate-600 uppercase tracking-widest">
             Trust Credentials & Client Portfolio
           </p>
         </SmoothScroll>

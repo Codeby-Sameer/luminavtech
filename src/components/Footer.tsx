@@ -17,10 +17,8 @@ const LinkedInIcon = ({ className = "w-6 h-6" }) => (
 );
 export default function Footer() {
   return (
-    <footer className="relative bg-white border-t border-slate-200 pt-14 pb-10 overflow-hidden z-10">
-      {/* Background radial glow */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-yellow-100/40 rounded-full blur-[100px] pointer-events-none -z-10" />
+    <footer className="relative bg-white border-t border-default pt-14 pb-10 overflow-hidden z-10">
+
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10 ">
         {/* Column 1: Brand Info */}
@@ -32,20 +30,20 @@ export default function Footer() {
           >
             <img src="/luminavtechlogo.png" alt="Logo" className="h-20 md:h-26 transition-all duration-300 group-hover:scale-110" />
           </Link>
-          <p className="text-sm text-slate-600 leading-relaxed">
+          <p className="text-sm text-slate-600  leading-relaxed">
             LuminaVTech is a specialized IT staffing and consulting organization dedicated to helping businesses access top-tier technology talent.
           </p>
           <div className="flex space-x-4">
             <a href="https://www.linkedin.com/company/luminavtech-llc"
               target='_blank'
               rel='noopener noreferrer'
-              className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 flex items-center justify-center text-slate-500 hover:text-blue-600 transition-all">
+              className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 border border-default hover:border-blue-300 flex items-center justify-center text-muted hover:text-primary transition-all">
               <LinkedInIcon className="w-4 h-4" />
             </a>
-            {/* <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 flex items-center justify-center text-slate-500 hover:text-blue-600 transition-all">
+            {/* <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 border border-default hover:border-blue-300 flex items-center justify-center text-muted hover:text-primary transition-all">
               <X className="w-4 h-4" />
             </a>
-            <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 flex items-center justify-center text-slate-500 hover:text-blue-600 transition-all">
+            <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 border border-default hover:border-blue-300 flex items-center justify-center text-muted hover:text-primary transition-all">
               <ArrowRight className="w-4 h-4" />
             </a> */}
           </div>
@@ -53,13 +51,13 @@ export default function Footer() {
 
         {/* Column 2: Navigation Links */}
         <div className="space-y-6">
-          <h4 className="text-sm font-semibold tracking-wider uppercase text-slate-900 font-display">Navigation</h4>
+          <h4 className="text-sm font-semibold tracking-wider uppercase text-slate-800 font-display">Navigation</h4>
           <ul className="space-y-3">
             <li>
               <Link
                 to="/"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="text-sm text-slate-600 hover:text-blue-600 transition-colors text-left block"
+                className="text-sm text-slate-600 hover:text-primary transition-colors text-left block"
               >
                 Home Page
               </Link>
@@ -68,7 +66,7 @@ export default function Footer() {
               <Link
                 to="/services"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="text-sm text-slate-600 hover:text-blue-600 transition-colors text-left block"
+                className="text-sm text-slate-600 hover:text-primary transition-colors text-left block"
               >
                 Our Services
               </Link>
@@ -77,7 +75,7 @@ export default function Footer() {
               <Link
                 to="/about"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="text-sm text-slate-600 hover:text-blue-600 transition-colors text-left block"
+                className="text-sm text-slate-600 hover:text-primary transition-colors text-left block"
               >
                 About LuminaVTech
               </Link>
@@ -86,7 +84,7 @@ export default function Footer() {
               <Link
                 to="/contact"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="text-sm text-slate-600 hover:text-blue-600 transition-colors text-left block"
+                className="text-sm text-slate-600 hover:text-primary transition-colors text-left block"
               >
                 Contact Us
               </Link>
@@ -96,7 +94,7 @@ export default function Footer() {
 
         {/* Column 3: Core Offerings */}
         <div className="space-y-6">
-          <h4 className="text-sm font-semibold tracking-wider uppercase text-slate-900 font-display">Core Offerings</h4>
+          <h4 className="text-sm font-semibold tracking-wider uppercase text-slate-800 font-display">Core Offerings</h4>
           <ul className="space-y-3">
             <li className="text-sm text-slate-600">AI Talent Solutions</li>
             <li className="text-sm text-slate-600">Specialized IT Staffing</li>
@@ -107,27 +105,27 @@ export default function Footer() {
 
         {/* Column 4: Contact Information */}
         <div className="space-y-6">
-          <h4 className="text-sm font-semibold tracking-wider uppercase text-slate-900 font-display">Enterprise Contact</h4>
+          <h4 className="text-sm font-semibold tracking-wider uppercase text-slate-800 font-display">Enterprise Contact</h4>
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
-              <MapPin className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" />
+              <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
               <span className="text-sm text-slate-600 leading-relaxed">
                 320 Decker Dr, Suite 131, Irving, TX, 75062.
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <MapPin className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" />
+              <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
               <span className="text-sm text-slate-600 leading-relaxed">
 
                 #407, 4th floor, Capital park, Hitech city, Hyderabad 500081
               </span>
             </li>
             <li className="flex items-center gap-3">
-              <Phone className="w-4 h-4 text-blue-600 shrink-0" />
+              <Phone className="w-4 h-4 text-primary shrink-0" />
               <span className="text-sm text-slate-600">+1 (800) 555-0199</span>
             </li>
             <li className="flex items-center gap-3">
-              <Mail className="w-4 h-4 text-blue-600 shrink-0" />
+              <Mail className="w-4 h-4 text-primary shrink-0" />
               <span className="text-sm text-slate-600">info@luminavtech.com</span>
             </li>
           </ul>
@@ -135,13 +133,13 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-slate-500">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-default flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-xs text-muted">
           © {new Date().getFullYear()} LuminaVTech. All rights reserved.
         </p>
         <div className="flex space-x-6">
-          <Link to="/privacy" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-xs text-slate-500 hover:text-slate-800 transition-colors">Privacy Policy</Link>
-          <Link to="/terms" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-xs text-slate-500 hover:text-slate-800 transition-colors">Terms of Service</Link>
+          <Link to="/privacy" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-xs text-muted hover:text-slate-600 transition-colors">Privacy Policy</Link>
+          <Link to="/terms" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-xs text-muted hover:text-slate-600 transition-colors">Terms of Service</Link>
         </div>
       </div>
     </footer>

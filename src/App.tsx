@@ -19,7 +19,7 @@ function App() {
 
   return (
     <SmoothScroll>
-      <div className="flex flex-col min-h-screen bg-white text-slate-900 overflow-x-hidden selection:bg-blue-600 selection:text-white">
+      <div className="flex flex-col min-h-screen bg-background text-body overflow-x-hidden selection:bg-primary selection:text-white">
         {/* Navigation Bar */}
         <Navbar />
 

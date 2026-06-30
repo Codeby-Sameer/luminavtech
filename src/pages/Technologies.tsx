@@ -139,7 +139,7 @@ export default function Technologies() {
   ]
 
   return (
-    <div className="relative w-full pt-32 pb-12 bg-gray-200 overflow-hidden text-left">
+    <div className="relative w-full pt-32 pb-12 bg-background overflow-hidden text-left">
       {/* Background Gradients */}
       <div className="glow-spot glow-blue w-[700px] h-[700px] -top-20 -left-20" />
       <div className="glow-spot glow-purple w-[600px] h-[600px] top-1/3 right-0" />
@@ -153,16 +153,16 @@ export default function Technologies() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl space-y-6"
         >
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-secondary">
             <span>Our Tech Expertise</span>
           </div>
-          <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-900 tracking-tight leading-tight">
+          <h1 className="font-display font-black text-4xl sm:text-6xl text-heading tracking-tight leading-tight">
             Next-Gen Technology{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-700">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
               Capabilities
             </span>
           </h1>
-          <p className="text-slate-800 text-lg md:text-xl font-light leading-relaxed">
+          <p className="text-body text-lg md:text-xl font-light leading-relaxed">
             Harness the power of leading-edge technologies. We supply specialized engineering talent and implement custom consulting solutions across major enterprise verticals.
           </p>
         </motion.div>
@@ -170,7 +170,7 @@ export default function Technologies() {
 
       {/* Technologies Grid */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {techStack.map((tech, idx) => {
             const IconComp = tech.icon
             return (
@@ -180,35 +180,35 @@ export default function Technologies() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.4, delay: idx * 0.03 }}
-                className="p-6 rounded-2xl bg-white border-slate-200 shadow-xl flex flex-col justify-between group hover:border-blue-500/20 transition-all cursor-pointer relative overflow-hidden"
+                className="p-6 rounded-card bg-surface border border-default shadow-card flex flex-col justify-between group hover:border-primary transition-all cursor-pointer relative overflow-hidden"
               >
                 {/* Micro glow spot */}
-                <div className="absolute -top-10 -left-10 w-20 h-20 bg-blue-500/5 rounded-full blur-lg group-hover:bg-blue-500/15 transition-all" />
+                <div className="absolute -top-10 -left-10 w-20 h-20 bg-primary/5 rounded-full blur-lg group-hover:bg-primary/15 transition-all" />
 
                 <div className="space-y-4">
                   {/* Icon */}
-                  <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 group-hover:scale-105 transition-all">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary group-hover:scale-105 transition-all">
                     <IconComp className="w-5 h-5" />
                   </div>
 
                   {/* Title & Desc */}
                   <div className="space-y-2">
-                    <h3 className="font-display font-bold text-lg text-slate-900 group-hover:text-blue-400 transition-colors">
+                    <h3 className="font-display font-bold text-lg text-heading group-hover:text-secondary transition-colors">
                       {tech.title}
                     </h3>
-                    <p className="text-xs text-slate-800 leading-relaxed ">
+                    <p className="text-xs text-body leading-relaxed ">
                       {tech.desc}
                     </p>
                   </div>
                 </div>
 
                 {/* Sub-tags */}
-                <div className="mt-4 pt-4 border-t border-slate-200 space-y-3">
+                <div className="mt-4 pt-4 border-t border-default space-y-3">
                   <div className="flex flex-wrap gap-1">
                     {tech.tags.map((tag, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-2 py-1 rounded bg-slate-100 text-[9px] font-semibold text-slate-500 border border-slate-200"
+                        className="px-2 py-1 rounded bg-primary text-slate-100 text-[10px] font-semibold border border-primary"
                       >
                         {tag}
                       </span>
@@ -216,7 +216,7 @@ export default function Technologies() {
                   </div>
                   <div
                     onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-                    className="flex items-center gap-1 text-[12px] font-semibold text-blue-500 group-hover:text-blue-400 hover:underline pt-1"
+                    className="flex items-center gap-1 text-[12px] font-semibold text-blue-300 group-hover:text-secondary hover:underline pt-1"
                   >
                     <span>Request Developers</span>
                     <ArrowRight className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" />
@@ -232,14 +232,14 @@ export default function Technologies() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="rounded-3xl p-8 sm:p-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="space-y-2">
-            <h3 className="font-display font-bold text-3xl text-slate-900">Looking for specialized technology expertise?</h3>
-            <p className="text-sm text-slate-800 max-w-xl">
+            <h3 className="font-display font-bold text-3xl text-heading">Looking for specialized technology expertise?</h3>
+            <p className="text-sm text-body max-w-xl">
               Partner with LuminaVTech to access elite developers, engineers, and specialists across our tech stacks.
             </p>
           </div>
           <button
             onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap cursor-pointer"
+            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary to-secondary font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap cursor-pointer"
           >
             Request Staffing
           </button>

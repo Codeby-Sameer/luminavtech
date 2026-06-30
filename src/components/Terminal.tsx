@@ -82,9 +82,9 @@ interface TerminalProps {
 
 export function Terminal({ children, className = '' }: TerminalProps) {
   return (
-    <div className={`w-full rounded-2xl border border-white/10 bg-slate-950/80 backdrop-blur-xl shadow-2xl overflow-hidden font-mono text-sm text-slate-200 relative ${className}`}>
+    <div className={`w-full rounded-2xl border border-default bg-slate-950/80 backdrop-blur-xl shadow-card overflow-hidden font-mono text-sm text-body relative ${className}`}>
       {/* Title Bar */}
-      <div className="flex items-center justify-between px-4 py-3 bg-slate-900/60 border-b border-white/5 select-none">
+      <div className="flex items-center justify-between px-4 py-3 bg-slate-900/60 border-b border-default select-none">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-[#ef4444]" />
           <div className="w-3 h-3 rounded-full bg-[#eab308]" />

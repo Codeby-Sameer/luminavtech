@@ -4,22 +4,9 @@ import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
   const location = useLocation()
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   // Close dropdown on click outside
   useEffect(() => {
@@ -65,10 +52,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
-        ? 'bg-white backdrop-blur-md border-b border-slate-200 py-2 shadow-sm'
-        : 'bg-transparent  py-2'
-        }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-white backdrop-blur-md border-b border-default py-2 shadow-sm`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Logo */}
@@ -94,8 +78,8 @@ export default function Navbar() {
                   <button
                     onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
                     className={`flex items-center gap-1 px-4 py-2 text-sm font-medium tracking-wide transition-all rounded-full cursor-pointer focus:outline-none ${isActive
-                      ? 'bg-[#f8e000] text-slate-900 font-semibold'
-                      : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
+                      ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-50 font-semibold'
+                      : 'text-slate-600 hover:bg-gradient-to-r hover:from-yellow-500 hover:to-yellow-600 hover:text-slate-50'
                       }`}
                   >
                     {item.name}
@@ -103,7 +87,7 @@ export default function Navbar() {
                   </button>
 
                   {isServicesDropdownOpen && (
-                    <div className="absolute top-full left-0 mt-2 w-48 rounded-xl bg-white border border-slate-200 shadow-xl p-2 flex flex-col space-y-1 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                    <div className="absolute top-full left-0 mt-2 w-48 rounded-xl bg-white border border-default shadow-card p-2 flex flex-col space-y-1 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                       {item.dropdownItems?.map((dropItem) => (
                         <Link
                           key={dropItem.name}
@@ -113,8 +97,8 @@ export default function Navbar() {
                             handleNavClick()
                           }}
                           className={`text-sm px-3 py-2 rounded-lg transition-colors text-left ${currentPage === dropItem.path
-                            ? 'bg-[#f8e000] text-slate-900 font-bold'
-                            : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
+                            ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-50 font-semibold'
+                            : 'text-slate-600 hover:bg-gradient-to-r hover:from-yellow-500 hover:to-yellow-600 hover:text-slate-50'
                             }`}
                         >
                           {dropItem.name}
@@ -133,8 +117,8 @@ export default function Navbar() {
                 to={item.path!}
                 onClick={handleNavClick}
                 className={`px-4 py-2 text-sm font-medium tracking-wide transition-all rounded-full cursor-pointer ${isActive
-                  ? 'bg-[#f8e000] text-slate-900 font-semibold'
-                  : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
+                  ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-50 font-semibold'
+                  : 'text-slate-600 hover:bg-gradient-to-r hover:from-yellow-500 hover:to-yellow-600 hover:text-slate-50'
                   }`}
               >
                 {item.name}
@@ -148,7 +132,7 @@ export default function Navbar() {
           <Link
             to="/contact"
             onClick={handleNavClick}
-            className="group relative px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider overflow-hidden btn-yellow flex items-center gap-2"
+            className="group relative px-6 py-2.5 text-slate-50 rounded-full text-xs font-semibold uppercase tracking-wider overflow-hidden bg-gradient-to-r from-yellow-500 to-yellow-600 flex items-center gap-2"
           >
             <span className="relative z-10 flex items-center gap-2">
               Talk To Experts
@@ -160,7 +144,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-slate-600 hover:text-blue-600 transition-colors focus:outline-none"
+          className="md:hidden text-slate-600 hover:text-primary transition-colors focus:outline-none"
           aria-label="Toggle menu"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -169,7 +153,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-x-0 top-[96px] bottom-0 bg-white border-t border-slate-200 z-40 md:hidden transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 bg-white visible' : 'opacity-0 -translate-y-4  invisible'
+        className={`fixed inset-x-0 top-[96px] bottom-0 bg-white border-t border-default z-40 md:hidden transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 bg-white visible' : 'opacity-0 -translate-y-4  invisible'
           }`}
       >
         <div className="flex flex-col p-8 bg-white  space-y-2 overflow-y-auto max-h-[calc(100vh-100px)]">
@@ -180,7 +164,7 @@ export default function Navbar() {
                 <div key={item.name} className="flex flex-col">
                   <button
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                    className={`flex items-center justify-between text-lg font-medium text-left transition-colors py-2 px-4 rounded-xl focus:outline-none ${isActive ? 'bg-[#f8e000] text-slate-900 font-bold' : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
+                    className={`flex items-center justify-between text-lg font-medium text-left transition-all py-2 px-4 rounded-xl focus:outline-none ${isActive ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-50 font-semibold' : 'text-slate-600 hover:bg-gradient-to-r hover:from-yellow-500 hover:to-yellow-600 hover:text-slate-50'
                       }`}
                   >
                     <span>{item.name}</span>
@@ -194,7 +178,7 @@ export default function Navbar() {
                           key={dropItem.name}
                           to={dropItem.path}
                           onClick={handleNavClick}
-                          className={`text-base text-left transition-colors py-2 px-4 rounded-xl ${currentPage === dropItem.path ? 'bg-[#f8e000] text-slate-900 font-medium' : 'text-slate-500 hover:bg-[#f8e000] hover:text-slate-900'
+                          className={`text-base text-left transition-all py-2 px-4 rounded-xl ${currentPage === dropItem.path ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-50 font-semibold' : 'text-slate-600 hover:bg-gradient-to-r hover:from-yellow-500 hover:to-yellow-600 hover:text-slate-50'
                             }`}
                         >
                           {dropItem.name}
@@ -212,7 +196,7 @@ export default function Navbar() {
                 key={item.name}
                 to={item.path!}
                 onClick={handleNavClick}
-                className={`text-lg font-medium text-left transition-colors py-2 px-4 rounded-xl ${isActive ? 'bg-[#f8e000] text-slate-900 font-bold' : 'text-slate-600 hover:bg-[#f8e000] hover:text-slate-900'
+                className={`text-lg font-medium text-left transition-all py-2 px-4 rounded-xl ${isActive ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-50 font-semibold' : 'text-slate-600 hover:bg-gradient-to-r hover:from-yellow-500 hover:to-yellow-600 hover:text-slate-50'
                   }`}
               >
                 {item.name}
@@ -224,7 +208,7 @@ export default function Navbar() {
           <Link
             to="/contact"
             onClick={handleNavClick}
-            className="w-full mt-4 flex items-center justify-center gap-2 py-3 btn-yellow text-sm font-semibold transition-all rounded-xl"
+            className="w-full mt-4 flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-50 text-sm font-semibold transition-all rounded-xl"
           >
             Talk To Experts
             <ArrowRight className="w-4 h-4" />

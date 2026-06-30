@@ -96,6 +96,20 @@ export default function Services() {
       icon: Search,
       desc: 'Leverage advanced recruitment technologies and market intelligence to improve hiring outcomes. Our approach combines industry expertise with AI-driven candidate sourcing, talent mapping, skills assessment, and workforce analytics to identify top talent faster and more efficiently.',
       profiles: ['AI-Driven Sourcing', 'Candidate Skills Analytics', 'Predictive Hiring Success Models']
+    },
+    {
+      id: 14,
+      title: 'AI & Emerging Technology Talent Solutions',
+      icon: Cpu,
+      desc: 'Help organizations build specialized teams in Artificial Intelligence, Generative AI, Machine Learning, Data Engineering, Cloud Computing, and Cybersecurity. We connect businesses with highly skilled professionals who can accelerate innovation and support digital transformation initiatives.',
+      profiles: ['AI Specialist', 'Generative AI Developer', 'Machine Learning Engineer', 'Data Engineer', 'Cloud Architect', 'Cybersecurity Expert']
+    },
+    {
+      id: 15,
+      title: 'AI Talent Solutions',
+      icon: Bot,
+      desc: 'Build high-performing AI teams with access to specialized professionals including AI Engineers, Machine Learning Engineers, Data Scientists, Prompt Engineers, AI Architects, and Generative AI Specialists. We help organizations source and hire talent capable of delivering advanced AI initiatives.',
+      profiles: ['AI Engineer', 'ML Engineer', 'Data Scientist', 'Prompt Engineer', 'AI Architect', 'Generative AI Specialist']
     }
   ]
 
@@ -134,7 +148,7 @@ export default function Services() {
   ]
 
   return (
-    <div className="relative w-full pt-32 pb-24 bg-yellow-100 overflow-hidden text-left">
+    <div className="relative w-full pt-32 pb-24 bg-background overflow-hidden text-left">
       {/* Background Gradients */}
       <div className="glow-spot glow-blue w-[700px] h-[700px] -top-20 -left-20" />
       <div className="glow-spot glow-purple w-[600px] h-[600px] top-1/3 right-0" />
@@ -148,16 +162,16 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl space-y-6"
         >
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-xs font-semibold text-accent">
             <span>Specialized Offerings</span>
           </div>
-          <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-900 tracking-tight leading-tight">
+          <h1 className="font-display font-black text-4xl sm:text-6xl text-heading tracking-tight leading-tight">
             IT Staffing &{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent to-yellow-600">
               AI Talent Solutions
             </span>
           </h1>
-          <p className="text-slate-600 text-lg md:text-xl font-light leading-relaxed">
+          <p className="text-body text-lg md:text-xl font-light leading-relaxed">
             We deliver reliable IT staffing and consulting services that support your evolving business needs and help you stay efficient, agile, and competitive.
           </p>
         </motion.div>
@@ -175,35 +189,35 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="p-8 rounded-2xl glass-panel border-slate-200 shadow-xl flex flex-col justify-between group hover:border-blue-500/30 transition-all cursor-pointer relative overflow-hidden"
+                className="p-8 rounded-card bg-surface border border-default shadow-card flex flex-col justify-between group hover:border-accent transition-all cursor-pointer relative overflow-hidden"
               >
                 {/* Micro glow spot */}
-                <div className="absolute -top-10 -left-10 w-24 h-24 bg-blue-500/5 rounded-full blur-xl group-hover:bg-blue-500/15 transition-all" />
+                <div className="absolute -top-10 -left-10 w-24 h-24 bg-accent/5 rounded-full blur-xl group-hover:bg-accent/15 transition-all" />
 
                 <div className="space-y-6">
                   {/* Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 group-hover:bg-blue-600/25 group-hover:scale-105 transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:bg-accent/20 group-hover:scale-105 transition-all">
                     <IconComp className="w-6 h-6" />
                   </div>
 
                   {/* Title & Desc */}
                   <div className="space-y-3">
-                    <h3 className="font-display font-bold text-xl text-slate-900 group-hover:text-blue-400 transition-colors">
+                    <h3 className="font-display font-bold text-xl text-heading group-hover:text-accent transition-colors">
                       {svc.title}
                     </h3>
-                    <p className="text-sm text-slate-500 leading-relaxed font-light">
+                    <p className="text-sm text-muted leading-relaxed font-light">
                       {svc.desc}
                     </p>
                   </div>
 
                   {/* Sample profiles */}
                   <div className="pt-2">
-                    <div className="text-xs text-slate-500 font-semibold mb-2 font-display uppercase tracking-wider">Example Roles</div>
+                    <div className="text-xs text-muted  font-semibold mb-2 font-display uppercase tracking-wider">Example Roles</div>
                     <div className="flex flex-wrap gap-1.5">
                       {svc.profiles.map((role, rIdx) => (
                         <span
                           key={rIdx}
-                          className="px-2.5 py-1 rounded bg-slate-100 text-[10px] font-semibold text-slate-500 border border-slate-200"
+                          className="px-2.5 py-1 rounded-full bg-accent text-[10px] font-semibold text-white border border-accent"
                         >
                           {role}
                         </span>
@@ -214,7 +228,7 @@ export default function Services() {
 
                 <div
                   onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-                  className="flex items-center gap-1 text-xs font-semibold text-blue-500 group-hover:text-blue-400 pt-6 mt-4 border-t border-slate-200 hover:underline"
+                  className="flex items-center gap-1 text-xs font-semibold text-accent group-hover:text-accent pt-6 mt-4 border-t border-default hover:underline"
                 >
                   <span>Request Staffing</span>
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
@@ -226,12 +240,12 @@ export default function Services() {
       </div>
 
       {/* Our Commitment Section */}
-      <div className="bg-slate-50 border-y border-slate-200 py-28 relative z-10 mb-32">
+      <div className="bg-surface border-y border-default py-28 relative z-10 mb-32">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="max-w-2xl text-left space-y-4 mb-16">
-            <div className="text-blue-500 font-bold text-xs uppercase tracking-widest font-display">Quality Assured</div>
-            <h2 className="font-display font-black text-3xl sm:text-5xl text-slate-900">Our Commitments</h2>
-            <p className="text-slate-500 text-sm sm:text-base font-light">
+            <div className="text-accent font-bold text-xs uppercase tracking-widest font-display">Quality Assured</div>
+            <h2 className="font-display font-black text-3xl sm:text-5xl text-heading">Our Commitments</h2>
+            <p className="text-slate-200 text-sm sm:text-base font-light">
               We stand by our processes and partners, aiming to deliver high-quality, pre-screened IT professionals who make an impact.
             </p>
           </div>
@@ -244,12 +258,12 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="p-6 rounded-2xl glass-panel border-slate-200 text-left flex gap-4"
+                className="p-6 rounded-card bg-surface border border-default text-left flex gap-4"
               >
-                <div className="w-8 h-8 rounded-lg bg-blue-600/15 text-blue-400 flex items-center justify-center font-display font-extrabold text-sm shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-accent/15 text-accent flex items-center justify-center font-display font-extrabold text-sm shrink-0">
                   {idx + 1}
                 </div>
-                <p className="text-sm text-slate-600 leading-relaxed font-light mt-0.5">
+                <p className="text-sm text-body leading-relaxed font-light mt-0.5">
                   {cmt}
                 </p>
               </motion.div>
@@ -261,8 +275,8 @@ export default function Services() {
       {/* Our Vision Section */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 mb-20">
         <div className="text-center space-y-4 mb-16">
-          <div className="text-blue-500 font-bold text-xs uppercase tracking-widest font-display">Looking Ahead</div>
-          <h2 className="font-display font-black text-3xl sm:text-5xl text-slate-900">Our Future-Ready Vision</h2>
+          <div className="text-accent font-bold text-xs uppercase tracking-widest font-display">Looking Ahead</div>
+          <h2 className="font-display font-black text-3xl sm:text-5xl text-heading">Our Future-Ready Vision</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -275,15 +289,15 @@ export default function Services() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-8 rounded-2xl glass-panel border-slate-200 text-left space-y-4 shadow-xl hover:border-blue-500/25 transition-all group"
+                className="p-8 rounded-card bg-surface border border-default text-left space-y-4 shadow-card hover:border-accent transition-all group"
               >
-                <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 group-hover:scale-105 transition-transform">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:scale-105 transition-transform">
                   <Icon className="w-5 h-5" />
                 </div>
-                <h3 className="font-display font-bold text-lg text-slate-900 group-hover:text-blue-400 transition-colors">
+                <h3 className="font-display font-bold text-lg text-heading group-hover:text-accent transition-colors">
                   {vision.title}
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-light">
+                <p className="text-xs text-muted leading-relaxed font-light">
                   {vision.text}
                 </p>
               </motion.div>
@@ -294,16 +308,16 @@ export default function Services() {
 
       {/* CTA Box */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="rounded-3xl bg-gradient-to-r from-blue-50 to-slate-100 border border-slate-300 p-8 sm:p-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="rounded-card bg-surface border border-default shadow-card p-8 sm:p-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="space-y-2">
-            <h3 className="font-display font-bold text-2xl text-slate-900">Need custom tech recruitment solutions?</h3>
-            <p className="text-sm text-slate-500 font-light max-w-xl">
+            <h3 className="font-display font-bold text-2xl text-heading">Need custom tech recruitment solutions?</h3>
+            <p className="text-sm text-muted font-light max-w-xl">
               We help corporations construct agile technical divisions through custom contract, contract-to-hire, nearshore, or executive search campaigns.
             </p>
           </div>
           <button
             onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap cursor-pointer"
+            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent to-yellow-600 font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap cursor-pointer"
           >
             Connect With Advisors
           </button>

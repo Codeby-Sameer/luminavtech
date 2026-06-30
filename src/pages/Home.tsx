@@ -143,7 +143,7 @@ export default function Home() {
   ]
 
   return (
-    <div ref={containerRef} className="relative w-full  overflow-hidden ">
+    <div ref={containerRef} className="relative w-full  pt-10 overflow-hidden ">
       {/* Dynamic Keyframe Animations for Hero Icons */}
       <style>{`
         @keyframes heroFloat {
@@ -172,7 +172,7 @@ export default function Home() {
       {/* 1. Combined Scroll Story & Typography Hero Section */}
       <section
         ref={heroSectionRef}
-        className="relative h-screen  bg-[#242628]
+        className="relative h-screen  bg-background
         flex items-center justify-center overflow-hidden z-20"
       >
         {/* Background Grids and Particles */}
@@ -185,7 +185,7 @@ export default function Home() {
           {/* Large Scroll Typography (Scale & Opacity Zoom) */}
           <h2
             ref={heroTypographyRef}
-            className="hero-typography font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wider text-center leading-none text-slate-900 select-none whitespace-pre-line uppercase absolute z-20"
+            className="hero-typography font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wider text-center leading-none text-heading select-none whitespace-pre-line uppercase absolute z-20"
           >
             THE FUTURE{'\n'}OF TALENT{'\n'}IS HERE
           </h2>
@@ -193,45 +193,45 @@ export default function Home() {
           {/* Cards to merge */}
           <div className="relative w-full h-[400px] flex items-center justify-center z-10">
             {/* Card 1: Talent */}
-            <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-2xl">
-              <div className="w-full h-full glass-panel border-slate-300 p-6 flex flex-col justify-between rounded-2xl animate-hero-float">
-                <Users className="w-8 h-8 text-blue-400 animate-hero-pulse-glow" />
+            <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-card">
+              <div className="w-full h-full glass-panel border-default p-6 flex flex-col justify-between rounded-2xl animate-hero-float">
+                <Users className="w-8 h-8 text-secondary animate-hero-pulse-glow" />
                 <div>
-                  <h3 className="font-display font-bold text-lg text-slate-900">Talent</h3>
-                  <p className="text-xs text-slate-500 mt-1">Connecting organizations with top skilled tech experts.</p>
+                  <h3 className="font-display font-bold text-lg text-heading">Talent</h3>
+                  <p className="text-xs text-muted mt-1">Connecting organizations with top skilled tech experts.</p>
                 </div>
               </div>
             </div>
 
             {/* Card 2: Technology */}
-            <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-2xl">
-              <div className="w-full h-full glass-panel border-slate-300 p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-1.5s' }}>
+            <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-card">
+              <div className="w-full h-full glass-panel border-default p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-1.5s' }}>
                 <Cpu className="w-8 h-8 text-indigo-400 animate-hero-pulse-glow" style={{ animationDelay: '-1s' }} />
                 <div>
-                  <h3 className="font-display font-bold text-lg text-slate-900">Technology</h3>
-                  <p className="text-xs text-slate-500 mt-1">Harnessing tech tools and expert engineering pools.</p>
+                  <h3 className="font-display font-bold text-lg text-heading">Technology</h3>
+                  <p className="text-xs text-muted mt-1">Harnessing tech tools and expert engineering pools.</p>
                 </div>
               </div>
             </div>
 
             {/* Card 3: Innovation */}
-            <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-2xl">
-              <div className="w-full h-full glass-panel border-slate-300 p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-3s' }}>
-                <Bot className="w-8 h-8 text-cyan-400 animate-hero-pulse-glow" style={{ animationDelay: '-2s' }} />
+            <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-card">
+              <div className="w-full h-full glass-panel border-default p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-3s' }}>
+                <Bot className="w-8 h-8 text-secondary animate-hero-pulse-glow" style={{ animationDelay: '-2s' }} />
                 <div>
-                  <h3 className="font-display font-bold text-lg text-slate-900">Innovation</h3>
-                  <p className="text-xs text-slate-500 mt-1">Leveraging AI insights for intelligent matchmaking.</p>
+                  <h3 className="font-display font-bold text-lg text-heading">Innovation</h3>
+                  <p className="text-xs text-muted mt-1">Leveraging AI insights for intelligent matchmaking.</p>
                 </div>
               </div>
             </div>
 
             {/* Card 4: Growth */}
-            <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-2xl">
-              <div className="w-full h-full glass-panel border-slate-300 p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-4.2s' }}>
-                <Zap className="w-8 h-8 text-blue-500 animate-hero-pulse-glow" style={{ animationDelay: '-3s' }} />
+            <div className="story-card absolute w-[260px] h-[160px] rounded-2xl shadow-card">
+              <div className="w-full h-full glass-panel border-default p-6 flex flex-col justify-between rounded-2xl animate-hero-float" style={{ animationDelay: '-4.2s' }}>
+                <Zap className="w-8 h-8 text-primary animate-hero-pulse-glow" style={{ animationDelay: '-3s' }} />
                 <div>
-                  <h3 className="font-display font-bold text-lg text-slate-900">Growth</h3>
-                  <p className="text-xs text-slate-500 mt-1">Scaling business operations and project delivery.</p>
+                  <h3 className="font-display font-bold text-lg text-heading">Growth</h3>
+                  <p className="text-xs text-muted mt-1">Scaling business operations and project delivery.</p>
                 </div>
               </div>
             </div>
@@ -241,19 +241,19 @@ export default function Home() {
               ref={mergedHeroContentRef}
               className="merged-hero-content absolute text-center pointer-events-none opacity-0 select-none max-w-4xl px-4 z-30"
             >
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400 mb-6 uppercase tracking-widest font-display">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-secondary mb-6 uppercase tracking-widest font-display">
                 <Bot className="w-4 h-4 animate-pulse" />
                 <span>Next-Gen Talent Acquisition</span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-tight">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-heading leading-tight">
                 Powering Business Growth Through{' '}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">
                   People & Technology
                 </span>
               </h1>
 
-              <p className="text-slate-600 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto mt-6">
+              <p className="text-body text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto mt-6">
                 Delivering IT Staffing, AI Talent Solutions, Workforce Consulting and Specialized Technology Recruitment for modern enterprises.
               </p>
 
@@ -266,7 +266,7 @@ export default function Home() {
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <button
-                  className="px-8 py-4 rounded-xl btn-yellow bg-white text-blue-600 border border-blue-200 hover:bg-slate-50 flex items-center justify-center gap-2 cursor-pointer"
+                  className="px-8 py-4 rounded-xl btn-yellow bg-white text-primary border border-blue-200 hover:bg-slate-50 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   Explore Services
                 </button>
@@ -279,20 +279,20 @@ export default function Home() {
       {/* 3. About LuminaVTech (Timeline / Split Entrance) */}
       <section
         ref={splitAboutSectionRef}
-        className="relative  bg-gradient-to-b from-yellow-100 via-yellow-50 to-blue-50 py-12 px-6 md:px-12  mx-auto z-10 overflow-hidden"
+        className="relative  bg-surface border-y border-default py-12 px-6 md:px-12  mx-auto z-10 overflow-hidden"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column heading */}
           <div ref={aboutLeftRef} className="lg:col-span-5 space-y-6 text-left">
-            <div className="text-blue-500 font-bold text-xs uppercase tracking-widest font-display">Who We Are</div>
-            <h2 className="font-display font-bold text-3xl sm:text-5xl text-slate-900 leading-tight">
+            <div className="text-accent font-bold text-xs uppercase tracking-widest font-display">Who We Are</div>
+            <h2 className="font-display font-bold text-3xl sm:text-5xl text-heading leading-tight">
               Delivering Premium IT Staffing & AI Talent Solutions
             </h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded" />
+            <div className="w-16 h-1 bg-gradient-to-r from-yellow-700 to-accent rounded" />
           </div>
 
           {/* Right Column content */}
-          <div ref={aboutRightRef} className="lg:col-span-7 text-left space-y-6 text-slate-600 leading-relaxed text-base font-light">
+          <div ref={aboutRightRef} className="lg:col-span-7 text-left space-y-6 text-body leading-relaxed text-base font-light">
             <p>
               At LuminaVTech, we believe that great businesses are built by great people. As a trusted IT staffing and workforce solutions partner, we specialize in connecting organizations with highly skilled technology professionals who help drive innovation, efficiency, and growth.
             </p>
@@ -304,7 +304,7 @@ export default function Home() {
             </p>
             <button
               onClick={() => { navigate('/about'); window.scrollTo(0, 0); }}
-              className="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition-colors mt-2"
+              className="inline-flex items-center gap-2 text-accent font-semibold hover:text-blue-900 transition-colors mt-2"
             >
               Read Company Story
               <ArrowRight className="w-4 h-4" />
@@ -312,18 +312,18 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='py-8 '>
-        <TrustStrip/>
+      <section className=''>
+        <TrustStrip />
       </section>
 
       {/* 4. Services Section */}
-      <section className="relative py-14 bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200 border-y border-slate-200 z-10">
+      <section className="relative py-14 bg-background border-y border-default z-10">
         <div className="absolute inset-0 animated-grid opacity-30 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative">
           <div className="text-center space-y-4 mb-16">
-            <div className="text-black font-bold text-xs uppercase tracking-widest font-display">Specialized Capabilities</div>
-            <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-slate-900">Our Staffing & AI Services</h2>
-            <p className="text-black max-w-2xl mx-auto text-sm sm:text-base">
+            <div className="text-white font-bold text-xs uppercase tracking-widest font-display">Specialized Capabilities</div>
+            <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-heading">Our Staffing & AI Services</h2>
+            <p className="text-white max-w-2xl mx-auto text-sm sm:text-base">
               We deliver reliable IT staffing and consulting services that support your evolving business needs and help you stay efficient, agile, and competitive.
             </p>
           </div>
@@ -335,7 +335,7 @@ export default function Home() {
               return (
                 <motion.div
                   key={idx}
-                  className="p-8 rounded-2xl bg-white glass-panel-hover flex flex-col text-left space-y-4 shadow-xl border-slate-200 relative group overflow-hidden cursor-pointer"
+                  className="p-8 rounded-2xl bg-white glass-panel-hover flex flex-col text-left space-y-4 shadow-card border-default relative group overflow-hidden cursor-pointer"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
@@ -345,22 +345,18 @@ export default function Home() {
                   {/* Glowing background spot for hover */}
                   <div className="absolute -top-12 -left-12 w-24 h-24 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all" />
 
-                  <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-600/25 transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary group-hover:scale-110 group-hover:bg-blue-600/25 transition-all">
                     <Icon className="w-6 h-6" />
                   </div>
 
-                  <h3 className="font-display font-semibold text-lg text-slate-900 group-hover:text-blue-400 transition-colors">
+                  <h3 className="font-display font-semibold text-lg text-slate-900 group-hover:text-secondary transition-colors">
                     {svc.title}
                   </h3>
 
-                  <p className="text-sm text-slate-500 leading-relaxed font-light flex-grow">
+                  <p className="text-sm text-slate-600 leading-relaxed  group-hover:text-slate-400 font-light flex-grow">
                     {svc.desc}
                   </p>
 
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-blue-500 group-hover:text-blue-400 pt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span>Learn more</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </div>
                 </motion.div>
               )
             })}
@@ -382,10 +378,10 @@ export default function Home() {
 
 
       {/* 8. Why Choose Us (Bento Grid) */}
-      <section className="relative bg-blue-200 py-28 px-6 md:px-12  mx-auto z-10">
+      <section className="relative bg-surface border-y border-default py-28 px-6 md:px-12  mx-auto z-10">
         <div className="text-center space-y-4 mb-16">
-          <div className="text-blue-500 font-bold text-xs uppercase tracking-widest font-display">Our Advantage</div>
-          <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-slate-900">Why Modern Enterprises Partner With Us</h2>
+          <div className="text-white font-bold text-xs uppercase tracking-widest font-display">Our Advantage</div>
+          <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-heading">Why Modern Enterprises Partner With Us</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -394,21 +390,21 @@ export default function Home() {
             return (
               <motion.div
                 key={idx}
-                className={`p-8 rounded-2xl  bg-white flex flex-col justify-between border-slate-200 shadow-xl hover:border-blue-500/25 transition-all text-left relative overflow-hidden group cursor-pointer ${item.size}`}
+                className={`p-8 rounded-2xl  bg-white flex flex-col justify-between border-default shadow-card hover:border-blue-500/25 transition-all text-left relative overflow-hidden group cursor-pointer ${item.size}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
               >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full blur-xl group-hover:bg-blue-500/10 transition-all" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-blue-500/10 transition-all" />
                 <div className="space-y-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="font-display font-bold text-xl text-slate-900 group-hover:text-blue-400 transition-colors">
+                  <h3 className="font-display font-bold text-xl text-slate-800 group-hover:text-secondary transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-slate-500 leading-relaxed font-light">
+                  <p className="text-sm text-slate-600 leading-relaxed font-light">
                     {item.desc}
                   </p>
                 </div>
@@ -421,14 +417,14 @@ export default function Home() {
       {/* 9. Metrics Section */}
       <section
         ref={metricsRef}
-        className="relative py-16 bg-white border-y border-slate-200 z-10 overflow-hidden"
+        className="relative py-16 bg-surface border-y border-default z-10 overflow-hidden"
       >
         <div className="absolute inset-0 animated-grid opacity-30 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {metrics.map((metric, idx) => (
             <div key={idx} className="text-center space-y-2">
-              <div className="font-display font-black text-4xl sm:text-6xl text-slate-900 tracking-tight drop-shadow-[0_0_15px_rgba(59,130,246,0.25)]">
+              <div className="font-display font-black text-4xl sm:text-6xl text-heading tracking-tight drop-shadow-[0_0_15px_rgba(59,130,246,0.25)]">
                 {metricsInView ? (
                   <CountUpComponent start={0} end={metric.value} duration={3} delay={0.2} />
                 ) : (
@@ -436,7 +432,7 @@ export default function Home() {
                 )}
                 <span className="text-blue-900">{metric.suffix}</span>
               </div>
-              <p className="text-slate-500 text-xs sm:text-sm font-light uppercase tracking-wider font-display">
+              <p className="text-muted text-xs sm:text-sm font-light uppercase tracking-wider font-display">
                 {metric.label}
               </p>
             </div>
@@ -446,22 +442,22 @@ export default function Home() {
 
       {/* 10. Enterprise CTA Section */}
       <section className="relative  z-10">
-        <div className=" mx-auto bg-blue-500 py-12 text-center relative overflow-hidden shadow-2xl">
+        <div className=" mx-auto bg-primary py-12 text-center relative overflow-hidden shadow-card">
           {/* Animated node grid background */}
           <div className="absolute inset-0 opacity-15 animated-grid pointer-events-none" />
           <div className="glow-spot glow-blue w-[400px] h-[400px] -bottom-20 -right-20" />
 
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-            <h2 className="font-display font-black text-3xl sm:text-5xl text-slate-900 leading-tight">
+            <h2 className="font-display font-black text-3xl sm:text-5xl text-heading leading-tight">
               Let's Build High-Performing Teams Together
             </h2>
-            <p className="text-black text-base sm:text-lg font-light leading-relaxed">
+            <p className="text-white text-base sm:text-lg leading-relaxed">
               Partner with LuminaVTech to access enterprise-grade AI experts, specialized IT talent, and smart workforce consulting strategies tailored for your business.
             </p>
             <div className="pt-4">
               <button
                 onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-                className="px-8 py-4 rounded-xl btn-yellow font-bold text-sm tracking-wider uppercase inline-flex items-center gap-3 cursor-pointer"
+                className="px-8 py-4 rounded-xl bg-gradient-to-r from-accent to-yellow-600 text-white font-bold text-sm tracking-wider uppercase inline-flex items-center gap-3 cursor-pointer"
               >
                 Schedule Consultation
                 <Calendar className="w-4 h-4" />

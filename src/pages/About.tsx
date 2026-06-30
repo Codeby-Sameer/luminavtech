@@ -31,7 +31,7 @@ export default function About() {
     {
       label: '02',
       title: 'Partnership & Business Success',
-      text: 'LuminaVTech is more than a staffing provider—we are a workforce partner committed to helping organizations achieve their goals through exceptional talent. We work closely with businesses to understand their unique challenges and deliver professionals who contribute value from day one. By combining recruitment expertise with a people-centric approach, we create meaningful connections between employers and technology professionals. We also utilize AI-based talent matching insights to improve alignment between role requirements and candidate capabilities, helping reduce hiring gaps and improve placement accuracy.',
+      text: 'LuminaVTech is more than a staffing provider we are a workforce partner committed to helping organizations achieve their goals through exceptional talent. We work closely with businesses to understand their unique challenges and deliver professionals who contribute value from day one. By combining recruitment expertise with a people-centric approach, we create meaningful connections between employers and technology professionals. We also utilize AI-based talent matching insights to improve alignment between role requirements and candidate capabilities, helping reduce hiring gaps and improve placement accuracy.',
       icon: Handshake,
     },
     {
@@ -61,7 +61,7 @@ export default function About() {
   ]
 
   return (
-    <div className="relative w-full pt-32 pb-24 bg-[#242628] overflow-hidden text-left">
+    <div className="relative w-full pt-32 pb-24 bg-background overflow-hidden text-left">
       {/* Background radial glows */}
       <div className="glow-spot glow-blue w-[700px] h-[700px] -top-20 -left-20" />
       <div className="glow-spot glow-cyan w-[600px] h-[600px] bottom-10 right-0" />
@@ -76,16 +76,16 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 space-y-6"
           >
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-secondary">
               <span>About LuminaVTech</span>
             </div>
-            <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-100 tracking-tight leading-tight">
+            <h1 className="font-display font-black text-4xl sm:text-6xl text-heading tracking-tight leading-tight">
               Powering Innovation Through{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
                 People & Strategy
               </span>
             </h1>
-            <p className="text-slate-200 text-lg md:text-xl font-light leading-relaxed">
+            <p className="text-body text-lg md:text-xl font-light leading-relaxed">
               A premier specialized IT staffing, AI talent consulting, and workforce optimization firm engineered to scale modern software development, artificial intelligence, and cloud operations.
             </p>
           </motion.div>
@@ -96,8 +96,8 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-5 w-full flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] group">
-              <div className="absolute inset-0 bg-gradient-to-t from-[#242628] via-transparent to-transparent opacity-30 z-10" />
+            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-full rounded-2xl overflow-hidden border border-default shadow-[0_0_50px_rgba(59,130,246,0.15)] group">
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-30 z-10" />
               <img
                 src={aboutusImg}
                 alt="LuminaVTech Team"
@@ -129,14 +129,14 @@ export default function About() {
                   className={`lg:col-span-4 flex items-center gap-6 ${isEven ? 'lg:order-1' : 'lg:order-2'
                     }`}
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 shadow-[0_0_15px_rgba(37,99,235,0.15)]">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary shadow-[0_0_15px_rgba(37,99,235,0.15)]">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <div className="text-blue-500 font-display font-black text-xl tracking-wider leading-none">
+                    <div className="text-primary font-display font-black text-xl tracking-wider leading-none">
                       {story.label}
                     </div>
-                    <h3 className="font-display font-bold text-xl text-blue-500 mt-1">
+                    <h3 className="font-display font-bold text-xl text-primary mt-1">
                       {story.title}
                     </h3>
                   </div>
@@ -144,7 +144,7 @@ export default function About() {
 
                 {/* Text Block Column */}
                 <div
-                  className={`lg:col-span-8 p-8 rounded-2xl bg-white border-slate-200 text-slate-600 leading-relaxed font-light text-sm sm:text-base ${isEven ? 'lg:order-2' : 'lg:order-1'
+                  className={`lg:col-span-8 p-8 rounded-card bg-surface border border-default text-body leading-relaxed font-light text-sm sm:text-base ${isEven ? 'lg:order-2' : 'lg:order-1'
                     }`}
                 >
                   {story.text}
@@ -156,11 +156,11 @@ export default function About() {
       </div>
 
       {/* Why Partner with Us (Dual Columns from content.md lines 82-105) */}
-      <div className="bg-slate-50 border-y border-slate-200 py-28 relative z-10">
+      <div className="bg-surface border-y border-default py-28 relative z-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center space-y-4 mb-20">
-            <div className="text-blue-500 font-bold text-xs uppercase tracking-widest font-display">Deep Partnership</div>
-            <h2 className="font-display font-black text-3xl sm:text-5xl text-slate-900">Why Partner with Us</h2>
+            <div className="text-primary font-bold text-xs uppercase tracking-widest font-display">Deep Partnership</div>
+            <h2 className="font-display font-black text-3xl sm:text-5xl text-heading">Why Partner with Us</h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -172,18 +172,18 @@ export default function About() {
               transition={{ duration: 0.6 }}
               className="space-y-8"
             >
-              <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
-                <Sparkles className="w-6 h-6 text-blue-400" />
-                <h3 className="font-display font-bold text-2xl text-slate-900">Results-Oriented Staffing</h3>
+              <div className="flex items-center gap-3 pb-4 border-b border-default">
+                <Sparkles className="w-6 h-6 text-secondary" />
+                <h3 className="font-display font-bold text-2xl text-heading">Results-Oriented Staffing</h3>
               </div>
 
               <div className="space-y-6">
                 {resultsOrientedList.map((item, idx) => (
                   <div key={idx} className="flex gap-4">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <div className="space-y-1">
-                      <h4 className="font-display font-semibold text-base text-slate-900">{item.title}</h4>
-                      <p className="text-xs sm:text-sm text-slate-700 font-light leading-relaxed">{item.desc}</p>
+                      <h4 className="font-display font-semibold text-base text-heading">{item.title}</h4>
+                      <p className="text-xs sm:text-sm text-body font-light leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -198,18 +198,18 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-8"
             >
-              <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
+              <div className="flex items-center gap-3 pb-4 border-b border-default">
                 <Shield className="w-6 h-6 text-indigo-400" />
-                <h3 className="font-display font-bold text-2xl text-slate-900">Deep Talent Understanding</h3>
+                <h3 className="font-display font-bold text-2xl text-heading">Deep Talent Understanding</h3>
               </div>
 
               <div className="space-y-6">
                 {talentUnderstandingList.map((item, idx) => (
                   <div key={idx} className="flex gap-4">
-                    <CheckCircle2 className="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                     <div className="space-y-1">
-                      <h4 className="font-display font-semibold text-base text-slate-900">{item.title}</h4>
-                      <p className="text-xs sm:text-sm text-slate-700 font-light leading-relaxed">{item.desc}</p>
+                      <h4 className="font-display font-semibold text-base text-heading">{item.title}</h4>
+                      <p className="text-xs sm:text-sm text-body font-light leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -221,13 +221,13 @@ export default function About() {
 
       {/* CTA Box */}
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 pt-28 text-center space-y-6">
-        <h3 className="font-display font-bold text-2xl sm:text-3xl text-slate-50">Ready to consult with our staffing directors?</h3>
-        <p className="text-slate-100 text-sm max-w-xl mx-auto font-light leading-relaxed">
+        <h3 className="font-display font-bold text-2xl sm:text-3xl text-heading">Ready to consult with our staffing directors?</h3>
+        <p className="text-heading text-sm max-w-xl mx-auto font-light leading-relaxed">
           Request a specialized talent consultation or explore candidate profiles suited for your open mandates.
         </p>
         <button
           onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-          className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all cursor-pointer inline-block"
+          className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary to-secondary font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all cursor-pointer inline-block"
         >
           Initiate Sourcing
         </button>

@@ -7,7 +7,7 @@ export default function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false)
 
   return (
-    <div className="relative w-full pt-32  bg-white overflow-hidden text-left">
+    <div className="relative w-full pt-32 bg-background overflow-hidden text-left">
       {/* Background elements */}
       <div className="glow-spot glow-blue w-[600px] h-[600px] -top-20 -left-20" />
       <div className="glow-spot glow-purple w-[500px] h-[500px] bottom-10 right-0" />
@@ -21,16 +21,16 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl space-y-6"
         >
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-secondary">
             <span>Corporate Communications</span>
           </div>
-          <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-900 tracking-tight leading-tight">
+          <h1 className="font-display font-black text-4xl sm:text-6xl text-heading tracking-tight leading-tight">
             Connect With{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
               Our Specialists
             </span>
           </h1>
-          <p className="text-slate-700 text-lg md:text-xl font-light leading-relaxed">
+          <p className="text-body text-lg md:text-xl font-light leading-relaxed">
             Whether you want to source elite engineers or need general consultation about tech markets, select the appropriate department below.
           </p>
         </motion.div>
@@ -42,50 +42,50 @@ export default function Contact() {
           {/* Left info column */}
           <div className="lg:col-span-5 text-left space-y-8">
             <div className="space-y-4">
-              <div className="text-blue-500 font-bold text-xs uppercase tracking-widest font-display">Get in Touch</div>
-              <h2 className="font-display font-bold text-3xl sm:text-5xl text-slate-900">Let’s Build Together</h2>
-              <p className="text-slate-900 font-light text-sm sm:text-base leading-relaxed">
+              <div className="text-primary font-bold text-xs uppercase tracking-widest font-display">Get in Touch</div>
+              <h2 className="font-display font-bold text-3xl sm:text-5xl text-heading">Let’s Build Together</h2>
+              <p className="text-heading font-light text-sm sm:text-base leading-relaxed">
                 We welcome the opportunity to learn about your hiring challenges and business goals. Share your requirements with us, and our team will work closely with you to deliver the right IT staffing solutions that support your success.
               </p>
             </div>
 
             <div className="space-y-8">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-base text-slate-900 font-semibold font-display">Email Us</div>
-                  <div className="text-sm text-slate-700">info@luminavtech.com</div>
+                  <div className="text-base text-heading font-semibold font-display">Email Us</div>
+                  <div className="text-sm text-body">info@luminavtech.com</div>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-base text-slate-900 font-semibold font-display">Call Us</div>
-                  <div className="text-sm text-slate-700">+1 (800) 555-0199</div>
+                  <div className="text-base text-heading font-semibold font-display">Call Us</div>
+                  <div className="text-sm text-body">+1 (800) 555-0199</div>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-base text-slate-900 font-semibold font-display">USA Office Address</div>
-                  <div className="text-sm text-slate-700">320 Decker Dr, Suite 131, Irving, TX, 75062.</div>
+                  <div className="text-base text-heading font-semibold font-display">USA Office Address</div>
+                  <div className="text-sm text-body">320 Decker Dr, Suite 131, Irving, TX, 75062.</div>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400 shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-secondary shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-base text-slate-900 font-semibold font-display">India Office Address</div>
-                  <div className="text-sm text-slate-700">#407, 4th floor, Capital park, Hitech city, Hyderabad 500081</div>
+                  <div className="text-base text-heading font-semibold font-display">India Office Address</div>
+                  <div className="text-sm text-body">#407, 4th floor, Capital park, Hitech city, Hyderabad 500081</div>
                 </div>
               </div>
             </div>
@@ -93,16 +93,16 @@ export default function Contact() {
 
           {/* Right form column */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-3xl glass-panel border-slate-300 shadow-2xl relative overflow-hidden text-left">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl" />
+            <div className="p-8 sm:p-10 rounded-card bg-surface border border-default shadow-card relative overflow-hidden text-left">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl" />
 
               {formSubmitted ? (
                 <div className="py-16 text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mx-auto">
+                  <div className="w-16 h-16 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-secondary mx-auto">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="font-display font-bold text-2xl text-slate-900">Consultation Requested</h3>
-                  <p className="text-slate-500 font-light text-sm max-w-sm mx-auto">
+                  <h3 className="font-display font-bold text-2xl text-heading">Consultation Requested</h3>
+                  <p className="text-muted font-light text-sm max-w-sm mx-auto">
                     Thank you for reaching out. An enterprise staffing expert from LuminaVTech will contact you within the next 24 hours.
                   </p>
                 </div>
@@ -116,22 +116,22 @@ export default function Contact() {
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-semibold text-slate-900 font-display">Full Name</label>
+                      <label htmlFor="name" className="text-sm font-semibold text-heading font-display">Full Name</label>
                       <input
                         type="text"
                         id="name"
                         required
-                        className="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-300 focus:border-blue-500/50 text-slate-900 text-sm focus:outline-none transition-all placeholder:text-slate-400"
+                        className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-primary text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-primary"
                         placeholder="John Doe"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-semibold text-slate-900 font-display">Corporate Email</label>
+                      <label htmlFor="email" className="text-sm font-semibold text-heading font-display">Corporate Email</label>
                       <input
                         type="email"
                         id="email"
                         required
-                        className="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-300 focus:border-blue-500/50 text-slate-900 text-sm focus:outline-none transition-all placeholder:text-slate-400"
+                        className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-primary text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-primary"
                         placeholder="john@enterprise.com"
                       />
                     </div>
@@ -139,40 +139,40 @@ export default function Contact() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="phone" className="text-sm font-semibold text-slate-900 font-display">Phone Number</label>
+                      <label htmlFor="phone" className="text-sm font-semibold text-heading font-display">Phone Number</label>
                       <input
                         type="tel"
                         id="phone"
-                        className="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-300 focus:border-blue-500/50 text-slate-900 text-sm focus:outline-none transition-all placeholder:text-slate-400"
+                        className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-primary text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-primary"
                         placeholder="+1 (555) 000-0000"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="company" className="text-sm font-semibold text-slate-900 font-display">Company Name</label>
+                      <label htmlFor="company" className="text-sm font-semibold text-heading font-display">Company Name</label>
                       <input
                         type="text"
                         id="company"
                         required
-                        className="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-300 focus:border-blue-500/50 text-slate-900 text-sm focus:outline-none transition-all placeholder:text-slate-400"
+                        className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-primary text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-primary"
                         placeholder="Enterprise Inc."
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-semibold text-slate-900 font-display">Your Requirements</label>
+                    <label htmlFor="message" className="text-sm font-semibold text-heading font-display">Your Requirements</label>
                     <textarea
                       id="message"
                       rows={4}
                       required
-                      className="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-300 focus:border-blue-500/50 text-slate-900 text-sm focus:outline-none transition-all placeholder:text-slate-400 resize-none"
+                      className="w-full px-4 py-3.5 rounded-xl bg-surface border border-default focus:border-primary text-heading text-sm focus:outline-none transition-all placeholder:text-muted focus:ring-1 focus:ring-primary resize-none"
                       placeholder="Tell us about the roles or consultation services you need..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-semibold text-sm tracking-wider uppercase text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all cursor-pointer flex items-center justify-center gap-2"
+                    className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-secondary font-semibold text-sm tracking-wider uppercase text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all cursor-pointer flex items-center justify-center gap-2"
                   >
                     Send Message
                     <ArrowRight className="w-4 h-4" />
@@ -186,7 +186,7 @@ export default function Contact() {
 
       {/* 12. Map Section */}
       <section className="relative px-6 md:px-12  mx-auto z-10 pb-16">
-        <div className="w-full h-96 overflow-hidden shadow-xl border border-slate-300">
+        <div className="w-full h-96 overflow-hidden shadow-card border border-default">
           <iframe
             title="LuminaVTech Office Location"
             width="100%"

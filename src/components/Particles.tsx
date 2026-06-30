@@ -9,6 +9,23 @@ interface Particle {
 }
 
 export default function Particles() {
+  const getThemeColor = (varName: string, defaultColor: string) => {
+    if (typeof window === 'undefined') return defaultColor
+    const val = getComputedStyle(document.documentElement).getPropertyValue(varName).trim()
+    return val || defaultColor
+  }
+
+  const hexToRgba = (hex: string, alpha: number) => {
+    hex = hex.replace('#', '')
+    if (hex.length === 3) {
+      hex = hex.split('').map((char) => char + char).join('')
+    }
+    const r = parseInt(hex.substring(0, 2), 16) || 0
+    const g = parseInt(hex.substring(2, 4), 16) || 0
+    const b = parseInt(hex.substring(4, 6), 16) || 0
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`
+  }
+
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
   useEffect(() => {
@@ -61,7 +78,10 @@ export default function Particles() {
       ctx.clearRect(0, 0, width, height)
 
       // Draw background gradient
-      ctx.fillStyle = "#D1D5DB"; // gray-300
+      const bgColor = getThemeColor('--background', '#242628');
+      const primaryColor = getThemeColor('--primary', '#0B3B8C');
+      const secondaryColor = getThemeColor('--secondary', '#3E6FB6');
+      ctx.fillStyle = bgColor; // gray-300
       ctx.fillRect(0, 0, width, height)
 
       // Update and draw particles
@@ -88,8 +108,8 @@ export default function Particles() {
         // Draw particle
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
-        ctx.fillStyle = "#2563EB";
-        ctx.shadowColor = "#38BDF8";
+        ctx.fillStyle = primaryColor;
+        ctx.shadowColor = secondaryColor;
         ctx.shadowBlur = 15;
 
         ctx.beginPath();
@@ -114,7 +134,7 @@ export default function Particles() {
             ctx.beginPath()
             ctx.moveTo(p1.x, p1.y)
             ctx.lineTo(p2.x, p2.y)
-         ctx.strokeStyle = `rgba(30,64,175,${alpha})` // Blue-800npm
+         ctx.strokeStyle = hexToRgba(primaryColor, alpha)
             ctx.lineWidth = 1.2
             ctx.stroke()
           }
@@ -130,7 +150,7 @@ export default function Particles() {
             ctx.beginPath()
             ctx.moveTo(p1.x, p1.y)
             ctx.lineTo(mouse.x, mouse.y)
-            ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`
+            ctx.strokeStyle = hexToRgba(secondaryColor, alpha)
             ctx.lineWidth = 1
             ctx.stroke()
           }
