@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import { Sparkles, Award, TrendingUp, UserPlus, BarChart3, Cpu, Crown, GraduationCap, ArrowRight, Check, Briefcase, ShieldCheck, UserCheck, Send, Settings, Handshake, Lightbulb } from 'lucide-react'
+import { BarChart3, ArrowRight, Check, Briefcase, ShieldCheck, UserCheck, Send, Settings, Handshake, Lightbulb } from 'lucide-react'
 import careersImg from '../assets/careers.png'
 
 export default function Careers() {
