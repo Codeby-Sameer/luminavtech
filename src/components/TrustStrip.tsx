@@ -30,6 +30,16 @@ import hondaLogo from '../assets/clientlogo/Honda-Logo.wine.svg';
 import capitalOneLogo from '../assets/clientlogo/Capital_One_logo.svg.png';
 import fiservLogo from '../assets/clientlogo/Fiserv-Logo.wine.svg';
 
+import charlesSchwabLogo from '../assets/clientlogo/Charles_SchwabLogo.wine.svg';
+import costcoLogo from '../assets/clientlogo/Costco-Logo.wine.svg';
+import deltaLogo from '../assets/clientlogo/DeltaAirLines-Logo.wine.svg';
+import googleLogo from '../assets/clientlogo/Google-Logo.wine.svg';
+import microsoftLogo from '../assets/clientlogo/Microsoft-Logo.wine.svg';
+import morganStanleyLogo from '../assets/clientlogo/Morgan_Stanley.svg';
+import stateStreetLogo from '../assets/clientlogo/State_Street.svg';
+import tMobileLogo from '../assets/clientlogo/T-MobileLogo.wine.svg';
+import verizonLogo from '../assets/clientlogo/VerizonLogo.wine.svg';
+
 const clients = [
   { name: 'Walmart', logo: walmartLogo },
   { name: 'Edwards LifeSciences', logo: edwardsLogo },
@@ -42,6 +52,15 @@ const clients = [
   // { name: 'TCH', logo: tchLogo },
   { name: 'Toyota', logo: toyotaLogo },
   { name: 'Virtusa', logo: virtusaLogo },
+  { name: 'Charles Schwab', logo: charlesSchwabLogo },
+  { name: 'Costco', logo: costcoLogo },
+  { name: 'Delta Air Lines', logo: deltaLogo },
+  { name: 'Google', logo: googleLogo },
+  { name: 'Microsoft', logo: microsoftLogo },
+  { name: 'Morgan Stanley', logo: morganStanleyLogo },
+  { name: 'State Street', logo: stateStreetLogo },
+  { name: 'T-Mobile', logo: tMobileLogo },
+  { name: 'Verizon', logo: verizonLogo },
   { name: 'JPMC', logo: jpmcLogo },
   { name: 'Disney', logo: disneyLogo },
   { name: 'DART', logo: dartLogo },
