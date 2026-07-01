@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight, Bot, Cpu, CheckCircle2, UserCheck, Zap, Globe as GlobeIcon, Users, Calendar } from 'lucide-react'
 import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
-import Particles from '../components/Particles'
+import ShaderBackground from '../components/ShaderBackground'
 import TrustStrip from '@/components/TrustStrip'
 
 
@@ -175,10 +175,9 @@ export default function Home() {
         className="relative h-screen  bg-background
         flex items-center justify-center overflow-hidden z-20"
       >
-        {/* Background Grids and Particles */}
+        {/* Background Grids and Shader Background */}
         <div className="absolute inset-0 animated-grid opacity-25 pointer-events-none" />
-        <div className="glow-spot glow-blue w-[600px] h-[600px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30 pointer-events-none" />
-        <Particles />
+        <ShaderBackground />
 
         <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center relative h-full">
 

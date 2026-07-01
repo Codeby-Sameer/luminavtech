@@ -155,7 +155,7 @@ export default function Careers() {
               <img
                 src={careersImg}
                 alt="LuminaVTech Careers"
-                className="w-full h-auto max-h-[300px] sm:max-h-[450px] lg:max-h-[500px] object-contain group-hover:scale-102 transition-transform duration-500"
+                className="w-full h-auto max-h-[300px] sm:max-h-[450px] lg:max-h-[500px] object-contain scale-x-108 scale-y-101"
               />
             </div>
           </motion.div>
@@ -245,7 +245,7 @@ export default function Careers() {
           </div>
           <button
             onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap cursor-pointer"
+            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-yellow-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap cursor-pointer"
           >
             Apply Now
           </button>

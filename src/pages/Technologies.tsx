@@ -141,8 +141,7 @@ export default function Technologies() {
   return (
     <div className="relative w-full pt-32 pb-12 bg-background overflow-hidden text-left">
       {/* Background Gradients */}
-      <div className="glow-spot glow-blue w-[700px] h-[700px] -top-20 -left-20" />
-      <div className="glow-spot glow-purple w-[600px] h-[600px] top-1/3 right-0" />
+
       <div className="absolute inset-0 animated-grid pointer-events-none" />
 
       {/* Hero Section */}
@@ -239,7 +238,7 @@ export default function Technologies() {
           </div>
           <button
             onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap cursor-pointer"
+            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent font-bold text-xs tracking-wider uppercase text-white hover:shadow-lg hover:shadow-yellow-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap cursor-pointer"
           >
             Request Staffing
           </button>
