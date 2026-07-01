@@ -102,39 +102,72 @@ export default function Footer() {
         <div className="space-y-6">
           <h4 className="text-sm font-semibold tracking-wider uppercase text-slate-800 font-display">Enterprise Contact</h4>
           <ul className="space-y-4">
-            <li className="flex items-start gap-3">
-              <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-              <span className="text-sm text-slate-600 leading-relaxed">
-                320 Decker Dr, Suite 131, Irving, TX, 75062.
-              </span>
+            <li>
+              <a 
+                href="https://maps.google.com/?q=320+Decker+Dr,+Suite+131,+Irving,+TX,+75062" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 group text-left"
+              >
+                <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0 transition-colors" />
+                <span className="text-sm text-slate-600 group-hover:text-primary transition-colors leading-relaxed">
+                  320 Decker Dr, Suite 131, Irving, TX, 75062.
+                </span>
+              </a>
             </li>
-            <li className="flex items-start gap-3">
-              <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-              <span className="text-sm text-slate-600 leading-relaxed">
-
-                #407, 4th floor, Capital park, Hitech city, Hyderabad 500081
-              </span>
+            <li>
+              <a 
+                href="https://maps.google.com/?q=Capital+park,+Hitech+city,+Hyderabad+500081" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 group text-left"
+              >
+                <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0 transition-colors" />
+                <span className="text-sm text-slate-600 group-hover:text-primary transition-colors leading-relaxed">
+                  #407, 4th floor, Capital park, Hitech city, Hyderabad 500081
+                </span>
+              </a>
             </li>
-            <li className="flex items-center gap-3">
-              <Phone className="w-4 h-4 text-primary shrink-0" />
-              <span className="text-sm text-slate-600">+1 (800) 555-0199</span>
+            <li>
+              <a 
+                href="tel:+14697531264" 
+                className="flex items-center gap-3 group text-left"
+              >
+                <Phone className="w-4 h-4 text-primary shrink-0 transition-colors" />
+                <span className="text-sm text-slate-600 group-hover:text-primary transition-colors">
+                  +1 (469) 753-1264
+                </span>
+              </a>
             </li>
-            <li className="flex items-center gap-3">
-              <Mail className="w-4 h-4 text-primary shrink-0" />
-              <span className="text-sm text-slate-600">info@luminavtech.com</span>
+            <li>
+              <a 
+                href="mailto:info@luminavtech.com" 
+                className="flex items-center gap-3 group text-left"
+              >
+                <Mail className="w-4 h-4 text-primary shrink-0 transition-colors" />
+                <span className="text-sm text-slate-600 group-hover:text-primary transition-colors">
+                  info@luminavtech.com
+                </span>
+              </a>
             </li>
           </ul>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-default flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-muted">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-7 border-t border-default flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-xs text-slate-600">
           © {new Date().getFullYear()} LuminaVTech. All rights reserved.
         </p>
+        <a className="text-xs text-slate-600 hover:text-slate-700 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={`https://wa.me/918790008825?text=${encodeURIComponent("Hello! RKS Brainstorm pvt ltd. I am looking for a website for my business.")}`}>
+            Developed by RKS Brainstorm pvt ltd
+          </a>
         <div className="flex space-x-6">
-          <Link to="/privacy" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-xs text-muted hover:text-slate-600 transition-colors">Privacy Policy</Link>
-          <Link to="/terms" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-xs text-muted hover:text-slate-600 transition-colors">Terms of Service</Link>
+          <Link to="/privacy" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-xs text-slate-600 hover:text-slate-700 transition-colors">Privacy Policy</Link>
+          <Link to="/terms" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-xs text-slate-600 hover:text-slate-700 transition-colors">Terms of Service</Link>
         </div>
       </div>
     </footer>

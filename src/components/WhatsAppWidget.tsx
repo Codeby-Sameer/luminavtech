@@ -9,7 +9,7 @@ export default function WhatsAppWidget() {
      
       {/* Floating Button */}
       <a
-        href="https://wa.me/+18005550199?text=Hello! I would like to learn more about Erba Solutions and your IT staffing/technology services."
+        href="https://wa.me/+14697531264?text=Hello! I would like to learn more about LuminaVTech  and your IT staffing/technology services."
         target="_blank"
         rel="noopener noreferrer"
         className="pointer-events-auto relative flex items-center justify-center md:w-14 md:h-14 w-10 h-10 bg-whatsapp text-white rounded-full shadow-whatsapp transition-all duration-300 hover:scale-110 hover:-translate-y-1 active:scale-95 group focus:outline-none focus:ring-4 focus:ring-green-300"

@@ -50,44 +50,61 @@ export default function Contact() {
             </div>
 
             <div className="space-y-8">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
+              <a 
+                href="mailto:info@luminavtech.com"
+                className="flex items-center gap-4 group cursor-pointer w-fit text-left"
+              >
+                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all duration-300">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-base text-heading font-semibold font-display">Email Us</div>
-                  <div className="text-sm text-body">info@luminavtech.com</div>
+                  <div className="text-base text-heading font-semibold font-display group-hover:text-accent transition-colors duration-300">Email Us</div>
+                  <div className="text-sm text-body group-hover:text-accent/80 transition-colors duration-300">info@luminavtech.com</div>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
+              <a 
+                href="tel:+14697531264"
+                className="flex items-center gap-4 group cursor-pointer w-fit text-left"
+              >
+                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all duration-300">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-base text-heading font-semibold font-display">Call Us</div>
-                  <div className="text-sm text-body">+1 (800) 555-0199</div>
+                  <div className="text-base text-heading font-semibold font-display group-hover:text-accent transition-colors duration-300">Call Us</div>
+                  <div className="text-sm text-body group-hover:text-accent/80 transition-colors duration-300">+1 (469) 753-1264</div>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
+              <a 
+                href="https://maps.google.com/?q=320+Decker+Dr,+Suite+131,+Irving,+TX,+75062"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group cursor-pointer w-fit text-left"
+              >
+                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all duration-300">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-base text-heading font-semibold font-display">USA Office Address</div>
-                  <div className="text-sm text-body">320 Decker Dr, Suite 131, Irving, TX, 75062.</div>
+                  <div className="text-base text-heading font-semibold font-display group-hover:text-accent transition-colors duration-300">USA Office Address</div>
+                  <div className="text-sm text-body group-hover:text-accent/80 transition-colors duration-300">320 Decker Dr, Suite 131, Irving, TX, 75062.</div>
                 </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
+              </a>
+
+              <a 
+                href="https://maps.google.com/?q=Capital+park,+Hitech+city,+Hyderabad+500081"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group cursor-pointer w-fit text-left"
+              >
+                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all duration-300">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-base text-heading font-semibold font-display">India Office Address</div>
-                  <div className="text-sm text-body">#407, 4th floor, Capital park, Hitech city, Hyderabad 500081</div>
+                  <div className="text-base text-heading font-semibold font-display group-hover:text-accent transition-colors duration-300">India Office Address</div>
+                  <div className="text-sm text-body group-hover:text-accent/80 transition-colors duration-300">#407, 4th floor, Capital park, Hitech city, Hyderabad 500081</div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 

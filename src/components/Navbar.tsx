@@ -134,8 +134,8 @@ export default function Navbar() {
             onClick={handleNavClick}
             className="group relative px-6 py-2.5 text-slate-50 rounded-full text-xs font-semibold uppercase tracking-wider overflow-hidden bg-gradient-to-r from-yellow-500 to-yellow-600 flex items-center gap-2"
           >
-            <span className="relative z-10 flex items-center gap-2">
-             Connect with Us
+            <span className="relative uppercase z-10 flex items-center gap-2">
+              CONNECT WITH US
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </span>
           </Link>
@@ -208,9 +208,9 @@ export default function Navbar() {
           <Link
             to="/contact"
             onClick={handleNavClick}
-            className="w-full mt-4 flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-50 text-sm font-semibold transition-all rounded-xl"
+            className="w-full mt-4 flex  uppercase items-center justify-center gap-2 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-50 text-sm font-semibold transition-all rounded-xl"
           >
-            Talk To Experts
+            Connect with Us
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
